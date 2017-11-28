@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("DataAccessLayer")]
+[assembly: AssemblyTitle("DataAccessLayerDBVideotheque")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DataAccessLayer")]
+[assembly: AssemblyProduct("DataAccessLayerDBVideotheque")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-[assembly: Guid("e3b2aa21-5937-4203-9f38-82c8e609d245")]
+[assembly: Guid("1cb41350-32e8-4cb2-a515-0b8fa6330f03")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //
