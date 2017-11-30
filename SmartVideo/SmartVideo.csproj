@@ -64,6 +64,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Class1.cs" />
     <Compile Include="Connected Services\SmartWCFServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,19 +93,19 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\SmartWCFServiceReference\Service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\SmartWCFServiceReference\Service11.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\SmartWCFServiceReference\Service12.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\SmartWCFServiceReference\SmartVideo.SmartWCFServiceReference.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\SmartWCFServiceReference\SmartWCFService.wsdl" />
+    <None Include="Connected Services\SmartWCFServiceReference\SmartWCFService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SmartWCFServiceReference\SmartWCFService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\SmartWCFServiceReference\SmartWCFService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -120,7 +121,7 @@
     <WCFMetadataStorage Include="Connected Services\SmartWCFServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\SmartWCFServiceReference\Service1.disco" />
+    <None Include="Connected Services\SmartWCFServiceReference\SmartWCFService.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\SmartWCFServiceReference\configuration91.svcinfo" />
