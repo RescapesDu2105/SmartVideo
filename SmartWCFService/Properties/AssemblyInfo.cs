@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de 
 // l'ensemble d'attributs suivant. Pour modifier les informations
 // associées à un assembly, changez les valeurs de ces attributs.
-[assembly: AssemblyTitle("Service WCF")]
+[assembly: AssemblyTitle("SmartWCFService")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Service WCF")]
+[assembly: AssemblyProduct("SmartWCFService")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
-[assembly: Guid("86218a39-67c1-4c4e-a185-75e2e7a70753")]
+[assembly: Guid("e9029a27-6fd7-4c6d-a9b9-f9368b7b0842")]
 
 // Les informations de version pour un assembly se composent des quatre valeurs suivantes :
 //
