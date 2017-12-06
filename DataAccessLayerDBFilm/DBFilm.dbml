@@ -14,11 +14,11 @@
       <Column Name="title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="original_title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="runtime" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="posterpath" Member="poster_path" Storage="_posterpath" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="trailer_path" Type="System.String" CanBeNull="false" />
+      <Column Name="posterpath" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="trailerpath" Storage="_trailer_path" Type="System.String" CanBeNull="false" />
       <Association Name="Film_FilmActor" Member="FilmActor" ThisKey="id" OtherKey="id_film" Type="FilmActor" />
       <Association Name="Film_FilmGenre" Member="FilmGenre" ThisKey="id" OtherKey="id_film" Type="FilmGenre" />
-      <Association Name="Film_FilmRealisateur" Member="FilmDirector" Storage="_FilmRealisateur" ThisKey="id" OtherKey="id_film" Type="FilmDirector" />
+      <Association Name="Film_FilmDirector" Member="FilmDirector" Storage="_FilmRealisateur" ThisKey="id" OtherKey="id_film" Type="FilmDirector" />
     </Type>
   </Table>
   <Table Name="dbo.FilmActor" Member="FilmActor">
@@ -44,8 +44,8 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="id_film" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="id_realisateur" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Film_FilmRealisateur" Member="Film" ThisKey="id_film" OtherKey="id" Type="Film" IsForeignKey="true" />
-      <Association Name="Realisateur_FilmRealisateur" Member="Director" Storage="_Realisateur" ThisKey="id_realisateur" OtherKey="id" Type="Director" IsForeignKey="true" />
+      <Association Name="Film_FilmDirector" Member="Film" ThisKey="id_film" OtherKey="id" Type="Film" IsForeignKey="true" />
+      <Association Name="Director_FilmDirector" Member="Director" Storage="_Realisateur" ThisKey="id_realisateur" OtherKey="id" Type="Director" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Genre" Member="Genre">
@@ -59,7 +59,7 @@
     <Type Name="Director">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="Realisateur_FilmRealisateur" Member="FilmDirector" Storage="_FilmRealisateur" ThisKey="id" OtherKey="id_realisateur" Type="FilmDirector" />
+      <Association Name="Director_FilmDirector" Member="FilmDirector" Storage="_FilmRealisateur" ThisKey="id" OtherKey="id_realisateur" Type="FilmDirector" />
     </Type>
   </Table>
 </Database>

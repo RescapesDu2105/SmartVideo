@@ -56,6 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="InfosFilmWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -64,11 +68,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ChangePageButtonCommand.cs" />
     <Compile Include="Connected Services\SmartWCFServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ListFilmsViewModel.cs" />
+    <Compile Include="InfosFilmWindow.xaml.cs">
+      <DependentUpon>InfosFilmWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -93,9 +101,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\SmartWCFServiceReference\SmartVideo.SmartWCFServiceReference.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\SmartWCFServiceReference\SmartWCFService.wsdl" />
     <None Include="Connected Services\SmartWCFServiceReference\SmartWCFService.xsd">
       <SubType>Designer</SubType>
@@ -106,6 +111,10 @@
     <None Include="Connected Services\SmartWCFServiceReference\SmartWCFService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\DTOLib.ActorDTO.datasource" />
+    <None Include="Properties\DataSources\DTOLib.DirectorDTO.datasource" />
+    <None Include="Properties\DataSources\DTOLib.FilmDTO.datasource" />
+    <None Include="Properties\DataSources\DTOLib.GenreDTO.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -119,6 +128,20 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\SmartWCFServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+      <Project>{dfee3dc3-bd08-47e9-a681-91e17ac053b1}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTOLib\DTOLib.csproj">
+      <Project>{152B13C5-A53A-4FB2-BF1A-81F1BB5B820D}</Project>
+      <Name>DTOLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartWCFService\SmartWCFService.csproj">
+      <Project>{e9029a27-6fd7-4c6d-a9b9-f9368b7b0842}</Project>
+      <Name>SmartWCFService</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\SmartWCFServiceReference\SmartWCFService.disco" />

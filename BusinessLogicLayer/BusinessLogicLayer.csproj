@@ -40,8 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BLLFilm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayerDBFilm\DataAccessLayerDBFilm.csproj">
+      <Project>{21344474-5B98-49E7-AAE4-0E88C22222D1}</Project>
+      <Name>DataAccessLayerDBFilm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTOLib\DTOLib.csproj">
+      <Project>{152B13C5-A53A-4FB2-BF1A-81F1BB5B820D}</Project>
+      <Name>DTOLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

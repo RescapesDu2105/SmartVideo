@@ -1,0 +1,7 @@
+E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe.config
+E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe
+E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.pdb
+E:\Dropbox\B3\C#\SmartVideo\SmartStatService\obj\Debug\SmartStatService.csprojResolveAssemblyReference.cache
+E:\Dropbox\B3\C#\SmartVideo\SmartStatService\obj\Debug\SmartStatService.csproj.CoreCompileInputs.cache
+E:\Dropbox\B3\C#\SmartVideo\SmartStatService\obj\Debug\SmartStatService.exe
+E:\Dropbox\B3\C#\SmartVideo\SmartStatService\obj\Debug\SmartStatService.pdb

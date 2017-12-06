@@ -1,0 +1,6 @@
+E:\Dropbox\B3\C#\SmartVideo\DataAccessLayerDBVideotheque\bin\Debug\DataAccessLayerDBVideotheque.dll
+E:\Dropbox\B3\C#\SmartVideo\DataAccessLayerDBVideotheque\bin\Debug\DataAccessLayerDBVideotheque.pdb
+E:\Dropbox\B3\C#\SmartVideo\DataAccessLayerDBVideotheque\obj\Debug\DataAccessLayerDBVideotheque.csprojResolveAssemblyReference.cache
+E:\Dropbox\B3\C#\SmartVideo\DataAccessLayerDBVideotheque\obj\Debug\DataAccessLayerDBVideotheque.csproj.CoreCompileInputs.cache
+E:\Dropbox\B3\C#\SmartVideo\DataAccessLayerDBVideotheque\obj\Debug\DataAccessLayerDBVideotheque.dll
+E:\Dropbox\B3\C#\SmartVideo\DataAccessLayerDBVideotheque\obj\Debug\DataAccessLayerDBVideotheque.pdb

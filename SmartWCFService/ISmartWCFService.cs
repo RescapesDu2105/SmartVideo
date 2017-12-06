@@ -1,10 +1,7 @@
-﻿using System;
+﻿using DTOLib;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
 
 namespace SmartWCFService
 {
@@ -12,36 +9,31 @@ namespace SmartWCFService
     [ServiceContract]
     public interface ISmartWCFService
     {
-
         [OperationContract]
         string GetData(int value);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        List<FilmDTO> GetFilmsDBFilm();
 
-        // TODO: ajoutez vos opérations de service ici
-    }
+        [OperationContract]
+        FilmDTO GetFilmInfos(FilmDTO Film);
 
+        [OperationContract]
+        List<FilmDTO> GetFilmsPage(int page);
+        
+        [OperationContract]
+        List<ActorDTO> GetActors();
 
-    // Utilisez un contrat de données comme indiqué dans l'exemple ci-après pour ajouter les types composites aux opérations de service.
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
+        [OperationContract]
+        List<GenreDTO> GetGenres();
 
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
+        [OperationContract]
+        List<DirectorDTO> GetDirectors();
+        
+        [OperationContract]
+        void UpdateTrailerFilm(int idFilm, String url);
 
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+        [OperationContract]
+        int CountFilms();
     }
 }

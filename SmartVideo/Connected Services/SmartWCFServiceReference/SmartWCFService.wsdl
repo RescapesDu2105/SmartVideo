@@ -4,7 +4,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:60888/SmartWCFService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:60888/SmartWCFService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:60888/SmartWCFService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SmartWCFService" />
+      <xsd:import schemaLocation="http://localhost:60888/SmartWCFService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DTOLib" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ISmartWCFService_GetData_InputMessage">
@@ -13,20 +13,90 @@
   <wsdl:message name="ISmartWCFService_GetData_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDataResponse" />
   </wsdl:message>
-  <wsdl:message name="ISmartWCFService_GetDataUsingDataContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  <wsdl:message name="ISmartWCFService_GetFilmsDBFilm_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmsDBFilm" />
   </wsdl:message>
-  <wsdl:message name="ISmartWCFService_GetDataUsingDataContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  <wsdl:message name="ISmartWCFService_GetFilmsDBFilm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmsDBFilmResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetFilmInfos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmInfos" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetFilmInfos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmInfosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetFilmsPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmsPage" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetFilmsPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmsPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetActors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActors" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetActors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetGenres_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenres" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetGenres_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGenresResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetDirectors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirectors" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetDirectors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDirectorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_UpdateTrailerFilm_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTrailerFilm" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_UpdateTrailerFilm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTrailerFilmResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_CountFilms_InputMessage">
+    <wsdl:part name="parameters" element="tns:CountFilms" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_CountFilms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CountFilmsResponse" />
   </wsdl:message>
   <wsdl:portType name="ISmartWCFService">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetData" message="tns:ISmartWCFService_GetData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetDataResponse" message="tns:ISmartWCFService_GetData_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetDataUsingDataContract" message="tns:ISmartWCFService_GetDataUsingDataContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetDataUsingDataContractResponse" message="tns:ISmartWCFService_GetDataUsingDataContract_OutputMessage" />
+    <wsdl:operation name="GetFilmsDBFilm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmsDBFilm" message="tns:ISmartWCFService_GetFilmsDBFilm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmsDBFilmResponse" message="tns:ISmartWCFService_GetFilmsDBFilm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilmInfos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmInfos" message="tns:ISmartWCFService_GetFilmInfos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmInfosResponse" message="tns:ISmartWCFService_GetFilmInfos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilmsPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmsPage" message="tns:ISmartWCFService_GetFilmsPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmsPageResponse" message="tns:ISmartWCFService_GetFilmsPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActors">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetActors" message="tns:ISmartWCFService_GetActors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetActorsResponse" message="tns:ISmartWCFService_GetActors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGenres">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetGenres" message="tns:ISmartWCFService_GetGenres_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetGenresResponse" message="tns:ISmartWCFService_GetGenres_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectors">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetDirectors" message="tns:ISmartWCFService_GetDirectors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetDirectorsResponse" message="tns:ISmartWCFService_GetDirectors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTrailerFilm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/UpdateTrailerFilm" message="tns:ISmartWCFService_UpdateTrailerFilm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/UpdateTrailerFilmResponse" message="tns:ISmartWCFService_UpdateTrailerFilm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CountFilms">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/CountFilms" message="tns:ISmartWCFService_CountFilms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/CountFilmsResponse" message="tns:ISmartWCFService_CountFilms_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISmartWCFService" type="tns:ISmartWCFService">
@@ -40,8 +110,71 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetDataUsingDataContract" style="document" />
+    <wsdl:operation name="GetFilmsDBFilm">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetFilmsDBFilm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilmInfos">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetFilmInfos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilmsPage">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetFilmsPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActors">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetActors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGenres">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetGenres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectors">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetDirectors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTrailerFilm">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/UpdateTrailerFilm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CountFilms">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/CountFilms" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

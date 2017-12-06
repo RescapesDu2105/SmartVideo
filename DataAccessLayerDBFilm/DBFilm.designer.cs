@@ -314,10 +314,10 @@ namespace DataAccessLayerDBFilm
     partial void Onoriginal_titleChanged();
     partial void OnruntimeChanging(System.Nullable<int> value);
     partial void OnruntimeChanged();
-    partial void Onposter_pathChanging(string value);
-    partial void Onposter_pathChanged();
-    partial void Ontrailer_pathChanging(string value);
-    partial void Ontrailer_pathChanged();
+    partial void OnposterpathChanging(string value);
+    partial void OnposterpathChanged();
+    partial void OntrailerpathChanging(string value);
+    partial void OntrailerpathChanged();
     #endregion
 		
 		public Film()
@@ -408,8 +408,8 @@ namespace DataAccessLayerDBFilm
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="posterpath", Storage="_posterpath", DbType="VarChar(100)")]
-		public string poster_path
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_posterpath", DbType="VarChar(100)")]
+		public string posterpath
 		{
 			get
 			{
@@ -419,17 +419,17 @@ namespace DataAccessLayerDBFilm
 			{
 				if ((this._posterpath != value))
 				{
-					this.Onposter_pathChanging(value);
+					this.OnposterpathChanging(value);
 					this.SendPropertyChanging();
 					this._posterpath = value;
-					this.SendPropertyChanged("poster_path");
-					this.Onposter_pathChanged();
+					this.SendPropertyChanged("posterpath");
+					this.OnposterpathChanged();
 				}
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trailer_path", CanBeNull=false)]
-		public string trailer_path
+		public string trailerpath
 		{
 			get
 			{
@@ -439,11 +439,11 @@ namespace DataAccessLayerDBFilm
 			{
 				if ((this._trailer_path != value))
 				{
-					this.Ontrailer_pathChanging(value);
+					this.OntrailerpathChanging(value);
 					this.SendPropertyChanging();
 					this._trailer_path = value;
-					this.SendPropertyChanged("trailer_path");
-					this.Ontrailer_pathChanged();
+					this.SendPropertyChanged("trailerpath");
+					this.OntrailerpathChanged();
 				}
 			}
 		}
@@ -474,7 +474,7 @@ namespace DataAccessLayerDBFilm
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Film_FilmRealisateur", Storage="_FilmRealisateur", ThisKey="id", OtherKey="id_film")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Film_FilmDirector", Storage="_FilmRealisateur", ThisKey="id", OtherKey="id_film")]
 		public EntitySet<FilmDirector> FilmDirector
 		{
 			get
@@ -1031,7 +1031,7 @@ namespace DataAccessLayerDBFilm
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Film_FilmRealisateur", Storage="_Film", ThisKey="id_film", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Film_FilmDirector", Storage="_Film", ThisKey="id_film", OtherKey="id", IsForeignKey=true)]
 		public Film Film
 		{
 			get
@@ -1065,7 +1065,7 @@ namespace DataAccessLayerDBFilm
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Realisateur_FilmRealisateur", Storage="_Realisateur", ThisKey="id_realisateur", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Director_FilmDirector", Storage="_Realisateur", ThisKey="id_realisateur", OtherKey="id", IsForeignKey=true)]
 		public Director Director
 		{
 			get
@@ -1302,7 +1302,7 @@ namespace DataAccessLayerDBFilm
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Realisateur_FilmRealisateur", Storage="_FilmRealisateur", ThisKey="id", OtherKey="id_realisateur")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Director_FilmDirector", Storage="_FilmRealisateur", ThisKey="id", OtherKey="id_realisateur")]
 		public EntitySet<FilmDirector> FilmDirector
 		{
 			get

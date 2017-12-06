@@ -51,7 +51,7 @@ namespace DataAccessLayerDBFilm
         }
         public List<FilmDTO> GetFilmsPage(int page)
         {
-            List<Film> listFilm = instanceDC.Film.OrderBy(d => d.id).Skip(10 * page).Take(10).ToList();
+            List<Film> listFilm = instanceDC.Film.OrderBy(d => d.id).Skip(20 * page).Take(20).ToList();
             List<FilmDTO> listBLL = new List<FilmDTO>();
 
             foreach (Film film in listFilm)
@@ -211,51 +211,57 @@ namespace DataAccessLayerDBFilm
 
             return listDirectorDTO;
         }
-    #endregion Get
+        #endregion Get
+
+        public int CountFilms()
+        {
+            return instanceDC.Film.Count();
+        }
+
+    #region Action sur un film
+        public void UpdateTrailerFilm(int idFilm, String url)
+        {
+            Film film = instanceDC.Film.Where(d => d.id == idFilm).SingleOrDefault();
+            film.trailerpath = url;
+            instanceDC.SubmitChanges();
+        }
+    #endregion Action sur un film
 
     #region To*DTO
         public FilmDTO ToFilmDTO(Film film)
         {
-            FilmDTO filmDTO = new FilmDTO
-            {
-                Id = film.id,
-                Title = film.title,
-                Original_Title = film.original_title,
-                Runtime = (int)film.runtime,
-                Poster_Path = film.poster_path,
-                Trailer_Path = film.trailer_path
-            };
+            FilmDTO filmDTO = new FilmDTO();
+            filmDTO.Id = film.id;
+            filmDTO.Title = film.title;
+            filmDTO.Original_Title = film.original_title;
+            filmDTO.Runtime = (int)film.runtime;
+            filmDTO.PosterPath = film.posterpath;
+            filmDTO.TrailerPath = film.trailerpath;
 
             return filmDTO;
         }
         public GenreDTO ToGenreDTO(Genre genre)
         {
-            GenreDTO genreDTO = new GenreDTO
-            {
-                Id = genre.id,
-                Name = genre.name
-            };
+            GenreDTO genreDTO = new GenreDTO();
+            genreDTO.Id = genre.id;
+            genreDTO.Name = genre.name;
 
             return genreDTO;
         }
         public ActorDTO ToActorDTO(Actor a)
         {
-            ActorDTO actorDTO = new ActorDTO
-            {
-                Id = a.id,
-                Name = a.name,
-                Character = a.character
-            };
+            ActorDTO actorDTO = new ActorDTO();
+            actorDTO.Id = a.id;
+            actorDTO.Name = a.name;
+            actorDTO.Character = a.character;
 
             return actorDTO;
         }
         public DirectorDTO ToDirectorDTO(Director d)
         {
-            DirectorDTO directorDTO = new DirectorDTO
-            {
-                Id = d.id,
-                Name = d.name
-            };
+            DirectorDTO directorDTO = new DirectorDTO();
+            directorDTO.Id = d.id;
+            directorDTO.Name = d.name;
 
             return directorDTO;
         }

@@ -1,0 +1,6 @@
+E:\Dropbox\B3\C#\SmartVideo\DTOLib\bin\Debug\DTOLib.dll
+E:\Dropbox\B3\C#\SmartVideo\DTOLib\bin\Debug\DTOLib.pdb
+E:\Dropbox\B3\C#\SmartVideo\DTOLib\obj\Debug\DTOLib.csproj.CoreCompileInputs.cache
+E:\Dropbox\B3\C#\SmartVideo\DTOLib\obj\Debug\DTOLib.dll
+E:\Dropbox\B3\C#\SmartVideo\DTOLib\obj\Debug\DTOLib.pdb
+E:\Dropbox\B3\C#\SmartVideo\DTOLib\obj\Debug\DTOLib.csprojResolveAssemblyReference.cache

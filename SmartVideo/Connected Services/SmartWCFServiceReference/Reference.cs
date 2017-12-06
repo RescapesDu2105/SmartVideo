@@ -9,70 +9,7 @@
 //------------------------------------------------------------------------------
 
 namespace SmartVideo.SmartWCFServiceReference {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/SmartWCFService")]
-    [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
-            get {
-                return this.BoolValueField;
-            }
-            set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
-            get {
-                return this.StringValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SmartWCFServiceReference.ISmartWCFService")]
@@ -84,11 +21,53 @@ namespace SmartVideo.SmartWCFServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetData", ReplyAction="http://tempuri.org/ISmartWCFService/GetDataResponse")]
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/ISmartWCFService/GetDataUsingDataContractResponse")]
-        SmartVideo.SmartWCFServiceReference.CompositeType GetDataUsingDataContract(SmartVideo.SmartWCFServiceReference.CompositeType composite);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetFilmsDBFilm", ReplyAction="http://tempuri.org/ISmartWCFService/GetFilmsDBFilmResponse")]
+        DTOLib.FilmDTO[] GetFilmsDBFilm();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/ISmartWCFService/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<SmartVideo.SmartWCFServiceReference.CompositeType> GetDataUsingDataContractAsync(SmartVideo.SmartWCFServiceReference.CompositeType composite);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetFilmsDBFilm", ReplyAction="http://tempuri.org/ISmartWCFService/GetFilmsDBFilmResponse")]
+        System.Threading.Tasks.Task<DTOLib.FilmDTO[]> GetFilmsDBFilmAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetFilmInfos", ReplyAction="http://tempuri.org/ISmartWCFService/GetFilmInfosResponse")]
+        DTOLib.FilmDTO GetFilmInfos(DTOLib.FilmDTO Film);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetFilmInfos", ReplyAction="http://tempuri.org/ISmartWCFService/GetFilmInfosResponse")]
+        System.Threading.Tasks.Task<DTOLib.FilmDTO> GetFilmInfosAsync(DTOLib.FilmDTO Film);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetFilmsPage", ReplyAction="http://tempuri.org/ISmartWCFService/GetFilmsPageResponse")]
+        DTOLib.FilmDTO[] GetFilmsPage(int page);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetFilmsPage", ReplyAction="http://tempuri.org/ISmartWCFService/GetFilmsPageResponse")]
+        System.Threading.Tasks.Task<DTOLib.FilmDTO[]> GetFilmsPageAsync(int page);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetActors", ReplyAction="http://tempuri.org/ISmartWCFService/GetActorsResponse")]
+        DTOLib.ActorDTO[] GetActors();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetActors", ReplyAction="http://tempuri.org/ISmartWCFService/GetActorsResponse")]
+        System.Threading.Tasks.Task<DTOLib.ActorDTO[]> GetActorsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetGenres", ReplyAction="http://tempuri.org/ISmartWCFService/GetGenresResponse")]
+        DTOLib.GenreDTO[] GetGenres();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetGenres", ReplyAction="http://tempuri.org/ISmartWCFService/GetGenresResponse")]
+        System.Threading.Tasks.Task<DTOLib.GenreDTO[]> GetGenresAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetDirectors", ReplyAction="http://tempuri.org/ISmartWCFService/GetDirectorsResponse")]
+        DTOLib.DirectorDTO[] GetDirectors();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetDirectors", ReplyAction="http://tempuri.org/ISmartWCFService/GetDirectorsResponse")]
+        System.Threading.Tasks.Task<DTOLib.DirectorDTO[]> GetDirectorsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/UpdateTrailerFilm", ReplyAction="http://tempuri.org/ISmartWCFService/UpdateTrailerFilmResponse")]
+        void UpdateTrailerFilm(int idFilm, string url);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/UpdateTrailerFilm", ReplyAction="http://tempuri.org/ISmartWCFService/UpdateTrailerFilmResponse")]
+        System.Threading.Tasks.Task UpdateTrailerFilmAsync(int idFilm, string url);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/CountFilms", ReplyAction="http://tempuri.org/ISmartWCFService/CountFilmsResponse")]
+        int CountFilms();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/CountFilms", ReplyAction="http://tempuri.org/ISmartWCFService/CountFilmsResponse")]
+        System.Threading.Tasks.Task<int> CountFilmsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -126,12 +105,68 @@ namespace SmartVideo.SmartWCFServiceReference {
             return base.Channel.GetDataAsync(value);
         }
         
-        public SmartVideo.SmartWCFServiceReference.CompositeType GetDataUsingDataContract(SmartVideo.SmartWCFServiceReference.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
+        public DTOLib.FilmDTO[] GetFilmsDBFilm() {
+            return base.Channel.GetFilmsDBFilm();
         }
         
-        public System.Threading.Tasks.Task<SmartVideo.SmartWCFServiceReference.CompositeType> GetDataUsingDataContractAsync(SmartVideo.SmartWCFServiceReference.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
+        public System.Threading.Tasks.Task<DTOLib.FilmDTO[]> GetFilmsDBFilmAsync() {
+            return base.Channel.GetFilmsDBFilmAsync();
+        }
+        
+        public DTOLib.FilmDTO GetFilmInfos(DTOLib.FilmDTO Film) {
+            return base.Channel.GetFilmInfos(Film);
+        }
+        
+        public System.Threading.Tasks.Task<DTOLib.FilmDTO> GetFilmInfosAsync(DTOLib.FilmDTO Film) {
+            return base.Channel.GetFilmInfosAsync(Film);
+        }
+        
+        public DTOLib.FilmDTO[] GetFilmsPage(int page) {
+            return base.Channel.GetFilmsPage(page);
+        }
+        
+        public System.Threading.Tasks.Task<DTOLib.FilmDTO[]> GetFilmsPageAsync(int page) {
+            return base.Channel.GetFilmsPageAsync(page);
+        }
+        
+        public DTOLib.ActorDTO[] GetActors() {
+            return base.Channel.GetActors();
+        }
+        
+        public System.Threading.Tasks.Task<DTOLib.ActorDTO[]> GetActorsAsync() {
+            return base.Channel.GetActorsAsync();
+        }
+        
+        public DTOLib.GenreDTO[] GetGenres() {
+            return base.Channel.GetGenres();
+        }
+        
+        public System.Threading.Tasks.Task<DTOLib.GenreDTO[]> GetGenresAsync() {
+            return base.Channel.GetGenresAsync();
+        }
+        
+        public DTOLib.DirectorDTO[] GetDirectors() {
+            return base.Channel.GetDirectors();
+        }
+        
+        public System.Threading.Tasks.Task<DTOLib.DirectorDTO[]> GetDirectorsAsync() {
+            return base.Channel.GetDirectorsAsync();
+        }
+        
+        public void UpdateTrailerFilm(int idFilm, string url) {
+            base.Channel.UpdateTrailerFilm(idFilm, url);
+        }
+        
+        public System.Threading.Tasks.Task UpdateTrailerFilmAsync(int idFilm, string url) {
+            return base.Channel.UpdateTrailerFilmAsync(idFilm, url);
+        }
+        
+        public int CountFilms() {
+            return base.Channel.CountFilms();
+        }
+        
+        public System.Threading.Tasks.Task<int> CountFilmsAsync() {
+            return base.Channel.CountFilmsAsync();
         }
     }
 }

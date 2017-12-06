@@ -1,0 +1,33 @@
+﻿<Window x:Class="SmartVideo.InfosFilmWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SmartVideo"
+        mc:Ignorable="d"
+        Title="InfosFilmWindow" Height="381.818" Width="559.943" Closed="Window_Closed" ResizeMode="NoResize">
+    <Grid RenderTransformOrigin="0.491,0.609" Margin="0,-5,0,5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="145*"/>
+            <RowDefinition Height="206*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="Label_Titre" Content="Titre :" HorizontalAlignment="Left" Height="30" Margin="151,21,0,0" VerticalAlignment="Top" Width="43"/>
+        <Image x:Name="Image_Poster" HorizontalAlignment="Left" Height="118" Margin="10,21,0,0" VerticalAlignment="Top" Width="136"/>
+        <Label x:Name="Titre_Film" Content="" HorizontalAlignment="Left" Height="30" Margin="247,21,0,0" VerticalAlignment="Top" Width="198"/>
+        <Label x:Name="Label_OT" Content="Original Title :" HorizontalAlignment="Left" Height="30" Margin="151,51,0,0" VerticalAlignment="Top" Width="91"/>
+        <Label x:Name="Original_Title_Film" Content="" HorizontalAlignment="Left" Height="30" Margin="247,51,0,0" VerticalAlignment="Top" Width="198"/>
+        <Label x:Name="Label_Runtime" Content="Runtime : " HorizontalAlignment="Left" Height="30" Margin="151,81,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label x:Name="Runtime_Film" Content="" HorizontalAlignment="Left" Height="30" Margin="247,81,0,0" VerticalAlignment="Top" Width="198"/>
+        <Label x:Name="Label_TrailerPath" Content="TrailerPath :" HorizontalAlignment="Left" Height="30" Margin="151,111,0,0" VerticalAlignment="Top" Width="78"/>
+        <TextBox x:Name="TrailerPath_Film" HorizontalAlignment="Left" Height="28" Margin="247,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198"/>
+        <ListBox x:Name="LB_Directors" HorizontalAlignment="Left" Height="167" Margin="10,29,0,0" VerticalAlignment="Top" Width="173" Grid.Row="1"/>
+        <ListBox x:Name="LB_Actors" HorizontalAlignment="Left" Height="167" Margin="188,29,0,0" VerticalAlignment="Top" Width="173" Grid.Row="1"/>
+        <ListBox x:Name="LB_Genres" HorizontalAlignment="Left" Height="167" Margin="366,29,0,0" VerticalAlignment="Top" Width="173" Grid.Row="1"/>
+        <Label Content="Directors" HorizontalAlignment="Left" Height="25" Margin="60,144,0,0" VerticalAlignment="Top" Width="62" Grid.RowSpan="2"/>
+        <Label Content="Actors" HorizontalAlignment="Left" Height="25" Margin="247,144,0,0" VerticalAlignment="Top" Width="62" Grid.RowSpan="2"/>
+        <Label Content="Genres" HorizontalAlignment="Left" Height="25" Margin="422,144,0,0" VerticalAlignment="Top" Width="62" Grid.RowSpan="2"/>
+    </Grid>
+</Window>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLogicLayer;
+using DTOLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -16,18 +18,37 @@ namespace SmartWCFService
         {
             return string.Format("You entered: {0}", value);
         }
-
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public List<FilmDTO> GetFilmsPage(int page)
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            return BLLFilm.getFilmsPage(page);
+        }
+        public List<FilmDTO> GetFilmsDBFilm()
+        {
+            return BLLFilm.getFilms();
+        }
+        public void UpdateTrailerFilm(int idFilm, String url)
+        {
+            BLLFilm.UpdateTrailerFilm(idFilm, url);
+        }
+        public FilmDTO GetFilmInfos(FilmDTO Film)
+        {
+            return BLLFilm.getFilmInfos(Film);
+        }
+        public List<ActorDTO> GetActors()
+        {
+            return BLLFilm.getActors();
+        }
+        public List<GenreDTO> GetGenres()
+        {
+            return BLLFilm.getGenres();
+        }
+        public List<DirectorDTO> GetDirectors()
+        {
+            return BLLFilm.getDirectors();
+        }
+        public int CountFilms()
+        {
+            return BLLFilm.CountFilms();
         }
     }
 }

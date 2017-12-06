@@ -1,0 +1,9 @@
+E:\Dropbox\B3\C#\SmartVideo\DataAccessLayerDBFilm\bin\Debug\DataAccessLayerDBFilm.dll.config
+E:\Dropbox\B3\C#\SmartVideo\DataAccessLayerDBFilm\bin\Debug\DataAccessLayerDBFilm.dll
+E:\Dropbox\B3\C#\SmartVideo\DataAccessLayerDBFilm\bin\Debug\DataAccessLayerDBFilm.pdb
+E:\Dropbox\B3\C#\SmartVideo\DataAccessLayerDBFilm\bin\Debug\DTOLib.dll
+E:\Dropbox\B3\C#\SmartVideo\DataAccessLayerDBFilm\bin\Debug\DTOLib.pdb
+E:\Dropbox\B3\C#\SmartVideo\DataAccessLayerDBFilm\obj\Debug\DataAccessLayerDBFilm.csprojResolveAssemblyReference.cache
+E:\Dropbox\B3\C#\SmartVideo\DataAccessLayerDBFilm\obj\Debug\DataAccessLayerDBFilm.csproj.CoreCompileInputs.cache
+E:\Dropbox\B3\C#\SmartVideo\DataAccessLayerDBFilm\obj\Debug\DataAccessLayerDBFilm.dll
+E:\Dropbox\B3\C#\SmartVideo\DataAccessLayerDBFilm\obj\Debug\DataAccessLayerDBFilm.pdb

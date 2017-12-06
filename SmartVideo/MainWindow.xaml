@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SmartVideo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="SmartVideo" Height="633.5" Width="1111.5" ResizeMode="NoResize">
+    <Grid Height="621" VerticalAlignment="Top">
+        <ListView x:Name="ListView_ListeFilms" HorizontalAlignment="Left" Height="458" Margin="28,122,0,0" VerticalAlignment="Top" Width="1052" MouseDoubleClick="LV_LF_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="60" Header="Id du film"
+                        DisplayMemberBinding="{Binding Id}"  />
+                    <GridViewColumn Width="150" Header="Titre"  
+                        DisplayMemberBinding="{Binding Title}" />
+                    <GridViewColumn Width="150" Header="Titre original"  
+                        DisplayMemberBinding="{Binding Original_Title}" />
+                    <GridViewColumn Width="80" Header="Durée en minutes"  
+                        DisplayMemberBinding="{Binding Runtime}" />
+                    <GridViewColumn Width="300" Header="Lien vers l'affiche"  
+                        DisplayMemberBinding="{Binding PosterPath}" />
+                    <GridViewColumn Width="300" Header="Lien vers la video de la bande-annonce"  
+                        DisplayMemberBinding="{Binding TrailerPath}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="Button_Precedent" Content="Page précédente" HorizontalAlignment="Left" Height="59" Margin="489,42,0,0" VerticalAlignment="Top" Width="140" FontSize="16" IsEnabled="False" Click="Button_Precedent_Click"/>
+        <Button x:Name="Button_Suivant" Content="Page suivante" HorizontalAlignment="Left" Height="59" Margin="634,42,0,0" VerticalAlignment="Top" Width="140" FontSize="16" Click="Button_Suivant_Click"/>
+        <Label x:Name="Label_Liste" Content="Liste de films :" HorizontalAlignment="Left" Height="58" Margin="28,42,0,0" VerticalAlignment="Top" Width="231" FontSize="36"/>
+
     </Grid>
 </Window>
