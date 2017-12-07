@@ -12,15 +12,15 @@
                 <GridView>
                     <GridViewColumn Width="60" Header="Id du film"
                         DisplayMemberBinding="{Binding Id}"  />
-                    <GridViewColumn Width="150" Header="Titre"  
+                    <GridViewColumn Width="180" Header="Titre"  
                         DisplayMemberBinding="{Binding Title}" />
-                    <GridViewColumn Width="150" Header="Titre original"  
+                    <GridViewColumn Width="180" Header="Titre original"  
                         DisplayMemberBinding="{Binding Original_Title}" />
-                    <GridViewColumn Width="80" Header="Durée en minutes"  
+                    <GridViewColumn Width="100" Header="Durée en minutes"  
                         DisplayMemberBinding="{Binding Runtime}" />
-                    <GridViewColumn Width="300" Header="Lien vers l'affiche"  
+                    <GridViewColumn Width="250" Header="Lien vers l'affiche"  
                         DisplayMemberBinding="{Binding PosterPath}" />
-                    <GridViewColumn Width="300" Header="Lien vers la video de la bande-annonce"  
+                    <GridViewColumn Width="250" Header="Lien vers la video de la bande-annonce"  
                         DisplayMemberBinding="{Binding TrailerPath}" />
                 </GridView>
             </ListView.View>

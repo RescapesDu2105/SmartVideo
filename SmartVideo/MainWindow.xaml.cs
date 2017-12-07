@@ -75,7 +75,7 @@ namespace SmartVideo
 
         private void LV_LF_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            InfosFilmWindow IFW = new InfosFilmWindow(ListView_ListeFilms.SelectedItem as FilmDTO, clientService);
+            InfosFilmWindow IFW = new InfosFilmWindow(this, ListView_ListeFilms, clientService);
             IFW.ShowDialog();
         }
 

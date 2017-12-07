@@ -15,7 +15,7 @@
       <Column Name="original_title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="runtime" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="posterpath" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="trailerpath" Storage="_trailer_path" Type="System.String" CanBeNull="false" />
+      <Column Name="trailerpath" Storage="_trailer_path" Type="System.String" CanBeNull="false" UpdateCheck="Never" />
       <Association Name="Film_FilmActor" Member="FilmActor" ThisKey="id" OtherKey="id_film" Type="FilmActor" />
       <Association Name="Film_FilmGenre" Member="FilmGenre" ThisKey="id" OtherKey="id_film" Type="FilmGenre" />
       <Association Name="Film_FilmDirector" Member="FilmDirector" Storage="_FilmRealisateur" ThisKey="id" OtherKey="id_film" Type="FilmDirector" />

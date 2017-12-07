@@ -21,15 +21,20 @@ namespace SmartVideo
     /// </summary>
     public partial class InfosFilmWindow : Window
     {
-        public SmartWCFServiceReference.SmartWCFServiceClient clientService { get; set; }
+        public MainWindow MainWindow { get; set; }
+        public ListView ListFilms { get; set; }
+        public SmartWCFServiceReference.SmartWCFServiceClient ClientService { get; set; }
         public FilmDTO Film { get; set; }
-        public InfosFilmWindow(FilmDTO Film, SmartWCFServiceReference.SmartWCFServiceClient clientService)
+        
+        public InfosFilmWindow(MainWindow MW, ListView LV_LF, SmartWCFServiceReference.SmartWCFServiceClient clientService)
         {
             InitializeComponent();
-            this.Film = Film;
-            this.clientService = clientService;
 
-            //Film = clientService.GetFilmInfo(Film.Id);
+            MainWindow = MW;
+            ListFilms = LV_LF;
+            ClientService = clientService;
+            Film = LV_LF.SelectedItem as FilmDTO;           
+            
             Image_Poster.Source = new BitmapImage(new Uri("http://image.tmdb.org/t/p/w185" + Film.PosterPath, UriKind.RelativeOrAbsolute));
             Titre_Film.Content = Film.Title;
             Original_Title_Film.Content = Film.Original_Title;
@@ -37,7 +42,7 @@ namespace SmartVideo
             if (Film.TrailerPath != null)
                 TrailerPath_Film.Text = Film.TrailerPath;
 
-            Film = clientService.GetFilmInfos(Film);
+            Film = ClientService.GetFilmInfos(Film);
             LB_Actors.ItemsSource = new ObservableCollection<ActorDTO>(Film.Actors);
             LB_Actors.DisplayMemberPath = "Name";
             LB_Directors.ItemsSource = new ObservableCollection<DirectorDTO>(Film.Directors);
@@ -48,7 +53,13 @@ namespace SmartVideo
         
         private void Window_Closed(object sender, EventArgs e)
         {
-            //clientService.UpdateTrailerFilm(Film.Id, TrailerPath_Film.Text);
+            FilmDTO UpdatedFilm = ListFilms.Items.GetItemAt(ListFilms.SelectedIndex) as FilmDTO;
+            if (Film.TrailerPath != TrailerPath_Film.Text)
+            {
+                ClientService.UpdateTrailerFilm(Film.Id, TrailerPath_Film.Text);
+                UpdatedFilm.TrailerPath = TrailerPath_Film.Text;
+                ListFilms.Items.Refresh();
+            }
         }
     }
 }

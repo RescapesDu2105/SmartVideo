@@ -428,7 +428,7 @@ namespace DataAccessLayerDBFilm
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trailer_path", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trailer_path", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
 		public string trailerpath
 		{
 			get
