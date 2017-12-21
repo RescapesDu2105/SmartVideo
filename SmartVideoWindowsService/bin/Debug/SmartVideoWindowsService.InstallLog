@@ -1,0 +1,160 @@
+﻿Installation de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Installation du service SmartVideoWindowsService en cours...
+Création d'une source EventLog SmartVideoWindowsService dans le journal Application...
+Restauration de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Restauration de l'état précédent du journal des événements pour la source SmartVideoWindowsService.
+Une exception s'est produite lors de la phase de restauration du programme d'installation System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: La source est introuvable mais certains ou l'ensemble des journaux des événements n'ont pas pu faire l'objet d'une recherche. Journaux inaccessibles : Security.
+Une exception s'est produite lors de la phase de restauration de l'installation. Cette exception est ignorée et la restauration se poursuit. Cependant, l'ordinateur ne sera pas totalement restauré à son état initial à la fin de la restauration.
+Installation de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Installation du service SmartVideoWindowsService en cours...
+Création d'une source EventLog SmartVideoWindowsService dans le journal Application...
+Restauration de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Restauration de l'état précédent du journal des événements pour la source SmartVideoWindowsService.
+Une exception s'est produite lors de la phase de restauration du programme d'installation System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: La source est introuvable mais certains ou l'ensemble des journaux des événements n'ont pas pu faire l'objet d'une recherche. Journaux inaccessibles : Security.
+Une exception s'est produite lors de la phase de restauration de l'installation. Cette exception est ignorée et la restauration se poursuit. Cependant, l'ordinateur ne sera pas totalement restauré à son état initial à la fin de la restauration.
+Installation de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Installation du service SmartVideoWindowsService en cours...
+Création d'une source EventLog SmartVideoWindowsService dans le journal Application...
+Restauration de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Restauration de l'état précédent du journal des événements pour la source SmartVideoWindowsService.
+Une exception s'est produite lors de la phase de restauration du programme d'installation System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: La source est introuvable mais certains ou l'ensemble des journaux des événements n'ont pas pu faire l'objet d'une recherche. Journaux inaccessibles : Security.
+Une exception s'est produite lors de la phase de restauration de l'installation. Cette exception est ignorée et la restauration se poursuit. Cependant, l'ordinateur ne sera pas totalement restauré à son état initial à la fin de la restauration.
+Installation de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Installation du service SmartVideoWindowsService en cours...
+Création d'une source EventLog SmartVideoWindowsService dans le journal Application...
+Restauration de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Restauration de l'état précédent du journal des événements pour la source SmartVideoWindowsService.
+Une exception s'est produite lors de la phase de restauration du programme d'installation System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: La source est introuvable mais certains ou l'ensemble des journaux des événements n'ont pas pu faire l'objet d'une recherche. Journaux inaccessibles : Security.
+Une exception s'est produite lors de la phase de restauration de l'installation. Cette exception est ignorée et la restauration se poursuit. Cependant, l'ordinateur ne sera pas totalement restauré à son état initial à la fin de la restauration.
+Installation de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Installation du service SmartVideoWindowsService en cours...
+Création d'une source EventLog SmartVideoWindowsService dans le journal Application...
+Restauration de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Restauration de l'état précédent du journal des événements pour la source SmartVideoWindowsService.
+Une exception s'est produite lors de la phase de restauration du programme d'installation System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: La source est introuvable mais certains ou l'ensemble des journaux des événements n'ont pas pu faire l'objet d'une recherche. Journaux inaccessibles : Security.
+Une exception s'est produite lors de la phase de restauration de l'installation. Cette exception est ignorée et la restauration se poursuit. Cependant, l'ordinateur ne sera pas totalement restauré à son état initial à la fin de la restauration.
+Installation de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Installation du service SmartVideoWindowsService en cours...
+Création d'une source EventLog SmartVideoWindowsService dans le journal Application...
+Restauration de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Restauration de l'état précédent du journal des événements pour la source SmartVideoWindowsService.
+Une exception s'est produite lors de la phase de restauration du programme d'installation System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: La source est introuvable mais certains ou l'ensemble des journaux des événements n'ont pas pu faire l'objet d'une recherche. Journaux inaccessibles : Security.
+Une exception s'est produite lors de la phase de restauration de l'installation. Cette exception est ignorée et la restauration se poursuit. Cependant, l'ordinateur ne sera pas totalement restauré à son état initial à la fin de la restauration.
+Installation de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Installation du service SmartVideoWindowsService en cours...
+Création d'une source EventLog SmartVideoWindowsService dans le journal Application...
+Restauration de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Restauration de l'état précédent du journal des événements pour la source SmartVideoWindowsService.
+Une exception s'est produite lors de la phase de restauration du programme d'installation System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: La source est introuvable mais certains ou l'ensemble des journaux des événements n'ont pas pu faire l'objet d'une recherche. Journaux inaccessibles : Security.
+Une exception s'est produite lors de la phase de restauration de l'installation. Cette exception est ignorée et la restauration se poursuit. Cependant, l'ordinateur ne sera pas totalement restauré à son état initial à la fin de la restauration.
+Installation de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Installation du service SmartVideoWindowsService en cours...
+Création d'une source EventLog SmartVideoWindowsService dans le journal Application...
+Restauration de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Restauration de l'état précédent du journal des événements pour la source SmartVideoWindowsService.
+Une exception s'est produite lors de la phase de restauration du programme d'installation System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: La source est introuvable mais certains ou l'ensemble des journaux des événements n'ont pas pu faire l'objet d'une recherche. Journaux inaccessibles : Security.
+Une exception s'est produite lors de la phase de restauration de l'installation. Cette exception est ignorée et la restauration se poursuit. Cependant, l'ordinateur ne sera pas totalement restauré à son état initial à la fin de la restauration.
+Installation de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Installation du service SmartVideoWindowsService en cours...
+Création d'une source EventLog SmartVideoWindowsService dans le journal Application...
+Restauration de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Restauration de l'état précédent du journal des événements pour la source SmartVideoWindowsService.
+Une exception s'est produite lors de la phase de restauration du programme d'installation System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: La source est introuvable mais certains ou l'ensemble des journaux des événements n'ont pas pu faire l'objet d'une recherche. Journaux inaccessibles : Security.
+Une exception s'est produite lors de la phase de restauration de l'installation. Cette exception est ignorée et la restauration se poursuit. Cependant, l'ordinateur ne sera pas totalement restauré à son état initial à la fin de la restauration.
+Installation de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Installation du service SmartVideoWindowsService en cours...
+Création d'une source EventLog SmartVideoWindowsService dans le journal Application...
+Restauration de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.InstallLog
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartVideoWindowsService\bin\Debug\SmartVideoWindowsService.exe
+Restauration de l'état précédent du journal des événements pour la source SmartVideoWindowsService.
+Une exception s'est produite lors de la phase de restauration du programme d'installation System.Diagnostics.EventLogInstaller.
+System.Security.SecurityException: La source est introuvable mais certains ou l'ensemble des journaux des événements n'ont pas pu faire l'objet d'une recherche. Journaux inaccessibles : Security.
+Une exception s'est produite lors de la phase de restauration de l'installation. Cette exception est ignorée et la restauration se poursuit. Cependant, l'ordinateur ne sera pas totalement restauré à son état initial à la fin de la restauration.
