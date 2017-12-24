@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{94C34AB1-540C-4433-BE75-2D8BC10659CF}</ProjectGuid>
+    <ProjectGuid>{D6BCF0FA-285A-4CAE-ABAC-59D756B4B678}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>SmartStatService</RootNamespace>
     <AssemblyName>SmartStatService</AssemblyName>
@@ -49,7 +49,7 @@
     <Compile Include="Service1.Designer.cs">
       <DependentUpon>Service1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="SmartStatService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

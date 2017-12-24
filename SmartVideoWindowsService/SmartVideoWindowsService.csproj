@@ -66,15 +66,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="SmartVideoWindowsServiceInstaller.resx">
+      <DependentUpon>SmartVideoWindowsServiceInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\SmartWCFService\SmartWCFService.csproj">
       <Project>{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}</Project>
       <Name>SmartWCFService</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="SmartVideoWindowsServiceInstaller.resx">
-      <DependentUpon>SmartVideoWindowsServiceInstaller.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

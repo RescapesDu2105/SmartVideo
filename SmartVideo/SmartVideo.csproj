@@ -138,10 +138,6 @@
       <Project>{152B13C5-A53A-4FB2-BF1A-81F1BB5B820D}</Project>
       <Name>DTOLib</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SmartWCFService\SmartWCFService.csproj">
-      <Project>{e9029a27-6fd7-4c6d-a9b9-f9368b7b0842}</Project>
-      <Name>SmartWCFService</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\SmartWCFServiceReference\SmartWCFService.disco" />

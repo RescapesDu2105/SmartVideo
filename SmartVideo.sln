@@ -1,14 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.0
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartVideo", "SmartVideo\SmartVideo.csproj", "{9DA23492-6CFD-4D36-A841-5AC414974385}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842} = {E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web@SmartVidéo", "SmartVideoWeb\Web@SmartVidéo.csproj", "{5A5CE75A-8D0E-43E1-8678-F1DCA67F78A4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOLib", "DTOLib\DTOLib.csproj", "{152B13C5-A53A-4FB2-BF1A-81F1BB5B820D}"
 EndProject
@@ -16,13 +14,36 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "Busin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayerDBVideotheque", "DataAccessLayerDBVideotheque\DataAccessLayerDBVideotheque.csproj", "{1CB41350-32E8-4CB2-A515-0B8FA6330F03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartStatService", "SmartStatService\SmartStatService.csproj", "{94C34AB1-540C-4433-BE75-2D8BC10659CF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayerDBFilm", "DataAccessLayerDBFilm\DataAccessLayerDBFilm.csproj", "{21344474-5B98-49E7-AAE4-0E88C22222D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartVideoWindowsService", "SmartVideoWindowsService\SmartVideoWindowsService.csproj", "{22D54066-53CE-41F3-B9E8-DE114B9E78A5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWCFService", "SmartWCFService\SmartWCFService.csproj", "{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartVideoWindowsService", "SmartVideoWindowsService\SmartVideoWindowsService.csproj", "{22D54066-53CE-41F3-B9E8-DE114B9E78A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartStatService", "SmartStatService\SmartStatService.csproj", "{D6BCF0FA-285A-4CAE-ABAC-59D756B4B678}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web@SmartVideo(1)", "Web@SmartVideo\", "{D4992CD4-BE45-4B2A-AA9A-F4C2F65E1574}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		ProjectReferences = "{152b13c5-a53a-4fb2-bf1a-81f1bb5b820d}|DTOLib.dll;{e9029a27-6fd7-4c6d-a9b9-f9368b7b0842}|SmartWCFService.dll;{DFEE3DC3-BD08-47E9-A681-91E17AC053B1}|BusinessLogicLayer.dll;{21344474-5B98-49E7-AAE4-0E88C22222D1}|DataAccessLayerDBFilm.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58794"
+		Debug.AspNetCompiler.PhysicalPath = "Web@SmartVideo\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58794\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58794"
+		Release.AspNetCompiler.PhysicalPath = "Web@SmartVideo\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58794\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "58794"
+		SlnRelativePath = "Web@SmartVideo\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +55,6 @@ Global
 		{9DA23492-6CFD-4D36-A841-5AC414974385}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DA23492-6CFD-4D36-A841-5AC414974385}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DA23492-6CFD-4D36-A841-5AC414974385}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A5CE75A-8D0E-43E1-8678-F1DCA67F78A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A5CE75A-8D0E-43E1-8678-F1DCA67F78A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A5CE75A-8D0E-43E1-8678-F1DCA67F78A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A5CE75A-8D0E-43E1-8678-F1DCA67F78A4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{152B13C5-A53A-4FB2-BF1A-81F1BB5B820D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{152B13C5-A53A-4FB2-BF1A-81F1BB5B820D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{152B13C5-A53A-4FB2-BF1A-81F1BB5B820D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -50,22 +67,26 @@ Global
 		{1CB41350-32E8-4CB2-A515-0B8FA6330F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CB41350-32E8-4CB2-A515-0B8FA6330F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CB41350-32E8-4CB2-A515-0B8FA6330F03}.Release|Any CPU.Build.0 = Release|Any CPU
-		{94C34AB1-540C-4433-BE75-2D8BC10659CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94C34AB1-540C-4433-BE75-2D8BC10659CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94C34AB1-540C-4433-BE75-2D8BC10659CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94C34AB1-540C-4433-BE75-2D8BC10659CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{21344474-5B98-49E7-AAE4-0E88C22222D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{21344474-5B98-49E7-AAE4-0E88C22222D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21344474-5B98-49E7-AAE4-0E88C22222D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21344474-5B98-49E7-AAE4-0E88C22222D1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}.Release|Any CPU.Build.0 = Release|Any CPU
 		{22D54066-53CE-41F3-B9E8-DE114B9E78A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{22D54066-53CE-41F3-B9E8-DE114B9E78A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22D54066-53CE-41F3-B9E8-DE114B9E78A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22D54066-53CE-41F3-B9E8-DE114B9E78A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6BCF0FA-285A-4CAE-ABAC-59D756B4B678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6BCF0FA-285A-4CAE-ABAC-59D756B4B678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6BCF0FA-285A-4CAE-ABAC-59D756B4B678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6BCF0FA-285A-4CAE-ABAC-59D756B4B678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4992CD4-BE45-4B2A-AA9A-F4C2F65E1574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4992CD4-BE45-4B2A-AA9A-F4C2F65E1574}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4992CD4-BE45-4B2A-AA9A-F4C2F65E1574}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4992CD4-BE45-4B2A-AA9A-F4C2F65E1574}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

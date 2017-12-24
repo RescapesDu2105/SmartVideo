@@ -15,12 +15,9 @@ E:\Dropbox\B3\C#\SmartVideo\SmartVideo\obj\Debug\SmartVideo.exe
 E:\Dropbox\B3\C#\SmartVideo\SmartVideo\obj\Debug\SmartVideo.pdb
 E:\Dropbox\B3\C#\SmartVideo\SmartVideo\bin\Debug\BusinessLogicLayer.dll
 E:\Dropbox\B3\C#\SmartVideo\SmartVideo\bin\Debug\DTOLib.dll
-E:\Dropbox\B3\C#\SmartVideo\SmartVideo\bin\Debug\SmartWCFService.dll
 E:\Dropbox\B3\C#\SmartVideo\SmartVideo\bin\Debug\DataAccessLayerDBFilm.dll
 E:\Dropbox\B3\C#\SmartVideo\SmartVideo\bin\Debug\BusinessLogicLayer.pdb
 E:\Dropbox\B3\C#\SmartVideo\SmartVideo\bin\Debug\DTOLib.pdb
-E:\Dropbox\B3\C#\SmartVideo\SmartVideo\bin\Debug\SmartWCFService.pdb
-E:\Dropbox\B3\C#\SmartVideo\SmartVideo\bin\Debug\SmartWCFService.dll.config
 E:\Dropbox\B3\C#\SmartVideo\SmartVideo\bin\Debug\DataAccessLayerDBFilm.pdb
 E:\Dropbox\B3\C#\SmartVideo\SmartVideo\bin\Debug\DataAccessLayerDBFilm.dll.config
 E:\Dropbox\B3\C#\SmartVideo\SmartVideo\obj\Debug\InfosFilmWindow.g.cs
