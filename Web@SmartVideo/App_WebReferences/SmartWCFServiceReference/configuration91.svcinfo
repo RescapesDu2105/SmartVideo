@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="N5HII6lTOrJ063+v3I4vQbB4C2U=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="K1T79/aGcBSYDFKs1zwCwBmwSfs=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ISmartWCFService">
+    <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ISmartWCFService1">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_ISmartWCFService</serializedValue>
+          <serializedValue>BasicHttpBinding_ISmartWCFService1</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -112,7 +112,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ISmartWCFService" contract="SmartWCFServiceReference.ISmartWCFService" bindingType="basicHttpBinding" address="http://localhost:60888/SmartWCFService.svc" bindingConfiguration="BasicHttpBinding_ISmartWCFService">
+    <endpoint name="BasicHttpBinding_ISmartWCFService" contract="SmartWCFServiceReference.ISmartWCFService" bindingType="basicHttpBinding" address="http://localhost:60888/SmartWCFService.svc" bindingConfiguration="BasicHttpBinding_ISmartWCFService1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:60888/SmartWCFService.svc</serializedValue>
@@ -124,7 +124,7 @@
           <serializedValue>basicHttpBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_ISmartWCFService</serializedValue>
+          <serializedValue>BasicHttpBinding_ISmartWCFService1</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>SmartWCFServiceReference.ISmartWCFService</serializedValue>

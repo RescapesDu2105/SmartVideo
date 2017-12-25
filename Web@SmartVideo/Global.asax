@@ -9,7 +9,7 @@
     {
         RouteConfig.RegisterRoutes(RouteTable.Routes);
         BundleConfig.RegisterBundles(BundleTable.Bundles);
-        
+
         ScriptResourceDefinition Popper = new ScriptResourceDefinition();
         Popper.CdnPath = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js";
         Popper.Path = "~/Scripts/popper.min.js";
@@ -41,6 +41,10 @@
         FontAwesome.CdnPath = "https://use.fontawesome.com/releases/v5.0.2/js/all.js";
         FontAwesome.CdnDebugPath = "https://use.fontawesome.com/releases/v5.0.2/js/all.js";
         ScriptManager.ScriptResourceMapping.AddDefinition("fontawesome", null, FontAwesome);
+
+        //HttpContext.Current.Session.Add("Page", 1);
+        //HttpContext.Current.Session.Add("i", 1);
+        
     }
 
 </script>

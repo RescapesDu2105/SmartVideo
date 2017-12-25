@@ -63,5 +63,62 @@ namespace DTOLib
             return Id + " " + Name;
         }
     }
-    
+
+    public class ClientDTO : IEquatable<ClientDTO>
+    {
+        public int Id { get; set; }
+        public String Nom { get; set; }
+        public String Prenom { get; set; }
+        public String Login { get; set; }
+        public String Password { get; set; }
+        public String Adresse { get; set; }
+        public String Mail { get; set; }
+
+        public override string ToString()
+        {
+            return Nom + " | " + Prenom + " | " + Adresse + " | " + Mail;
+        }
+
+        public bool Equals(ClientDTO other)
+        {
+            return other.Id == Id;
+        }
+    }
+
+    public class HitsDTO : IEquatable<HitsDTO>
+    {
+        public int Id { get; set; }
+        public int IdClient { get; set; }
+        public DateTime Date { get; set; }
+        public String Critere { get; set; }
+
+        public override string ToString()
+        {
+            return IdClient + " | " +  Date + " | " + Critere;
+        }
+
+        public bool Equals(HitsDTO other)
+        {
+            return other.Id == Id;
+        }
+    }
+
+    public class LocationDTO : IEquatable<LocationDTO>
+    {
+        public int Id { get; set; }
+        public int IdFilm { get; set; }
+        public int IdClient { get; set; }
+        public DateTime DateDebut { get; set; }
+        public DateTime DateFin { get; set; }
+
+        public override string ToString()
+        {
+            return IdClient + " | " + IdFilm + " | " + DateDebut + " | " + DateFin;
+        }
+
+        public bool Equals(LocationDTO other)
+        {
+            return other.Id == Id;
+        }
+    }
 }

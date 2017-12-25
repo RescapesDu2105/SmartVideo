@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer;
+using BusinessLogicLayerBDSmartVideo;
 using DTOLib;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,8 @@ namespace SmartWCFService
         {
             return string.Format("You entered: {0}", value);
         }
+
+        //DBFilm
         public List<FilmDTO> GetFilmsPage(int page)
         {
             return BLLFilm.getFilmsPage(page);
@@ -49,6 +52,36 @@ namespace SmartWCFService
         public int CountFilms()
         {
             return BLLFilm.CountFilms();
+        }
+
+        //BDSmartVideo
+        public ClientDTO GetClientById(int idClient)
+        {
+            return BLLSmartVideo.GetClientById(idClient);
+        }
+        public HitsDTO GetHitsById(int idHits)
+        {
+            return BLLSmartVideo.GetHitsById(idHits);
+        }
+        public LocationDTO GetLocationById(int idLocation)
+        {
+            return BLLSmartVideo.GetLocationById(idLocation);
+        }
+        public List<LocationDTO> GetLocationsClient(int idClient)
+        {
+            return BLLSmartVideo.GetLocationsClient(idClient);
+        }
+        public List<ClientDTO> GetClients()
+        {
+            return BLLSmartVideo.GetClients();
+        }
+        public List<HitsDTO> GetHits()
+        {
+            return BLLSmartVideo.GetHits();
+        }
+        public List<LocationDTO> GetLocations()
+        {
+            return BLLSmartVideo.GetLocations();
         }
     }
 }

@@ -10,9 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartVideo", "SmartVideo\Sm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOLib", "DTOLib\DTOLib.csproj", "{152B13C5-A53A-4FB2-BF1A-81F1BB5B820D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{DFEE3DC3-BD08-47E9-A681-91E17AC053B1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayerDBVideotheque", "DataAccessLayerDBVideotheque\DataAccessLayerDBVideotheque.csproj", "{1CB41350-32E8-4CB2-A515-0B8FA6330F03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayerDBFilm", "BusinessLogicLayer\BusinessLogicLayerDBFilm.csproj", "{DFEE3DC3-BD08-47E9-A681-91E17AC053B1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayerDBFilm", "DataAccessLayerDBFilm\DataAccessLayerDBFilm.csproj", "{21344474-5B98-49E7-AAE4-0E88C22222D1}"
 EndProject
@@ -25,7 +23,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web@SmartVideo(1)", "Web@SmartVideo\", "{D4992CD4-BE45-4B2A-AA9A-F4C2F65E1574}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
-		ProjectReferences = "{152b13c5-a53a-4fb2-bf1a-81f1bb5b820d}|DTOLib.dll;{e9029a27-6fd7-4c6d-a9b9-f9368b7b0842}|SmartWCFService.dll;{DFEE3DC3-BD08-47E9-A681-91E17AC053B1}|BusinessLogicLayer.dll;{21344474-5B98-49E7-AAE4-0E88C22222D1}|DataAccessLayerDBFilm.dll;"
+		ProjectReferences = "{152b13c5-a53a-4fb2-bf1a-81f1bb5b820d}|DTOLib.dll;{DFEE3DC3-BD08-47E9-A681-91E17AC053B1}|BusinessLogicLayer.dll;{21344474-5B98-49E7-AAE4-0E88C22222D1}|DataAccessLayerDBFilm.dll;{ba6e77b1-927d-4b52-9428-a1312f67a585}|DataAccessLayerBDSmartVideo.dll;{9416ad9d-a99b-4f7c-b709-67c6f8c31895}|BusinessLogicLayerBDSmartVideo.dll;{e9029a27-6fd7-4c6d-a9b9-f9368b7b0842}|SmartWCFService.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_58794"
 		Debug.AspNetCompiler.PhysicalPath = "Web@SmartVideo\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58794\"
@@ -45,6 +43,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web@SmartVideo(1)", "Web@Sm
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayerBDSmartVideo", "DataAccessLayerBDSmartVideo\DataAccessLayerBDSmartVideo.csproj", "{BA6E77B1-927D-4B52-9428-A1312F67A585}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayerBDSmartVideo", "BusinessLogicLayerBDSmartVideo\BusinessLogicLayerBDSmartVideo.csproj", "{9416AD9D-A99B-4F7C-B709-67C6F8C31895}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,10 +65,6 @@ Global
 		{DFEE3DC3-BD08-47E9-A681-91E17AC053B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFEE3DC3-BD08-47E9-A681-91E17AC053B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFEE3DC3-BD08-47E9-A681-91E17AC053B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1CB41350-32E8-4CB2-A515-0B8FA6330F03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1CB41350-32E8-4CB2-A515-0B8FA6330F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1CB41350-32E8-4CB2-A515-0B8FA6330F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1CB41350-32E8-4CB2-A515-0B8FA6330F03}.Release|Any CPU.Build.0 = Release|Any CPU
 		{21344474-5B98-49E7-AAE4-0E88C22222D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{21344474-5B98-49E7-AAE4-0E88C22222D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21344474-5B98-49E7-AAE4-0E88C22222D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -87,6 +85,14 @@ Global
 		{D4992CD4-BE45-4B2A-AA9A-F4C2F65E1574}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4992CD4-BE45-4B2A-AA9A-F4C2F65E1574}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{D4992CD4-BE45-4B2A-AA9A-F4C2F65E1574}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{BA6E77B1-927D-4B52-9428-A1312F67A585}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA6E77B1-927D-4B52-9428-A1312F67A585}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA6E77B1-927D-4B52-9428-A1312F67A585}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA6E77B1-927D-4B52-9428-A1312F67A585}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9416AD9D-A99B-4F7C-B709-67C6F8C31895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9416AD9D-A99B-4F7C-B709-67C6F8C31895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9416AD9D-A99B-4F7C-B709-67C6F8C31895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9416AD9D-A99B-4F7C-B709-67C6F8C31895}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

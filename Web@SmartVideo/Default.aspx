@@ -1,14 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" Runat="Server">
-    <script runat="server">
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-            if (!this.IsPostBack)
-                this.Pagination1.DataBind();            
-        }
-    </script>
     <div class="row justify-content-md-center">
         <div class="col col-md-3">
             <form class="form-inline">
@@ -25,34 +17,24 @@
     <div class="row justify-content-center">
     <nav>
         <ul class="pagination">
-            <%  int iMax;
-                
+            <%  int iMax;                
 
-                iMax = I + 3;
-                
-                /*Response.Write("Pagination = " + Pagination);
-                Response.Write("i = " + I);
-                Response.Write("iMax = " + iMax);*/
+                iMax = (int)Session["i"] + 3;
 
-
-                if (Pagination > 1)
-                {%>
+                if ((int)Session["Page"] > 1)
+                {%>            
+                    <li class="page-item"><asp:Button runat="server" ID="PaginationP" CssClass="page-link" Text="Première" OnClick="ChangerPage" ></asp:Button></li>
                     <li class="page-item"><asp:Button runat="server" CssClass="page-link" Text="Précédent" OnClick="ChangerPage" ></asp:Button></li>
             <%  } %>
-
                 
-                              
-                    <li class="page-item <%: I == Pagination ? "active" : null %>"><asp:Button ID="Pagination1" runat="server" CssClass="page-link"/></li>
-                    <li class="page-item <%: I == Pagination ? "active" : null %>"><asp:Button ID="Pagination2" runat="server" CssClass="page-link"/></li>
-                    <li class="page-item <%: I == Pagination ? "active" : null %>"><asp:Button ID="Pagination3" runat="server" CssClass="page-link"/></li>
+                <li class="page-item <%: Int32.Parse(Pagination1.Text) == (int)Session["Page"] ? "active" : null %>"><asp:Button ID="Pagination1" runat="server" CssClass="page-link" OnClick="ChangerPage"/></li>
+                <li class="page-item <%: Int32.Parse(Pagination2.Text) == (int)Session["Page"] ? "active" : null %>"><asp:Button ID="Pagination2" runat="server" CssClass="page-link" OnClick="ChangerPage"/></li>
+                <li class="page-item <%: Int32.Parse(Pagination3.Text) == (int)Session["Page"] ? "active" : null %>"><asp:Button ID="Pagination3" runat="server" CssClass="page-link" OnClick="ChangerPage"/></li>
            
-            <!--<li class="page-item active">
-                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li> -->
-            <% if (Pagination < PagesMax)
+            <% if ((int)Session["Page"] < (int)Session["PagesMax"])
                { %>
-                    <li class="page-item"><a class="page-link" href="#">Suivant</a></li>
+                    <li class="page-item"><asp:Button runat="server" CssClass="page-link" Text="Suivant" OnClick="ChangerPage" ></asp:Button></li>
+                    <li class="page-item"><asp:Button runat="server" ID="PaginationD" CssClass="page-link" Text="Dernière" OnClick="ChangerPage" ></asp:Button></li>
             <% } %>
         </ul>
     </nav>
@@ -69,7 +51,7 @@
                                 DTOLib.FilmDTO Film = ListeFilms.ElementAt(col);
                                 %>
                                 <div class="card" style="width: 150px;">
-                                    <img class="card-img-top" src="http://image.tmdb.org/t/p/original<%: Film.PosterPath %>"/>
+                                    <img class="card-img-top" src="<%: !Film.PosterPath.Equals("") ? ("http://image.tmdb.org/t/p/original" + Film.PosterPath) : "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" %>"/>
                                     <div class="card-body">
                                         <h4 class="card-title"><%: Film.Title %> </h4>
                                         <p class="card-text"><small class="text-muted"><%: Film.Original_Title %></small></p>

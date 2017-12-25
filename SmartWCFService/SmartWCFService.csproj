@@ -83,9 +83,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+    <ProjectReference Include="..\BusinessLogicLayerBDSmartVideo\BusinessLogicLayerBDSmartVideo.csproj">
+      <Project>{9416ad9d-a99b-4f7c-b709-67c6f8c31895}</Project>
+      <Name>BusinessLogicLayerBDSmartVideo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayerDBFilm.csproj">
       <Project>{DFEE3DC3-BD08-47E9-A681-91E17AC053B1}</Project>
-      <Name>BusinessLogicLayer</Name>
+      <Name>BusinessLogicLayerDBFilm</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTOLib\DTOLib.csproj">
       <Project>{152B13C5-A53A-4FB2-BF1A-81F1BB5B820D}</Project>

@@ -1,0 +1,11 @@
+E:\Dropbox\B3\C#\SmartVideo\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+E:\Dropbox\B3\C#\SmartVideo\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+E:\Dropbox\B3\C#\SmartVideo\BusinessLogicLayer\bin\Debug\DataAccessLayerDBFilm.dll
+E:\Dropbox\B3\C#\SmartVideo\BusinessLogicLayer\bin\Debug\DTOLib.dll
+E:\Dropbox\B3\C#\SmartVideo\BusinessLogicLayer\bin\Debug\DataAccessLayerDBFilm.pdb
+E:\Dropbox\B3\C#\SmartVideo\BusinessLogicLayer\bin\Debug\DataAccessLayerDBFilm.dll.config
+E:\Dropbox\B3\C#\SmartVideo\BusinessLogicLayer\bin\Debug\DTOLib.pdb
+E:\Dropbox\B3\C#\SmartVideo\BusinessLogicLayer\obj\Debug\BusinessLogicLayerDBFilm.csprojResolveAssemblyReference.cache
+E:\Dropbox\B3\C#\SmartVideo\BusinessLogicLayer\obj\Debug\BusinessLogicLayerDBFilm.csproj.CoreCompileInputs.cache
+E:\Dropbox\B3\C#\SmartVideo\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+E:\Dropbox\B3\C#\SmartVideo\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb

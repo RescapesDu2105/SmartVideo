@@ -35,5 +35,27 @@ namespace SmartWCFService
 
         [OperationContract]
         int CountFilms();
+
+
+        [OperationContract]
+        ClientDTO GetClientById(int idClient);
+
+        [OperationContract]
+        HitsDTO GetHitsById(int idHits);
+
+        [OperationContract]
+        LocationDTO GetLocationById(int idLocation);
+
+        [OperationContract]
+        List<LocationDTO> GetLocationsClient(int idClient);
+
+        [OperationContract]
+        List<ClientDTO> GetClients();
+
+        [OperationContract]
+        List<HitsDTO> GetHits();
+
+        [OperationContract]
+        List<LocationDTO> GetLocations();
     }
 }

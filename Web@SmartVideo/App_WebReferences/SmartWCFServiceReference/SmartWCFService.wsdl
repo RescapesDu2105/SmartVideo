@@ -61,6 +61,48 @@
   <wsdl:message name="ISmartWCFService_CountFilms_OutputMessage">
     <wsdl:part name="parameters" element="tns:CountFilmsResponse" />
   </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetClientById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientById" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetClientById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetHitsById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHitsById" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetHitsById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHitsByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetLocationById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationById" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetLocationById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetLocationsClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationsClient" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetLocationsClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationsClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetClients_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClients" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetClients_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetHits_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHits" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetHits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocations" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLocationsResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISmartWCFService">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetData" message="tns:ISmartWCFService_GetData_InputMessage" />
@@ -97,6 +139,34 @@
     <wsdl:operation name="CountFilms">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/CountFilms" message="tns:ISmartWCFService_CountFilms_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/CountFilmsResponse" message="tns:ISmartWCFService_CountFilms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetClientById" message="tns:ISmartWCFService_GetClientById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetClientByIdResponse" message="tns:ISmartWCFService_GetClientById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHitsById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetHitsById" message="tns:ISmartWCFService_GetHitsById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetHitsByIdResponse" message="tns:ISmartWCFService_GetHitsById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetLocationById" message="tns:ISmartWCFService_GetLocationById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetLocationByIdResponse" message="tns:ISmartWCFService_GetLocationById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationsClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetLocationsClient" message="tns:ISmartWCFService_GetLocationsClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetLocationsClientResponse" message="tns:ISmartWCFService_GetLocationsClient_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClients">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetClients" message="tns:ISmartWCFService_GetClients_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetClientsResponse" message="tns:ISmartWCFService_GetClients_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHits">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetHits" message="tns:ISmartWCFService_GetHits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetHitsResponse" message="tns:ISmartWCFService_GetHits_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLocations">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetLocations" message="tns:ISmartWCFService_GetLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetLocationsResponse" message="tns:ISmartWCFService_GetLocations_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISmartWCFService" type="tns:ISmartWCFService">
@@ -175,6 +245,69 @@
     </wsdl:operation>
     <wsdl:operation name="CountFilms">
       <soap:operation soapAction="http://tempuri.org/ISmartWCFService/CountFilms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientById">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetClientById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHitsById">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetHitsById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationById">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetLocationById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocationsClient">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetLocationsClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClients">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetClients" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHits">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetHits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLocations">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetLocations" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
