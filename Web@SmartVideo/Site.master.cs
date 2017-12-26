@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Web_SmartVideo;
 
 public partial class SiteMaster : MasterPage
 {
     private const string AntiXsrfTokenKey = "__AntiXsrfToken";
     private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
     private string _antiXsrfTokenValue;
+    private SmartWCFServiceReference.SmartWCFServiceClient Service = new SmartWCFServiceReference.SmartWCFServiceClient();
 
     protected void Page_Init(object sender, EventArgs e)
     {
@@ -59,7 +62,8 @@ public partial class SiteMaster : MasterPage
             if ((string)ViewState[AntiXsrfTokenKey] != _antiXsrfTokenValue
                 || (string)ViewState[AntiXsrfUserNameKey] != (Context.User.Identity.Name ?? String.Empty))
             {
-                throw new InvalidOperationException("Échec de la validation du jeton anti-XSRF.");
+                //throw new InvalidOperationException("Échec de la validation du jeton anti-XSRF.");
+                Unnamed_LoggingOut(sender, null);
             }
         }
     }
@@ -71,6 +75,12 @@ public partial class SiteMaster : MasterPage
 
     protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
     {
+        Application.Remove("ListeFilms");
+        Session.Remove("LocationsClient");
+        Application["Page"] = 1;
+        Application["i"] = 1;
+        //Session.Remove("ClientId");
+
         Context.GetOwinContext().Authentication.SignOut();
     }
-}
+ }

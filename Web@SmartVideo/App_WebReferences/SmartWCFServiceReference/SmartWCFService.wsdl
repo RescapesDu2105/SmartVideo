@@ -13,6 +13,12 @@
   <wsdl:message name="ISmartWCFService_GetData_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDataResponse" />
   </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetFilmById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmById" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetFilmById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmByIdResponse" />
+  </wsdl:message>
   <wsdl:message name="ISmartWCFService_GetFilmsDBFilm_InputMessage">
     <wsdl:part name="parameters" element="tns:GetFilmsDBFilm" />
   </wsdl:message>
@@ -85,6 +91,12 @@
   <wsdl:message name="ISmartWCFService_GetLocationsClient_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetLocationsClientResponse" />
   </wsdl:message>
+  <wsdl:message name="ISmartWCFService_AddLocationClient_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLocationClient" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_AddLocationClient_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLocationClientResponse" />
+  </wsdl:message>
   <wsdl:message name="ISmartWCFService_GetClients_InputMessage">
     <wsdl:part name="parameters" element="tns:GetClients" />
   </wsdl:message>
@@ -107,6 +119,10 @@
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetData" message="tns:ISmartWCFService_GetData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetDataResponse" message="tns:ISmartWCFService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilmById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmById" message="tns:ISmartWCFService_GetFilmById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmByIdResponse" message="tns:ISmartWCFService_GetFilmById_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetFilmsDBFilm">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmsDBFilm" message="tns:ISmartWCFService_GetFilmsDBFilm_InputMessage" />
@@ -156,6 +172,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetLocationsClient" message="tns:ISmartWCFService_GetLocationsClient_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetLocationsClientResponse" message="tns:ISmartWCFService_GetLocationsClient_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AddLocationClient">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/AddLocationClient" message="tns:ISmartWCFService_AddLocationClient_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/AddLocationClientResponse" message="tns:ISmartWCFService_AddLocationClient_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetClients">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetClients" message="tns:ISmartWCFService_GetClients_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetClientsResponse" message="tns:ISmartWCFService_GetClients_OutputMessage" />
@@ -173,6 +193,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetData">
       <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilmById">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetFilmById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -281,6 +310,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetLocationsClient">
       <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetLocationsClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLocationClient">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/AddLocationClient" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

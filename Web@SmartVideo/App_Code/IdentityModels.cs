@@ -10,12 +10,14 @@ namespace Web_SmartVideo
     // Vous pouvez ajouter des données d'utilisateur pour l'utilisateur en ajoutant d'autres propriétés à votre classe d'utilisateur. Pour en savoir plus, visitez https://go.microsoft.com/fwlink/?LinkID=317594.
     public class ApplicationUser : IdentityUser
     {
+        public String FirstName { get; set; }
+        public String LastName { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection")
+            : base("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=BDSmartVideo;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True")
         {
         }
     }

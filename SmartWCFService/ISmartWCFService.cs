@@ -13,6 +13,9 @@ namespace SmartWCFService
         string GetData(int value);
 
         [OperationContract]
+        FilmDTO GetFilmById(int idFilm);
+
+        [OperationContract]
         List<FilmDTO> GetFilmsDBFilm();
 
         [OperationContract]
@@ -38,7 +41,7 @@ namespace SmartWCFService
 
 
         [OperationContract]
-        ClientDTO GetClientById(int idClient);
+        ClientDTO GetClientById(String idClient);
 
         [OperationContract]
         HitsDTO GetHitsById(int idHits);
@@ -47,7 +50,10 @@ namespace SmartWCFService
         LocationDTO GetLocationById(int idLocation);
 
         [OperationContract]
-        List<LocationDTO> GetLocationsClient(int idClient);
+        List<LocationDTO> GetLocationsClient(String idClient);
+
+        [OperationContract]
+        void AddLocationClient(String idClient, int idFilm, DateTime date);
 
         [OperationContract]
         List<ClientDTO> GetClients();

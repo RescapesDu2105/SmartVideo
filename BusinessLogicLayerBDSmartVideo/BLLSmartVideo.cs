@@ -12,7 +12,7 @@ namespace BusinessLogicLayerBDSmartVideo
     {
         private static DAL dal = DAL.Singleton("(localdb)\\MSSQLLocalDB", "DBSmartVideo");
 
-        public static ClientDTO GetClientById(int idClient)
+        public static ClientDTO GetClientById(String idClient)
         {
             return dal.GetClientById(idClient);
         }
@@ -25,9 +25,13 @@ namespace BusinessLogicLayerBDSmartVideo
             return dal.GetLocationById(idLocation);
         }
 
-        public static List<LocationDTO> GetLocationsClient(int idClient)
+        public static List<LocationDTO> GetLocationsClient(String idClient)
         {
             return dal.GetLocationsClient(idClient);
+        }
+        public static void AddLocationClient(String idClient, int idFilm, DateTime date)
+        {
+            dal.AddLocationClient(idClient, idFilm, date);
         }
 
         public static List<ClientDTO> GetClients()

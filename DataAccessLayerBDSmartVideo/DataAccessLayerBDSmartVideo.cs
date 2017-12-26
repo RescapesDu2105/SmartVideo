@@ -31,9 +31,9 @@ namespace DataAccessLayerBDSmartVideo
         }
 
         #region Get by id
-        public ClientDTO GetClientById(int idClient)
+        public ClientDTO GetClientById(String idClient)
         {
-            return ToClientDTO(instanceDC.Client.Where(d => d.Id == idClient).SingleOrDefault());
+            return ToClientDTO(instanceDC.AspNetUsers.Where(d => d.Id == idClient).SingleOrDefault());
         }
         public HitsDTO GetHitsById(int idHits)
         {
@@ -44,7 +44,7 @@ namespace DataAccessLayerBDSmartVideo
             return ToLocationDTO(instanceDC.Location.Where(d => d.Id == idLocation).SingleOrDefault());
         }
         #endregion Get by id
-        public List<LocationDTO> GetLocationsClient(int idClient)
+        public List<LocationDTO> GetLocationsClient(String idClient)
         {
             List<Location> listLocations = instanceDC.Location.OrderBy(d => d.Id).ToList();
             List<LocationDTO> listLocationDTO = new List<LocationDTO>();
@@ -56,13 +56,25 @@ namespace DataAccessLayerBDSmartVideo
 
             return listLocationDTO;
         }
+        public void AddLocationClient(String idClient, int idFilm, DateTime date)
+        {
+            Location location = new Location
+            {
+                IdClient = idClient,
+                IdFilm = idFilm,
+                DateFin = date
+            };
+
+            instanceDC.GetTable<Location>().InsertOnSubmit(location);
+            instanceDC.SubmitChanges();
+        }
         #region Get All
         public List<ClientDTO> GetClients()
         {
-            List<Client> listClients = instanceDC.Client.OrderBy(d => d.Id).ToList();
+            List<AspNetUsers> listClients = instanceDC.AspNetUsers.OrderBy(d => d.Id).ToList();
             List<ClientDTO> listClientDTO = new List<ClientDTO>();
 
-            foreach (Client client in listClients)
+            foreach (AspNetUsers client in listClients)
             {
                 listClientDTO.Add(ToClientDTO(client));
             }
@@ -96,16 +108,14 @@ namespace DataAccessLayerBDSmartVideo
         #endregion
 
         #region To*DTO
-        public ClientDTO ToClientDTO(Client client)
+        public ClientDTO ToClientDTO(AspNetUsers client)
         {
             ClientDTO clientDTO = new ClientDTO();
             clientDTO.Id = client.Id;
-            clientDTO.Nom = client.Nom;
-            clientDTO.Prenom = client.Prenom;
-            clientDTO.Login = client.Login;
-            clientDTO.Password = client.Password;
-            clientDTO.Adresse = client.Adresse;
-            clientDTO.Mail = client.Mail;
+            clientDTO.Nom = client.FirstName;
+            clientDTO.Prenom = client.LastName;
+            clientDTO.Login = client.UserName;
+            clientDTO.Mail = client.Email;
 
             return clientDTO;
         }
@@ -125,7 +135,6 @@ namespace DataAccessLayerBDSmartVideo
             locationDTO.Id = location.Id;
             locationDTO.IdFilm = location.IdFilm;
             locationDTO.IdClient = location.IdClient;
-            locationDTO.DateDebut = location.DateDebut;
             locationDTO.DateFin = location.DateFin;
 
             return locationDTO;

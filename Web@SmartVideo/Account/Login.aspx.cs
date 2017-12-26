@@ -10,15 +10,11 @@ using Web_SmartVideo;
 
 public partial class Account_Login : Page
 {
+    private SmartWCFServiceReference.SmartWCFServiceClient Service = new SmartWCFServiceReference.SmartWCFServiceClient();
+
     protected void Page_Load(object sender, EventArgs e)
     {
-        //RegisterHyperLink.NavigateUrl = "Register";
-        //OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
-        //var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
-        /*if (!String.IsNullOrEmpty(returnUrl))
-        {
-            RegisterHyperLink.NavigateUrl += "?ReturnUrl=" + returnUrl;
-        }*/
+
     }
 
     protected void LogIn(object sender, EventArgs e)
@@ -26,34 +22,28 @@ public partial class Account_Login : Page
         if (IsValid)
         {
             // Validate the user password
-            var manager = Context.GetOwinContext().GetUserManager<UserManager>();
-
-            SmartWCFServiceReference.SmartWCFServiceClient service = new SmartWCFServiceReference.SmartWCFServiceClient();
-            List<ClientDTO> Clients = new List<ClientDTO>(service.GetClients());
-
-            ApplicationUser user;
-            foreach (ClientDTO client in Clients)
-            {
-                user = new ApplicationUser();
-                user.Id = client.Id.ToString();
-                user.UserName = client.Login;
-                manager.Create(user, client.Password);
-            }
-
-            user = manager.Find(UserName.Text, Password.Text);
+            var manager = new UserManager();
+            
+            ApplicationUser user = manager.Find(UserName.Text, Password.Text);
             
             if (user != null)
             {
                 IdentityHelper.SignIn(manager, user, RememberMe.Checked);
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+
+                //Session.Add("LocationsClient", Service.GetLocationsClient(user.Id));
+                //Session.Add("ClientId", user.Id);
             }
             else
             {
                 FailureText.Text = "Nom d'utilisateur et/ou mot de passe incorrect(s) !";
                 ErrorMessage.Visible = true;
             }
-
-                
         }
+    }
+
+    protected void RedirectToRegister(object sender, EventArgs e)
+    {
+        IdentityHelper.RedirectToReturnUrl("~/Account/Register", Response);
     }
 }

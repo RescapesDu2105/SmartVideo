@@ -66,17 +66,15 @@ namespace DTOLib
 
     public class ClientDTO : IEquatable<ClientDTO>
     {
-        public int Id { get; set; }
+        public String Id { get; set; }
         public String Nom { get; set; }
         public String Prenom { get; set; }
         public String Login { get; set; }
-        public String Password { get; set; }
-        public String Adresse { get; set; }
         public String Mail { get; set; }
 
         public override string ToString()
         {
-            return Nom + " | " + Prenom + " | " + Adresse + " | " + Mail;
+            return Nom + " | " + Prenom + " | " + Mail;
         }
 
         public bool Equals(ClientDTO other)
@@ -88,7 +86,7 @@ namespace DTOLib
     public class HitsDTO : IEquatable<HitsDTO>
     {
         public int Id { get; set; }
-        public int IdClient { get; set; }
+        public String IdClient { get; set; }
         public DateTime Date { get; set; }
         public String Critere { get; set; }
 
@@ -107,13 +105,12 @@ namespace DTOLib
     {
         public int Id { get; set; }
         public int IdFilm { get; set; }
-        public int IdClient { get; set; }
-        public DateTime DateDebut { get; set; }
+        public String IdClient { get; set; }
         public DateTime DateFin { get; set; }
 
         public override string ToString()
         {
-            return IdClient + " | " + IdFilm + " | " + DateDebut + " | " + DateFin;
+            return IdClient + " | " + IdFilm  + " | " + DateFin;
         }
 
         public bool Equals(LocationDTO other)

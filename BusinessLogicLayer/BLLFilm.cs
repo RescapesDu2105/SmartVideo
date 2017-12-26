@@ -12,6 +12,11 @@ namespace BusinessLogicLayer
     {
         private static DAL dal = DAL.Singleton("(localdb)\\MSSQLLocalDB", "FilmDB");
 
+        public static FilmDTO getFilmById(int idFilm)
+        {
+            return dal.GetFilmById(idFilm);
+        }
+
         public static List<FilmDTO> getFilms()
         {
             List<FilmDTO> listFilms = dal.GetNumberOfFilms();

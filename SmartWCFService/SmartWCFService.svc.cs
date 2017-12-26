@@ -21,6 +21,10 @@ namespace SmartWCFService
         }
 
         //DBFilm
+        public FilmDTO GetFilmById(int idFilm)
+        {
+            return BLLFilm.getFilmById(idFilm);
+        }
         public List<FilmDTO> GetFilmsPage(int page)
         {
             return BLLFilm.getFilmsPage(page);
@@ -55,7 +59,7 @@ namespace SmartWCFService
         }
 
         //BDSmartVideo
-        public ClientDTO GetClientById(int idClient)
+        public ClientDTO GetClientById(String idClient)
         {
             return BLLSmartVideo.GetClientById(idClient);
         }
@@ -67,9 +71,13 @@ namespace SmartWCFService
         {
             return BLLSmartVideo.GetLocationById(idLocation);
         }
-        public List<LocationDTO> GetLocationsClient(int idClient)
+        public List<LocationDTO> GetLocationsClient(String idClient)
         {
             return BLLSmartVideo.GetLocationsClient(idClient);
+        }
+        public void AddLocationClient(String idClient, int idFilm, DateTime date)
+        {
+            BLLSmartVideo.AddLocationClient(idClient, idFilm, date);
         }
         public List<ClientDTO> GetClients()
         {

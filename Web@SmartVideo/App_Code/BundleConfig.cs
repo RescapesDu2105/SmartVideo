@@ -41,6 +41,13 @@ namespace Web_SmartVideo
                     Path = "~/Scripts/respond.min.js",
                     DebugPath = "~/Scripts/respond.js",
                 });
+
+            /*ScriptManager.ScriptResourceMapping.AddDefinition(
+                "rental",
+                new ScriptResourceDefinition
+                {
+                    Path = "~/Scripts/rental.js"
+                });*/
         }
     }
 }

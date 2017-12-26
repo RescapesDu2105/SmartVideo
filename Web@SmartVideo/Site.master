@@ -13,8 +13,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/> 
     
@@ -42,7 +41,7 @@
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Scripts de site--%>
             </Scripts>
-        </asp:ScriptManager>
+        </asp:ScriptManager>        
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <a class="navbar-brand" runat="server" href="~/"><i class="fas fa-film"></i> SmartVideo</a>
@@ -60,10 +59,8 @@
                     </AnonymousTemplate>
                     <LoggedInTemplate>
                         <ul class="navbar-nav ml-auto">
-                            <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %>!</a></li>
-                            <li>
-                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Se déconnecter" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                            </li>
+                            <li class="nav-item active"><a class="nav-link font-weight-bold" runat="server" href="~/Account/Rentals" title="Aperçu de vos locations de films"><%: Context.User.Identity.GetUserName() %></a></li>
+                            <li class="nav-item active"><asp:LoginStatus runat="server" CssClass="nav-link" LogoutAction="Redirect" LogoutText="Se déconnecter" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" /></li>
                         </ul>
                     </LoggedInTemplate>
                 </asp:LoginView>
@@ -71,10 +68,10 @@
         </nav>
         <div class="container-fluid">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-            <footer class="fixed-bottom">
+            <!--<footer class="fixed-bottom">
                 <hr />
                 <p class="ml-3">&copy; <%: DateTime.Now.Year %> - SmartVideo</p>
-            </footer>
+            </footer> -->
         </div>
     </form>
 </body>

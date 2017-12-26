@@ -2,36 +2,36 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BDSmartVideo">
   <DataContextMoniker Name="/BDSmartVideoDataContext" />
   <nestedChildShapes>
-    <classShape Id="2d576526-01a9-4bb5-a659-8c2306b20f1b" absoluteBounds="0.75, 2, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/BDSmartVideoDataContext/Client" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5042e9f0-d01b-4099-9a4f-136213258605" absoluteBounds="0.765, 2.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="fe630a5c-a69a-4ad5-bb66-1a7c093850f4" absoluteBounds="3.5, 3.375, 2, 1.7708968098958327">
-      <DataClassMoniker Name="/BDSmartVideoDataContext/Location" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9951de46-3b26-43b8-a5c9-24ffc3e57093" absoluteBounds="3.515, 3.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="0014c3f5-3153-4527-83b9-a467d4e23e53" absoluteBounds="3.5, 1, 2, 1.5785953776041666">
+    <classShape Id="ba191b81-343d-4992-8211-0250d73a33cd" absoluteBounds="3.5, 1, 2, 1.5785953776041666">
       <DataClassMoniker Name="/BDSmartVideoDataContext/Hits" />
       <nestedChildShapes>
-        <elementListCompartment Id="ff18968b-20ce-4d13-8004-707eb5654224" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="abbecaf5-a37e-4800-b9f8-dced9cddf379" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 3.76524983723958); (3.5 : 3.76524983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/BDSmartVideoDataContext/Client/Client_Location" />
+    <classShape Id="8ef3ab01-e98d-47c1-8e91-5c1d9f42900c" absoluteBounds="0.75, 1.375, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/BDSmartVideoDataContext/AspNetUsers" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fddec5aa-9d2d-4c2d-a93a-3df9491ded13" absoluteBounds="0.765, 1.835, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.97679768880208); (3.5 : 1.97679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BDSmartVideoDataContext/AspNetUsers/AspNetUsers_Hits" />
       <nodes>
-        <classShapeMoniker Id="2d576526-01a9-4bb5-a659-8c2306b20f1b" />
-        <classShapeMoniker Id="fe630a5c-a69a-4ad5-bb66-1a7c093850f4" />
+        <classShapeMoniker Id="8ef3ab01-e98d-47c1-8e91-5c1d9f42900c" />
+        <classShapeMoniker Id="ba191b81-343d-4992-8211-0250d73a33cd" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.28929768880208); (3.5 : 2.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/BDSmartVideoDataContext/Client/Client_Hits" />
+    <classShape Id="38a2a5f8-e29b-4fbc-87fc-193dae06cb3a" absoluteBounds="3.5, 3.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BDSmartVideoDataContext/Location" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c18bae6f-114f-4920-b65d-f41d9fb474fa" absoluteBounds="3.5149999999999997, 3.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.12580485026042); (3.5 : 4.12580485026042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BDSmartVideoDataContext/AspNetUsers/AspNetUsers_Location" />
       <nodes>
-        <classShapeMoniker Id="2d576526-01a9-4bb5-a659-8c2306b20f1b" />
-        <classShapeMoniker Id="0014c3f5-3153-4527-83b9-a467d4e23e53" />
+        <classShapeMoniker Id="8ef3ab01-e98d-47c1-8e91-5c1d9f42900c" />
+        <classShapeMoniker Id="38a2a5f8-e29b-4fbc-87fc-193dae06cb3a" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

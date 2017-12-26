@@ -130,7 +130,7 @@
     <WCFMetadataStorage Include="Connected Services\SmartWCFServiceReference\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayerDBFilm.csproj">
       <Project>{dfee3dc3-bd08-47e9-a681-91e17ac053b1}</Project>
       <Name>BusinessLogicLayer</Name>
     </ProjectReference>

@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DTOLib" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DTOLib" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfFilmDTO">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="FilmDTO" nillable="true" type="tns:FilmDTO" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfFilmDTO" nillable="true" type="tns:ArrayOfFilmDTO" />
   <xs:complexType name="FilmDTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="Actors" nillable="true" type="tns:ArrayOfActorDTO" />
@@ -60,14 +54,18 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="GenreDTO" nillable="true" type="tns:GenreDTO" />
+  <xs:complexType name="ArrayOfFilmDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FilmDTO" nillable="true" type="tns:FilmDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFilmDTO" nillable="true" type="tns:ArrayOfFilmDTO" />
   <xs:complexType name="ClientDTO">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Adresse" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Mail" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Prenom" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -77,16 +75,15 @@
       <xs:element minOccurs="0" name="Critere" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="IdClient" type="xs:int" />
+      <xs:element minOccurs="0" name="IdClient" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HitsDTO" nillable="true" type="tns:HitsDTO" />
   <xs:complexType name="LocationDTO">
     <xs:sequence>
-      <xs:element minOccurs="0" name="DateDebut" type="xs:dateTime" />
       <xs:element minOccurs="0" name="DateFin" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="IdClient" type="xs:int" />
+      <xs:element minOccurs="0" name="IdClient" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdFilm" type="xs:int" />
     </xs:sequence>
   </xs:complexType>

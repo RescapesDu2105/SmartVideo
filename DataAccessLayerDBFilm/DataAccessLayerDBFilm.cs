@@ -66,7 +66,7 @@ namespace DataAccessLayerDBFilm
     #region GetById
         public FilmDTO GetFilmById(int idFilm)
         {
-            return this.ToFilmDTO(instanceDC.Film.Where(d => d.id == idFilm).SingleOrDefault());
+            return ToFilmDTO(instanceDC.Film.Where(d => d.id == idFilm).SingleOrDefault());
         }
         public Genre GetGenreById(int idFilm)
         {

@@ -1,7 +1,5 @@
 ﻿<%@ Page Title="Se connecter" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Account_Login" Async="true" %>
 
-<%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
-
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     
     <div class="container" id="main">
@@ -20,12 +18,12 @@
                         <div class="form-group">
                             <asp:Label runat="server" AssociatedControlID="UserName">Nom d'utilisateur</asp:Label>
                             <asp:TextBox runat="server" ID="UserName" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName" CssClass="text-danger" ErrorMessage="Le champ du nom d'utilisateur est obligatoire" />
+                            <asp:RequiredFieldValidator runat="server" ValidationGroup="ValidationButton" ControlToValidate="UserName" CssClass="text-danger" ErrorMessage="Le champ du nom d'utilisateur est obligatoire" />
                         </div>
                         <div class="form-group">
                             <asp:Label runat="server" AssociatedControlID="Password">Mot de passe</asp:Label>
                             <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="Le champ du mot de passe est obligatoire" />
+                            <asp:RequiredFieldValidator runat="server" ValidationGroup="ValidationButton" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="Le champ du mot de passe est obligatoire" />
                         </div>
                         <div class="form-check">
                             <asp:Label runat="server" AssociatedControlID="RememberMe" CssClass="form-check-label">
@@ -34,8 +32,8 @@
                             </asp:Label>
                         </div>
                         <div class="form-group">
-                            <asp:Button runat="server" Text="Pas encore inscris ?" CssClass="btn btn-primary mr-4" />
-                            <asp:Button runat="server" OnClick="LogIn" Text="Se connecter" CssClass="btn btn-success ml-3" />
+                            <asp:Button runat="server" Text="Pas encore inscris ?" CssClass="btn btn-primary mr-4" OnClick="RedirectToRegister" />
+                            <asp:Button runat="server" ValidationGroup="ValidationButton" OnClick="LogIn" Text="Se connecter" CssClass="btn btn-success ml-3" />
                         </div>
                     </div>
                 </section>
