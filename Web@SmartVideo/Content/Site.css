@@ -2,11 +2,7 @@
     padding-top: 80px;
     padding-bottom: 20px;
 }
-
-/* Set widths on the form inputs since otherwise they're 100% wide */
-/*
-input,
-select,
-textarea {
-    
-}*/
+.img-circle {
+    width: 200px;
+    height: 200px;
+}

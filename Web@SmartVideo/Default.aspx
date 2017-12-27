@@ -3,16 +3,24 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" Runat="Server">    
     <script src="<%=ResolveUrl("~/Scripts/default.js")%>" type="text/javascript"></script>
 
-    <div class="row justify-content-md-center mt-4 mb-5">
-        <div class="col col-md-3">
-            <form class="form-inline">
-                <div class="input-group">
-                    <input class="form-control ml-5" type="search" placeholder="Nom d'un film ou d'un acteur" aria-label="Search">
-                    <span class="input-group-btn">                        
-                        <asp:Button runat="server" OnClick="Search" Text="Chercher" CssClass="btn btn-success"></asp:Button>
-                    </span>
+    <div class="row justify-content-md-center mt-2 mb-2" hidden>
+        <div class="alert alert-success" role="alert">
+            J'AFFICHE UNE ERREUR LOL
+        </div>
+    </div>
+
+    <div class="row mt-4 justify-content-center mb-5">
+        <div class="col-md-3">
+            <div class="input-group">
+                <input type="search" class="form-control" aria-label="Search" placeholder="Entrer le nom d'un film ou d'un acteur">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Chercher</button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#">Chercher film</a>
+                        <a class="dropdown-item" href="#">Chercher acteur</a>
+                    </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 
@@ -23,19 +31,19 @@
             <ul class="pagination">
                 <%  int iMax;
                     
-                    iMax = (int)Application["i"] + 3;
+                    iMax = (int)Session["i"] + 3;
 
-                    if ((int)Application["Page"] > 1)
+                    if ((int)Session["Page"] > 1)
                     {%>            
                         <li class="page-item"><asp:Button runat="server" ID="PaginationP" CssClass="page-link" Text="Première" OnClick="ChangerPage" ></asp:Button></li>
                         <li class="page-item"><asp:Button runat="server" CssClass="page-link" Text="Précédent" OnClick="ChangerPage" ></asp:Button></li>
                 <%  } %>
                 
-                    <li class="page-item <%: Int32.Parse(Pagination1.Text) == (int)Application["Page"] ? "active" : null %>"><asp:Button ID="Pagination1" runat="server" CssClass="page-link" OnClick="ChangerPage"/></li>
-                    <li class="page-item <%: Int32.Parse(Pagination2.Text) == (int)Application["Page"] ? "active" : null %>"><asp:Button ID="Pagination2" runat="server" CssClass="page-link" OnClick="ChangerPage"/></li>
-                    <li class="page-item <%: Int32.Parse(Pagination3.Text) == (int)Application["Page"] ? "active" : null %>"><asp:Button ID="Pagination3" runat="server" CssClass="page-link" OnClick="ChangerPage"/></li>
+                    <li class="page-item <%: Int32.Parse(Pagination1.Text) == (int)Session["Page"] ? "active" : null %>"><asp:Button ID="Pagination1" runat="server" CssClass="page-link" OnClick="ChangerPage"/></li>
+                    <li class="page-item <%: Int32.Parse(Pagination2.Text) == (int)Session["Page"] ? "active" : null %>"><asp:Button ID="Pagination2" runat="server" CssClass="page-link" OnClick="ChangerPage"/></li>
+                    <li class="page-item <%: Int32.Parse(Pagination3.Text) == (int)Session["Page"] ? "active" : null %>"><asp:Button ID="Pagination3" runat="server" CssClass="page-link" OnClick="ChangerPage"/></li>
            
-                <% if ((int)Application["Page"] < (int)Application["PagesMax"])
+                <% if ((int)Session["Page"] < (int)Session["PagesMax"])
                    { %>
                         <li class="page-item"><asp:Button runat="server" CssClass="page-link" Text="Suivant" OnClick="ChangerPage" ></asp:Button></li>
                         <li class="page-item"><asp:Button runat="server" ID="PaginationD" CssClass="page-link" Text="Dernière" OnClick="ChangerPage" ></asp:Button></li>
@@ -46,7 +54,7 @@
     <div class="row mt-2">
         <div class="col">
             <%  
-                List<DTOLib.FilmDTO> ListeFilms = Application["ListeFilms"] as List<DTOLib.FilmDTO>;
+                List<DTOLib.FilmDTO> ListeFilms = Session["ListeFilms"] as List<DTOLib.FilmDTO>;
                 if (ListeFilms != null && ListeFilms.Count > 0)
                 {
                     for (int row = 0; row < 4; row++)

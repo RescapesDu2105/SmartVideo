@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Vos locations de films" Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeFile="Rentals.aspx.cs" Inherits="Account_Rentals" Async="true" %>
+﻿<%@ Page Title="Vos locations de films" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Rentals.aspx.cs" Inherits="Account_Rentals" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
 
@@ -9,7 +9,7 @@
                 <h2 class="text-center"><%: Title %></h2>
                 <section id="rentals" class="mx-auto">
                 <%
-                    List<DTOLib.LocationDTO> Locations = Session["LocationsClient"] as List<DTOLib.LocationDTO>;
+                    List<DTOLib.LocationDTO> Locations = null;//= Session["LocationsClient"] as List<DTOLib.LocationDTO>;
                     if (Locations != null && Locations.Count > 0)
                     { %>
                         <table class ="table table-hover mt-5">

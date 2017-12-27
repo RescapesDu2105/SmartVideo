@@ -24,6 +24,12 @@ public partial class Account_Register : Page
             else
             {
                 ErrorMessage.Text = result.Errors.FirstOrDefault();
+                if (result.Errors.FirstOrDefault().Contains("is already taken"))
+                {
+                    ErrorMessage.Text = "Le nom d'utilisateur " + UserName.Text + " est déjà pris !";
+                }
+                else
+                    ErrorMessage.Text = result.Errors.FirstOrDefault();
             }
         }
         catch(FormatException ex)

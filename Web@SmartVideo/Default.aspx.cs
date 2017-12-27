@@ -21,14 +21,17 @@ public partial class _Default : System.Web.UI.Page
         //Response.Write("Init<br/>");
         if (!IsPostBack)
         {
-            if (Application["Page"] == null)
+            if (Session["Page"] == null)
             {
-                Application["Page"] = 1;
+                Session["Page"] = 1;
             }
             ChangerPage(null, null);
 
             //Response.Write("!PostBack<br/>");        
-        }        
+        }
+
+        //Response.Write("Count = " + Service.GetLocationsClient(Session["LocationsClient"] != null ? Session["LocationsClient"].ToString() : "null").Count());
+        //Response.Write("Count = " + Service.GetLocationsClient(Session["ClientId"] != null ? Session["ClientId"].ToString() : "null").Count());
     }
 
     protected void Page_Load(object sender, EventArgs e)
@@ -53,56 +56,56 @@ public partial class _Default : System.Web.UI.Page
         
         //Response.Write(System.Guid.NewGuid().ToString() + "<br/>");
 
-        if (Application["Page"] == null)
+        if (Session["Page"] == null)
         {
-            Application["Page"] = 1;  
+            Session["Page"] = 1;  
         }
 
-        if(Application["PagesMax"] == null)
+        if(Session["PagesMax"] == null)
         {
-            Application["PagesMax"] = Service.CountFilms() / 20;
+            Session["PagesMax"] = Service.CountFilms() / 20;
         }
 
         if (button != null)
         { 
             if (button.Text.Equals("Précédent"))
             {
-                Application["Page"] = (int)Application["Page"] - 1;
+                Session["Page"] = (int)Session["Page"] - 1;
             }
             else if (button.Text.Equals("Suivant"))
             {
-                Application["Page"] = (int)Application["Page"] + 1;
+                Session["Page"] = (int)Session["Page"] + 1;
             }
             else if (button.Text.Equals("Première"))
             {
-                Application["Page"] = 1;
+                Session["Page"] = 1;
             }
             else if (button.Text.Equals("Dernière"))
             {
-                Application["Page"] = Application["PagesMax"];
+                Session["Page"] = Session["PagesMax"];
             }
             else
             {
                 int page = Int32.Parse(button.Text);
-                int Pagination = (int)Application["Page"];
+                int Pagination = (int)Session["Page"];
                 Pagination += -(Pagination - page);
-                Application["Page"] = Pagination;
+                Session["Page"] = Pagination;
             }
         }
 
-        if ((int)Application["Page"] == 1)
-            Application["i"] = (int)Application["Page"];
-        else if ((int)Application["Page"] == (int)Application["PagesMax"])
-            Application["i"] = (int)Application["Page"] - 2;
+        if ((int)Session["Page"] == 1)
+            Session["i"] = (int)Session["Page"];
+        else if ((int)Session["Page"] == (int)Session["PagesMax"])
+            Session["i"] = (int)Session["Page"] - 2;
         else
-            Application["i"] = (int)Application["Page"] - 1;
+            Session["i"] = (int)Session["Page"] - 1;
 
-        if(Application["ListeFilms"] == null || button != null)
-            Application["ListeFilms"] = ChargerFilms((int)Application["Page"]);
+        if(Session["ListeFilms"] == null || button != null)
+            Session["ListeFilms"] = ChargerFilms((int)Session["Page"]);
         
-        Pagination1.Text = Application["i"].ToString();
-        Pagination2.Text = ((int)Application["i"] + 1).ToString();
-        Pagination3.Text = ((int)Application["i"] + 2).ToString();
+        Pagination1.Text = Session["i"].ToString();
+        Pagination2.Text = ((int)Session["i"] + 1).ToString();
+        Pagination3.Text = ((int)Session["i"] + 2).ToString();
         //Response.Write("ChangerPage <br/>");
     }
 

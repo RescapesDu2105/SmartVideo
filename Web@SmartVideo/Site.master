@@ -68,10 +68,10 @@
         </nav>
         <div class="container-fluid">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-            <!--<footer class="fixed-bottom">
+            <footer class="fixed-bottom">
                 <hr />
                 <p class="ml-3">&copy; <%: DateTime.Now.Year %> - SmartVideo</p>
-            </footer> -->
+            </footer>
         </div>
     </form>
 </body>
