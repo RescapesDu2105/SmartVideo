@@ -19,11 +19,17 @@
   <wsdl:message name="ISmartWCFService_GetFilmById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFilmByIdResponse" />
   </wsdl:message>
-  <wsdl:message name="ISmartWCFService_GetFilmsDBFilm_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetFilmsDBFilm" />
+  <wsdl:message name="ISmartWCFService_GetFilms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilms" />
   </wsdl:message>
-  <wsdl:message name="ISmartWCFService_GetFilmsDBFilm_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetFilmsDBFilmResponse" />
+  <wsdl:message name="ISmartWCFService_GetFilms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetNumberOfFilms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumberOfFilms" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetNumberOfFilms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNumberOfFilmsResponse" />
   </wsdl:message>
   <wsdl:message name="ISmartWCFService_GetFilmInfos_InputMessage">
     <wsdl:part name="parameters" element="tns:GetFilmInfos" />
@@ -124,9 +130,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmById" message="tns:ISmartWCFService_GetFilmById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmByIdResponse" message="tns:ISmartWCFService_GetFilmById_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetFilmsDBFilm">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmsDBFilm" message="tns:ISmartWCFService_GetFilmsDBFilm_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmsDBFilmResponse" message="tns:ISmartWCFService_GetFilmsDBFilm_OutputMessage" />
+    <wsdl:operation name="GetFilms">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilms" message="tns:ISmartWCFService_GetFilms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmsResponse" message="tns:ISmartWCFService_GetFilms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfFilms">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetNumberOfFilms" message="tns:ISmartWCFService_GetNumberOfFilms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetNumberOfFilmsResponse" message="tns:ISmartWCFService_GetNumberOfFilms_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetFilmInfos">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmInfos" message="tns:ISmartWCFService_GetFilmInfos_InputMessage" />
@@ -209,8 +219,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetFilmsDBFilm">
-      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetFilmsDBFilm" style="document" />
+    <wsdl:operation name="GetFilms">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetFilms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNumberOfFilms">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetNumberOfFilms" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

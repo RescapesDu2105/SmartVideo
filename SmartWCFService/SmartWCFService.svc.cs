@@ -29,9 +29,13 @@ namespace SmartWCFService
         {
             return BLLFilm.getFilmsPage(page);
         }
-        public List<FilmDTO> GetFilmsDBFilm()
+        public List<FilmDTO> GetFilms(String table, String critere)
         {
-            return BLLFilm.getFilms();
+            return BLLFilm.getFilms(table, critere);
+        }
+        public List<FilmDTO> GetNumberOfFilms()
+        {
+            return BLLFilm.getNumberOfFilms();
         }
         public void UpdateTrailerFilm(int idFilm, String url)
         {

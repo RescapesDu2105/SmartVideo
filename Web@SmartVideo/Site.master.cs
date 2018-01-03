@@ -80,7 +80,8 @@ public partial class SiteMaster : MasterPage
         Application["i"] = 1;
 
         Session.Remove("LocationsClient");
-        Session.Remove("ClientId");
+        Session.Remove("FilmsLocationsClient");
+        //Session.Remove("ClientId");
 
         Context.GetOwinContext().Authentication.SignOut();
     }

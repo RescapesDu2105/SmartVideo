@@ -18,7 +18,6 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Init(object sender, EventArgs e)
     {
-        //Response.Write("Init<br/>");
         if (!IsPostBack)
         {
             if (Session["Page"] == null)
@@ -29,20 +28,38 @@ public partial class _Default : System.Web.UI.Page
 
             //Response.Write("!PostBack<br/>");        
         }
-
-        //Response.Write("Count = " + Service.GetLocationsClient(Session["LocationsClient"] != null ? Session["LocationsClient"].ToString() : "null").Count());
-        //Response.Write("Count = " + Service.GetLocationsClient(Session["ClientId"] != null ? Session["ClientId"].ToString() : "null").Count());
+        //Response.Write("Init : " + (Session["ListeFilms"] as List<FilmDTO>).Count + " <br/>");
+        //ChangerPage(null, null);
     }
 
     protected void Page_Load(object sender, EventArgs e)
     {
         //Response.Write("Load<br/>");
-        //this.ClientScript.RegisterClientScriptInclude(this.GetType(), "default", "Scripts/default.js");
     }
     
     protected void Search(object sender, EventArgs e)
     {
+        if (!SearchInput.Text.Equals(""))
+        {
+            if ((sender as LinkButton).Text.Equals("Chercher par rapport au nom du film"))
+            {            
+                Response.Write("Existe ou pas = " + (Service.GetFilms("Film", SearchInput.Text) != null) + " <br/>");
+                Response.Write("Count = " + Service.GetFilms("Film", SearchInput.Text).Count() + " <br/>");
+                //Session["ListeFilms"] = ;                
+            }
+            else
+            {
+                //Session["ListeFilms"] = Service.GetFilms("Actor", SearchInput.Text);
+            }
 
+            Session["Page"] = 1;
+            Session["i"] = (int)Session["Page"];
+        }
+        else
+            ChangerPage(null, null);
+
+
+        Response.Write("Search<br/>");
     }
 
     protected List<FilmDTO> ChargerFilms(int page)
@@ -106,12 +123,12 @@ public partial class _Default : System.Web.UI.Page
         Pagination1.Text = Session["i"].ToString();
         Pagination2.Text = ((int)Session["i"] + 1).ToString();
         Pagination3.Text = ((int)Session["i"] + 2).ToString();
-        //Response.Write("ChangerPage <br/>");
+        Response.Write("ChangerPage <br/>");
     }
 
     protected void Louer(object sender, EventArgs e)
     {        
-        String clientId = new UserManager().FindByName(User.Identity.Name).Id;
+        String clientId = new UserManager().FindById(User.Identity.GetUserId()).Id;
         
         //Response.Write("Id = " + FilmID.Value + "<br/>");
         //Response.Write("Duree = " + Int32.Parse(Duree.Value) + "<br/>");

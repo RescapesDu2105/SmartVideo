@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,21 +10,32 @@ using Web_SmartVideo;
 
 public partial class Account_Rentals : Page
 {
-    public SmartWCFServiceReference.SmartWCFServiceClient Service
-    {
-        get { return Service; }
-        private set
-        {
-            Service = new SmartWCFServiceReference.SmartWCFServiceClient();
-        }
-    }
+    private SmartWCFServiceReference.SmartWCFServiceClient Service = new SmartWCFServiceReference.SmartWCFServiceClient();
 
     protected void Page_Init(object sender, EventArgs e)
     {
         //Response.Write("Init<br/>");
 
-        //Response.Write("Count = " + Service.GetLocationsClient(Session["LocationsClient"] != null ? Session["LocationsClient"].ToString() : "null").Count());
-        //Response.Write("Count = " + Service.GetLocationsClient(Session["ClientId"] != null ? Session["ClientId"].ToString() : "null").Count());
+        if (Session["LocationsClient"] == null && Session["FilmsLocationsClient"] == null)
+            ChargerListes();
+        else
+        {
+            ChargerListes();
+            /*Response.Write("MAJ <br/>");
+
+            List<DTOLib.LocationDTO> Locations = Session["LocationsClient"] as List<DTOLib.LocationDTO>;
+            List<DTOLib.FilmDTO> Films = Session["FilmsLocationsClient"] as List<DTOLib.FilmDTO>;
+
+            var newLocations = Service.GetLocationsClient(new UserManager().FindById(User.Identity.GetUserId()).Id).ToList().Where(x => !(Locations.Any(y => x.Id == y.Id)));
+            foreach (DTOLib.LocationDTO newLocation in newLocations)
+            {
+                Locations.Add(newLocation);
+                Films.Add(Service.GetFilmById(newLocation.IdFilm));
+            }
+
+            Session["LocationsClient"] = Locations;
+            Session["FilmsLocationsClient"] = Films;*/
+        }        
     }
 
     protected void Page_Load(object sender, EventArgs e)
@@ -34,5 +46,21 @@ public partial class Account_Rentals : Page
     protected void ReturnOnHomePage(object sender, EventArgs e)
     {
         IdentityHelper.RedirectToReturnUrl("~/", Response);
+    }
+
+    protected void ChargerListes()
+    {
+        //Response.Write("Chargement");
+
+        List<DTOLib.LocationDTO> Locations = Service.GetLocationsClient(new UserManager().FindById(User.Identity.GetUserId()).Id).ToList();
+        List<DTOLib.FilmDTO> Films = new List<DTOLib.FilmDTO>();
+
+        foreach (DTOLib.LocationDTO Location in Locations)
+        {
+            Films.Add(Service.GetFilmById(Location.IdFilm));
+        }
+        
+        Session["LocationsClient"] = Locations;
+        Session["FilmsLocationsClient"] = Films;
     }
 }

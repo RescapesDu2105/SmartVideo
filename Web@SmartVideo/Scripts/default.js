@@ -1,11 +1,13 @@
 ﻿$(document).ready(function ()
 {
-    $('#film').click(function (event)
+    $('.card').click(function (event)
     {
+        //console.log(event);
         var img = $(event.currentTarget);
+        //console.log(img);
 
         var id = img.data('id');
-        console.log(id);
+        //console.log(id);
         var title = img.data('title');
         var posterpath = img.data('posterpath');
 

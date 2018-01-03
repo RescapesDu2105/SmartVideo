@@ -6,6 +6,15 @@ using Web_SmartVideo;
 
 public partial class Account_Manage : System.Web.UI.Page
 {
+    public SmartWCFServiceReference.SmartWCFServiceClient Service
+    {
+        get { return Service; }
+        private set
+        {
+            Service = new SmartWCFServiceReference.SmartWCFServiceClient();
+        }
+    }
+
     protected string SuccessMessage
     {
         get;
@@ -28,6 +37,9 @@ public partial class Account_Manage : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
+            Response.Write("Count = " + Service.GetLocationsClient(Session["LocationsClient"] != null ? Session["LocationsClient"].ToString() : "null").Count());
+            Response.Write("Count = " + Service.GetLocationsClient(Session["ClientId"] != null ? Session["ClientId"].ToString() : "null").Count());
+
             // Déterminer les sections à afficher
             UserManager manager = new UserManager();
             if (HasPassword(manager))

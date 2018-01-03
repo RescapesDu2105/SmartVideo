@@ -30,9 +30,7 @@ public partial class Account_Login : Page
             {
                 IdentityHelper.SignIn(manager, user, RememberMe.Checked);
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-                Session.Add("ClientId", user.Id);
-                Session.Add("LocationsClient", Service.GetLocationsClient(user.Id));
-                //Session.Add("ClientId", user.Id);
+                //Session.Add("LocationsClient", Service.GetLocationsClient(user.Id));
             }
             else
             {

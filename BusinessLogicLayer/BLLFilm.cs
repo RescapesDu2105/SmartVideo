@@ -17,7 +17,14 @@ namespace BusinessLogicLayer
             return dal.GetFilmById(idFilm);
         }
 
-        public static List<FilmDTO> getFilms()
+        public static List<FilmDTO> getFilms(String table, String critere)
+        {
+            List<FilmDTO> listFilms = dal.GetFilms(table, critere);
+
+            return listFilms;
+        }
+
+        public static List<FilmDTO> getNumberOfFilms()
         {
             List<FilmDTO> listFilms = dal.GetNumberOfFilms();
 

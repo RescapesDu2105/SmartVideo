@@ -12,12 +12,12 @@
     <div class="row mt-4 justify-content-center mb-5">
         <div class="col-md-3">
             <div class="input-group">
-                <input type="search" class="form-control" aria-label="Search" placeholder="Entrer le nom d'un film ou d'un acteur">
+                <asp:TextBox runat="server" placeholder="Entrer le nom d'un film ou d'un acteur" type="search" CssClass="form-control" ID="SearchInput"/>
                 <div class="input-group-btn">
-                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Chercher</button>
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chercher</button>
                     <div class="dropdown-menu dropdown-menu-right">
-                        <a class="dropdown-item" href="#">Chercher film</a>
-                        <a class="dropdown-item" href="#">Chercher acteur</a>
+                        <asp:LinkButton runat="server" CssClass="dropdown-item" Text="Chercher par rapport au nom du film" OnClick="Search"/>
+                        <asp:LinkButton runat="server" CssClass="dropdown-item" Text="Chercher par rapport au nom d'un acteur" OnClick="Search"/>
                     </div>
                 </div>
             </div>
@@ -55,16 +55,18 @@
         <div class="col">
             <%  
                 List<DTOLib.FilmDTO> ListeFilms = Session["ListeFilms"] as List<DTOLib.FilmDTO>;
+                //Response.Write("Count = " + ListeFilms != null ? ListeFilms.Count.ToString() : "null");
+
                 if (ListeFilms != null && ListeFilms.Count > 0)
                 {
-                    for (int row = 0; row < 4; row++)
+                    for (int row = 0; row < 2; row++)
                     { %>
                         <div class="card-group mb-1">
                         <%  for (int col = (10 * row); ListeFilms.Count > col && col < (10 * (row+1)) ; col++)
                             {
                                 DTOLib.FilmDTO Film = ListeFilms.ElementAt(col);
                                 %>
-                                <div class="card bg-dark text-white" id="film" data-toggle="modal" data-target="#ModalLouer" data-id="<%: Film.Id %>" data-title="<%: Film.Title %>" data-posterpath="<%: !Film.PosterPath.Equals("") ? ("http://image.tmdb.org/t/p/original" + Film.PosterPath) : "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" %>">
+                                <div class="card bg-dark text-white" data-toggle="modal" data-target="#ModalLouer" data-id="<%: Film.Id %>" data-title="<%: Film.Title %>" data-posterpath="<%: !Film.PosterPath.Equals("") ? ("http://image.tmdb.org/t/p/original" + Film.PosterPath) : "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" %>">
                                     <img class="card-img my-auto" src="<%: !Film.PosterPath.Equals("") ? ("http://image.tmdb.org/t/p/original" + Film.PosterPath) : "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" %>"/>
                                     <!--<div class="card-img-overlay">
                                         <h4 class="card-title"><%: Film.Title %> </h4>
@@ -106,7 +108,15 @@
                 </div>
                 <div class="modal-footer">                    
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-                    <asp:Button runat="server" class="btn btn-success" Text="Oui, je veux le louer !" OnClick="Louer"/>
+                    
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>                            
+                            <a class="btn btn-warning" runat="server" href="~/Account/Login"> Vous devez être connecté pour louer ce film !</a>                           
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <asp:Button runat="server" class="btn btn-success" Text="Oui, je veux le louer !" OnClick="Louer"/>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
                 </div>
             </div>
         </div>
