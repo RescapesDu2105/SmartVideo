@@ -10,12 +10,15 @@
     </div>
 
     <div class="row mt-4 justify-content-center mb-5">
-        <div class="col-md-3">
+        <div class="col-md-4">
             <div class="input-group">
+                <div class="input-group-prepend">
+                    <asp:Button runat="server" type="button" CssClass="btn btn-primary" Text="Reset" OnClick="Reset"/>
+                </div>
                 <asp:TextBox runat="server" placeholder="Entrer le nom d'un film ou d'un acteur" type="search" CssClass="form-control" ID="SearchInput"/>
-                <div class="input-group-btn">
+                <div class="input-group-append">
                     <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chercher</button>
-                    <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-menu">
                         <asp:LinkButton runat="server" CssClass="dropdown-item" Text="Chercher par rapport au nom du film" OnClick="Search"/>
                         <asp:LinkButton runat="server" CssClass="dropdown-item" Text="Chercher par rapport au nom d'un acteur" OnClick="Search"/>
                     </div>
@@ -23,7 +26,7 @@
             </div>
         </div>
     </div>
-
+   
     <hr />
     
     <div class="row justify-content-center mt-4">
@@ -36,7 +39,7 @@
                     if ((int)Session["Page"] > 1)
                     {%>            
                         <li class="page-item"><asp:Button runat="server" ID="PaginationP" CssClass="page-link" Text="Première" OnClick="ChangerPage" ></asp:Button></li>
-                        <li class="page-item"><asp:Button runat="server" CssClass="page-link" Text="Précédent" OnClick="ChangerPage" ></asp:Button></li>
+                        <li class="page-item"><asp:Button runat="server" CssClass="page-link" Text="<<" OnClick="ChangerPage" ></asp:Button></li>
                 <%  } %>
                 
                     <li class="page-item <%: Int32.Parse(Pagination1.Text) == (int)Session["Page"] ? "active" : null %>"><asp:Button ID="Pagination1" runat="server" CssClass="page-link" OnClick="ChangerPage"/></li>
@@ -45,7 +48,7 @@
            
                 <% if ((int)Session["Page"] < (int)Session["PagesMax"])
                    { %>
-                        <li class="page-item"><asp:Button runat="server" CssClass="page-link" Text="Suivant" OnClick="ChangerPage" ></asp:Button></li>
+                        <li class="page-item"><asp:Button runat="server" CssClass="page-link" Text=">>" OnClick="ChangerPage" ></asp:Button></li>
                         <li class="page-item"><asp:Button runat="server" ID="PaginationD" CssClass="page-link" Text="Dernière" OnClick="ChangerPage" ></asp:Button></li>
                 <% } %>
             </ul>
@@ -53,27 +56,41 @@
     </div>
     <div class="row mt-2">
         <div class="col">
-            <%  
+            <%    
                 List<DTOLib.FilmDTO> ListeFilms = Session["ListeFilms"] as List<DTOLib.FilmDTO>;
-                //Response.Write("Count = " + ListeFilms != null ? ListeFilms.Count.ToString() : "null");
 
                 if (ListeFilms != null && ListeFilms.Count > 0)
                 {
                     for (int row = 0; row < 2; row++)
                     { %>
                         <div class="card-group mb-1">
-                        <%  for (int col = (10 * row); ListeFilms.Count > col && col < (10 * (row+1)) ; col++)
+                        <%  for (int col = (10 * row); col < (10 * (row + 1)); col++)
                             {
-                                DTOLib.FilmDTO Film = ListeFilms.ElementAt(col);
-                                %>
-                                <div class="card bg-dark text-white" data-toggle="modal" data-target="#ModalLouer" data-id="<%: Film.Id %>" data-title="<%: Film.Title %>" data-posterpath="<%: !Film.PosterPath.Equals("") ? ("http://image.tmdb.org/t/p/original" + Film.PosterPath) : "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" %>">
-                                    <img class="card-img my-auto" src="<%: !Film.PosterPath.Equals("") ? ("http://image.tmdb.org/t/p/original" + Film.PosterPath) : "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" %>"/>
-                                    <!--<div class="card-img-overlay">
-                                        <h4 class="card-title"><%: Film.Title %> </h4>
-                                        <p class="card-text"><small class="text-muted"><%: Film.Original_Title %></small></p>
-                                    </div> -->
-                                </div>
-                        <%  } %>
+                                if (col < ListeFilms.Count)
+                                {
+                                    DTOLib.FilmDTO Film = ListeFilms.ElementAt(col);
+                                    if (!Film.PosterPath.Equals(""))
+                                    { %>
+                                        <div class="card bg-dark text-white" data-toggle="modal" data-target="#ModalLouer" data-id="<%: Film.Id %>" data-title="<%: Film.Title %>" data-posterpath="<%: !Film.PosterPath.Equals("") ? ("http://image.tmdb.org/t/p/original" + Film.PosterPath) : "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" %>">
+                                            <img class="card-img my-auto" src="<%: !Film.PosterPath.Equals("") ? ("http://image.tmdb.org/t/p/original" + Film.PosterPath) : "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" %>" style="max-height: 310px;"/>
+                                        </div>
+                            <%      }
+                                    else
+                                    { %>
+                                        <div class="card card-body" data-toggle="modal" data-target="#ModalLouer" data-id="<%: Film.Id %>" data-title="<%: Film.Title %>" data-posterpath="<%: !Film.PosterPath.Equals("") ? ("http://image.tmdb.org/t/p/original" + Film.PosterPath) : "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg" %>">
+                                            <div class="my-auto">
+                                                <h4 class="card-title text-center"><%: Film.Title %></h4>
+                                                <p class="text-center">(<%: Film.Original_Title %>)</p>                                            
+                                                <p class="text-center">Durée : <%: Film.Runtime %> minutes</p>
+                                            </div>
+                                        </div>
+                                 <% }
+                                }
+                                else
+                                { %>
+                                    <div class="card bg-dark text-white"></div>
+                             <% }
+                            } %>
                         </div>
                 <%  }
                 }%>
@@ -96,7 +113,9 @@
                         </div>
                         <div class="col">
                             <h5 class="text-center"></h5>
-                            <hr />
+                            <hr />                            
+                            <!--<p class="text-center"></p>                                            
+                            <p class="text-center">Durée : minutes</p> -->
                             <p class="text-center font-weight-bold">Durée de la location :</p>
                             <div class="form-inline ml-5">
                                 <input runat="server" class="form-control col-md-5" ID="Duree" type="number" name="duree" min="3" max="12" value="3" />

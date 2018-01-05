@@ -83,17 +83,19 @@ namespace DataAccessLayerDBFilm
     #endregion GetById
 
     #region Get
-        public List<FilmDTO> GetFilms(String table, String critere)
+        public List<FilmDTO> GetFilms(String table, String critere, int page)
         {
             List<Film> listFilm = null;
             List<FilmDTO> listFilmDTO = new List<FilmDTO>();
+
+            Console.WriteLine("critere = " + critere);
 
             switch(table)
             {
                 case "Film":
                     listFilm = (from f in instanceDC.Film
                                 where f.title.Contains(critere) || f.original_title.Contains(critere)
-                                select f).ToList();
+                                select f).Skip(20 * page).Take(20).OrderBy(d => d.id).ToList();
                     break;
 
                 case "Actor":
@@ -101,7 +103,7 @@ namespace DataAccessLayerDBFilm
                                 join fa in instanceDC.FilmActor on a.id equals fa.id_actor
                                 join f in instanceDC.Film on fa.id_film equals f.id
                                 where a.name.Contains(critere)
-                                select f).ToList();
+                                select f).Skip(20 * page).Take(20).OrderBy(d => d.id).ToList();
                     break;
 
                 case "Genre":
@@ -109,7 +111,7 @@ namespace DataAccessLayerDBFilm
                                 join fg in instanceDC.FilmGenre on g.id equals fg.id_genre
                                 join f in instanceDC.Film on fg.id_film equals f.id
                                 where g.name.Contains(critere)
-                                select f).ToList();
+                                select f).Skip(20 * page).Take(20).OrderBy(d => d.id).ToList();
                     break;
 
                 case "Realisateur":
@@ -117,7 +119,7 @@ namespace DataAccessLayerDBFilm
                                 join fr in instanceDC.FilmDirector on d.id equals fr.id_realisateur
                                 join f in instanceDC.Film on fr.id_film equals f.id
                                 where d.name.Contains(critere)
-                                select f).ToList();
+                                select f).Skip(20 * page).Take(20).OrderBy(d => d.id).ToList();
                     break;
                 
             }
@@ -212,6 +214,51 @@ namespace DataAccessLayerDBFilm
             return listDirectorDTO;
         }
         #endregion Get
+
+        public int CountFilms(String table, String critere)
+        {
+            List<Film> listFilm = null;
+            List<FilmDTO> listFilmDTO = new List<FilmDTO>();
+
+            switch (table)
+            {
+                case "Film":
+                    listFilm = (from f in instanceDC.Film
+                                where f.title.Contains(critere) || f.original_title.Contains(critere)
+                                select f).ToList();
+                    break;
+
+                case "Actor":
+                    listFilm = (from a in instanceDC.Actor
+                                join fa in instanceDC.FilmActor on a.id equals fa.id_actor
+                                join f in instanceDC.Film on fa.id_film equals f.id
+                                where a.name.Contains(critere)
+                                select f).ToList();
+                    break;
+
+                case "Genre":
+                    listFilm = (from g in instanceDC.Genre
+                                join fg in instanceDC.FilmGenre on g.id equals fg.id_genre
+                                join f in instanceDC.Film on fg.id_film equals f.id
+                                where g.name.Contains(critere)
+                                select f).ToList();
+                    break;
+
+                case "Realisateur":
+                    listFilm = (from d in instanceDC.Director
+                                join fr in instanceDC.FilmDirector on d.id equals fr.id_realisateur
+                                join f in instanceDC.Film on fr.id_film equals f.id
+                                where d.name.Contains(critere)
+                                select f).ToList();
+                    break;
+
+            }
+
+            foreach (Film film in listFilm)
+                listFilmDTO.Add(ToFilmDTO(film));
+
+            return listFilmDTO.Count;
+        }
 
         public int CountFilms()
         {

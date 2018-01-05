@@ -5,17 +5,19 @@
         //console.log(event);
         var img = $(event.currentTarget);
         //console.log(img);
+        if (img.data('id') != null)
+        {
+            var id = img.data('id');
+            console.log(id);
+            var title = img.data('title');
+            var posterpath = img.data('posterpath');
 
-        var id = img.data('id');
-        //console.log(id);
-        var title = img.data('title');
-        var posterpath = img.data('posterpath');
+            var modal = $('#ModalLouer');
+            $('#MainContent_FilmID').attr('value', id);
+            modal.find('.modal-body h5').text(title);
+            modal.find('.modal-body img').attr('src', posterpath);
 
-        var modal = $('#ModalLouer');
-        $('#MainContent_FilmID').attr('value', id);
-        modal.find('.modal-body h5').text(title);
-        modal.find('.modal-body img').attr('src', posterpath);
-
-        $('#ModalLouer').modal('show');
+            $('#ModalLouer').modal('show');
+        }
     });
 });

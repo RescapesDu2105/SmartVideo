@@ -16,7 +16,7 @@ namespace SmartWCFService
         FilmDTO GetFilmById(int idFilm);
 
         [OperationContract]
-        List<FilmDTO> GetFilms(String table, String critere);
+        List<FilmDTO> GetFilms(String table, String critere, int page);
 
         [OperationContract]
         List<FilmDTO> GetNumberOfFilms();
@@ -41,6 +41,9 @@ namespace SmartWCFService
 
         [OperationContract]
         int CountFilms();
+
+        [OperationContract]
+        int CountFilmsRecherche(String table, String critere);
 
 
         [OperationContract]

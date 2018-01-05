@@ -27,11 +27,11 @@
         ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, JQuery);
 
         ScriptResourceDefinition Bootstrap = new ScriptResourceDefinition();
-        Bootstrap.CdnPath = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js";
+        Bootstrap.CdnPath = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js";
         Bootstrap.Path = "~/Scripts/bootstrap.min.js";
         Bootstrap.DebugPath = "~/Scripts/bootstrap.min.js";
-        Bootstrap.CdnPath = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js";
-        Bootstrap.CdnDebugPath = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js";
+        Bootstrap.CdnPath = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js";
+        Bootstrap.CdnDebugPath = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js";
         ScriptManager.ScriptResourceMapping.AddDefinition("bootstrap", null, Bootstrap);
 
         ScriptResourceDefinition FontAwesome = new ScriptResourceDefinition();

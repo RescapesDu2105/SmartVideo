@@ -75,12 +75,12 @@ public partial class SiteMaster : MasterPage
 
     protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
     {
-        Application.RemoveAll();
-        Application["Page"] = 1;
-        Application["i"] = 1;
+        //Session.RemoveAll();
+        //Session["Page"] = 1;
+        //Session["i"] = 1;
 
-        Session.Remove("LocationsClient");
-        Session.Remove("FilmsLocationsClient");
+        //Session.Remove("LocationsClient");
+        //Session.Remove("FilmsLocationsClient");
         //Session.Remove("ClientId");
 
         Context.GetOwinContext().Authentication.SignOut();

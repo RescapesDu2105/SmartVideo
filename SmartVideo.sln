@@ -47,6 +47,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayerBDSmartVideo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayerBDSmartVideo", "BusinessLogicLayerBDSmartVideo\BusinessLogicLayerBDSmartVideo.csproj", "{9416AD9D-A99B-4F7C-B709-67C6F8C31895}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{AEDAC4B1-A850-44AF-8E77-695842789D7F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842} = {E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +98,10 @@ Global
 		{9416AD9D-A99B-4F7C-B709-67C6F8C31895}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9416AD9D-A99B-4F7C-B709-67C6F8C31895}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9416AD9D-A99B-4F7C-B709-67C6F8C31895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEDAC4B1-A850-44AF-8E77-695842789D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEDAC4B1-A850-44AF-8E77-695842789D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEDAC4B1-A850-44AF-8E77-695842789D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEDAC4B1-A850-44AF-8E77-695842789D7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -41,19 +41,62 @@ public partial class _Default : System.Web.UI.Page
     {
         if (!SearchInput.Text.Equals(""))
         {
+            Session["SearchInput"] = SearchInput.Text;
             if ((sender as LinkButton).Text.Equals("Chercher par rapport au nom du film"))
-            {            
-                Response.Write("Existe ou pas = " + (Service.GetFilms("Film", SearchInput.Text) != null) + " <br/>");
-                Response.Write("Count = " + Service.GetFilms("Film", SearchInput.Text).Count() + " <br/>");
-                //Session["ListeFilms"] = ;                
+            {
+                int Count = Service.CountFilmsRecherche("Film", (String)Session["SearchInput"]);
+                if (Count != 0)
+                {
+                    Session["Recherche"] = "Film";
+                    Session["ListeFilms"] = ChargerFilms(1);
+                    Session["PagesMax"] = (int)Math.Ceiling(Count / 20.0);
+                    Response.Write("Count = " + Count + " <br/>");
+
+                    if ((int)Session["PagesMax"] < 3)
+                    {
+                        Pagination3.Visible = false;
+
+                        if ((int)Session["PagesMax"] < 2)
+                            Pagination2.Visible = false;
+                        else
+                            Pagination2.Visible = true;
+                    }
+                    else
+                    {
+                        Pagination3.Visible = true;
+                        Pagination2.Visible = true;
+                    }
+                }
             }
             else
             {
-                //Session["ListeFilms"] = Service.GetFilms("Actor", SearchInput.Text);
+                int Count = Service.CountFilmsRecherche("Actor", (String)Session["SearchInput"]);
+                if (Count != 0)
+                {
+                    Session["Recherche"] = "Actor";
+                    Session["ListeFilms"] = ChargerFilms(1).ToList();
+                    Session["PagesMax"] = Count / 20;
+                    Response.Write("Count 2 = " + (int)Session["PagesMax"] + " <br/>");
+
+                    if ((int)Session["PagesMax"] < 3)
+                    {
+                        Pagination3.Visible = false;
+
+                        if ((int)Session["PagesMax"] < 2)
+                            Pagination2.Visible = false;
+                        else
+                            Pagination2.Visible = true;
+                    }
+                    else
+                    {
+                        Pagination3.Visible = true;
+                        Pagination2.Visible = true;
+                    }
+                }
             }
 
             Session["Page"] = 1;
-            Session["i"] = (int)Session["Page"];
+            Session["i"] = 1;
         }
         else
             ChangerPage(null, null);
@@ -64,14 +107,17 @@ public partial class _Default : System.Web.UI.Page
 
     protected List<FilmDTO> ChargerFilms(int page)
     {
-        return Service.GetFilmsPage(page - 1).ToList();
+        //Response.Write("Recherche = " + Session["Recherche"] + "<br/>");
+
+        if (Session["Recherche"] == null)
+            return Service.GetFilmsPage(page - 1).ToList();
+        else
+            return Service.GetFilms((String)Session["Recherche"], (String)Session["SearchInput"], page - 1).ToList();
     }
 
     protected void ChangerPage(object sender, EventArgs e)
     {
-        Button button = sender as Button;
-        
-        //Response.Write(System.Guid.NewGuid().ToString() + "<br/>");
+        Button button = sender as Button;        
 
         if (Session["Page"] == null)
         {
@@ -81,15 +127,30 @@ public partial class _Default : System.Web.UI.Page
         if(Session["PagesMax"] == null)
         {
             Session["PagesMax"] = Service.CountFilms() / 20;
+
+            if ((int)Session["PagesMax"] < 3)
+            {
+                Pagination3.Visible = false;
+
+                if ((int)Session["PagesMax"] < 2)
+                    Pagination2.Visible = false;
+                else
+                    Pagination2.Visible = true;
+            }
+            else
+            {
+                Pagination3.Visible = true;
+                Pagination2.Visible = true;
+            }
         }
 
         if (button != null)
         { 
-            if (button.Text.Equals("Précédent"))
+            if (button.Text.Equals("<<"))
             {
                 Session["Page"] = (int)Session["Page"] - 1;
             }
-            else if (button.Text.Equals("Suivant"))
+            else if (button.Text.Equals(">>"))
             {
                 Session["Page"] = (int)Session["Page"] + 1;
             }
@@ -112,27 +173,49 @@ public partial class _Default : System.Web.UI.Page
 
         if ((int)Session["Page"] == 1)
             Session["i"] = (int)Session["Page"];
+        else if((int)Session["PagesMax"] != 2)
+            if ((int)Session["Page"] == (int)Session["PagesMax"])
+                Session["i"] = (int)Session["Page"] - 2;
+            else
+                Session["i"] = (int)Session["Page"] - 1;
         else if ((int)Session["Page"] == (int)Session["PagesMax"])
-            Session["i"] = (int)Session["Page"] - 2;
-        else
             Session["i"] = (int)Session["Page"] - 1;
 
-        if(Session["ListeFilms"] == null || button != null)
+        if (Session["ListeFilms"] == null || button != null)
             Session["ListeFilms"] = ChargerFilms((int)Session["Page"]);
+        
         
         Pagination1.Text = Session["i"].ToString();
         Pagination2.Text = ((int)Session["i"] + 1).ToString();
         Pagination3.Text = ((int)Session["i"] + 2).ToString();
-        Response.Write("ChangerPage <br/>");
+
+        //Response.Write("ChangerPage <br/>");
     }
 
     protected void Louer(object sender, EventArgs e)
     {        
         String clientId = new UserManager().FindById(User.Identity.GetUserId()).Id;
         
-        //Response.Write("Id = " + FilmID.Value + "<br/>");
-        //Response.Write("Duree = " + Int32.Parse(Duree.Value) + "<br/>");
         Service.AddLocationClient(clientId, Int32.Parse(FilmID.Value), DateTime.Now.AddMonths(Int32.Parse(Duree.Value)));
-        //IdentityHelper.RedirectToReturnUrl("~/", Response);
+    }
+
+    protected void Reset(object sender, EventArgs e)
+    {
+        Session["Page"] = 1;
+        Session["i"] = 1;
+        Session["PagesMax"] = Service.CountFilms() / 20;
+        Session.Remove("Recherche");
+
+        Session["ListeFilms"] = ChargerFilms(1);
+
+        Pagination1.Text = 1.ToString();
+        Pagination2.Text = 2.ToString();
+        Pagination3.Text = 3.ToString();
+
+        Pagination2.Visible = true;
+        Pagination3.Visible = true;
+
+        SearchInput.Text = null;
+        Session.Remove("SearchInput");
     }
 }

@@ -29,9 +29,9 @@ namespace SmartWCFService
         {
             return BLLFilm.getFilmsPage(page);
         }
-        public List<FilmDTO> GetFilms(String table, String critere)
+        public List<FilmDTO> GetFilms(String table, String critere, int page)
         {
-            return BLLFilm.getFilms(table, critere);
+            return BLLFilm.getFilms(table, critere, page);
         }
         public List<FilmDTO> GetNumberOfFilms()
         {
@@ -60,6 +60,10 @@ namespace SmartWCFService
         public int CountFilms()
         {
             return BLLFilm.CountFilms();
+        }
+        public int CountFilmsRecherche(String table, String critere)
+        {
+            return BLLFilm.CountFilms(table, critere);
         }
 
         //BDSmartVideo
