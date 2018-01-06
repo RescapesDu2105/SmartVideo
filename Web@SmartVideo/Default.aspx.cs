@@ -14,7 +14,7 @@ using Web_SmartVideo;
 public partial class _Default : System.Web.UI.Page
 {
     private SmartWCFServiceReference.SmartWCFServiceClient Service = new SmartWCFServiceReference.SmartWCFServiceClient();
-    
+
 
     protected void Page_Init(object sender, EventArgs e)
     {
@@ -44,9 +44,19 @@ public partial class _Default : System.Web.UI.Page
             Session["SearchInput"] = SearchInput.Text;
             if ((sender as LinkButton).Text.Equals("Chercher par rapport au nom du film"))
             {
+
                 int Count = Service.CountFilmsRecherche("Film", (String)Session["SearchInput"]);
                 if (Count != 0)
                 {
+                    if (Count == 1)
+                    {
+                        FilmDTO Film = Service.GetFilmByName((String)Session["SearchInput"]);
+                        if(Film != null)
+                        {
+                            Service.AddHits(new UserManager().FindById(User.Identity.GetUserId()).Id, Film.Id, new DateTime(), "Film");
+                        }
+                    }
+
                     Session["Recherche"] = "Film";
                     Session["ListeFilms"] = ChargerFilms(1);
                     Session["PagesMax"] = (int)Math.Ceiling(Count / 20.0);
@@ -72,7 +82,13 @@ public partial class _Default : System.Web.UI.Page
             {
                 int Count = Service.CountFilmsRecherche("Actor", (String)Session["SearchInput"]);
                 if (Count != 0)
-                {
+                {                    
+                    ActorDTO Actor = Service.IsActorExists((String)Session["SearchInput"]);
+                    if (Actor != null)
+                    {
+                        Service.AddHits(new UserManager().FindById(User.Identity.GetUserId()).Id, Actor.Id, new DateTime(), "Actor");
+                    }
+
                     Session["Recherche"] = "Actor";
                     Session["ListeFilms"] = ChargerFilms(1).ToList();
                     Session["PagesMax"] = Count / 20;

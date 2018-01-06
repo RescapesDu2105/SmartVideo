@@ -68,6 +68,19 @@ namespace DataAccessLayerBDSmartVideo
             instanceDC.GetTable<Location>().InsertOnSubmit(location);
             instanceDC.SubmitChanges();
         }
+        public void AddHits(String IdClient, int IdCritere, DateTime date, String Type)
+        {
+            Hits hits = new Hits
+            {
+                IdClient = IdClient,
+                IdType = IdCritere,
+                Date = date,
+                Type = Type
+            };
+
+            instanceDC.GetTable<Hits>().InsertOnSubmit(hits);
+            instanceDC.SubmitChanges();
+        }
         #region Get All
         public List<ClientDTO> GetClients()
         {
@@ -125,7 +138,7 @@ namespace DataAccessLayerBDSmartVideo
             hitsDTO.Id = hits.Id;
             hitsDTO.IdClient = hits.IdClient;
             hitsDTO.Date = hits.Date;
-            hitsDTO.Critere = hits.Critere;
+            hitsDTO.Type = hits.Type;
 
             return hitsDTO;
         }

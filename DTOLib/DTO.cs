@@ -88,11 +88,11 @@ namespace DTOLib
         public int Id { get; set; }
         public String IdClient { get; set; }
         public DateTime Date { get; set; }
-        public String Critere { get; set; }
+        public String Type { get; set; }
 
         public override string ToString()
         {
-            return IdClient + " | " +  Date + " | " + Critere;
+            return IdClient + " | " +  Date + " | " + Type;
         }
 
         public bool Equals(HitsDTO other)
@@ -114,6 +114,25 @@ namespace DTOLib
         }
 
         public bool Equals(LocationDTO other)
+        {
+            return other.Id == Id;
+        }
+    }
+
+    public class StatistiquesDTO : IEquatable<StatistiquesDTO>
+    {
+        public int Id { get; set; }
+        public DateTime Date { get; set; }
+        public String Type { get; set; }
+        public int IdType { get; set; }
+        public int NombreHits { get; set; }
+
+        public override string ToString()
+        {
+            return Date + " | " + Type + " | " + NombreHits;
+        }
+
+        public bool Equals(StatistiquesDTO other)
         {
             return other.Id == Id;
         }

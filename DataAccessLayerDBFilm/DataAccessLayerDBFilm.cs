@@ -129,6 +129,10 @@ namespace DataAccessLayerDBFilm
 
             return listFilmDTO;
         }
+        public FilmDTO GetFilmByName(String filmName)
+        {
+            return ToFilmDTO(instanceDC.Film.Where(f => f.title.ToUpper().Equals(filmName.ToUpper()) || f.original_title.ToUpper().Equals(filmName.ToUpper())).SingleOrDefault());
+        }
         public List<GenreDTO> GetGenres()
         {
             List<GenreDTO> listGenreDTO = new List<GenreDTO>();
@@ -148,6 +152,21 @@ namespace DataAccessLayerDBFilm
                 listActorsDTO.Add(ToActorDTO(actor));
 
             return listActorsDTO;
+        }
+        public ActorDTO IsActorExists(String actorName)
+        {
+            try
+            {
+                return ToActorDTO((from a in instanceDC.Actor
+                                   join fa in instanceDC.FilmActor on a.id equals fa.id_actor
+                                   join f in instanceDC.Film on fa.id_film equals f.id
+                                   where a.name.ToUpper().Equals(actorName.ToUpper())
+                                   select a).SingleOrDefault());
+            }
+            catch
+            {
+                return null;
+            }
         }
         public List<DirectorDTO> GetDirectors()
         {

@@ -19,6 +19,12 @@
   <wsdl:message name="ISmartWCFService_GetFilmById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFilmByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetFilmByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmByName" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetFilmByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmByNameResponse" />
+  </wsdl:message>
   <wsdl:message name="ISmartWCFService_GetFilms_InputMessage">
     <wsdl:part name="parameters" element="tns:GetFilms" />
   </wsdl:message>
@@ -48,6 +54,12 @@
   </wsdl:message>
   <wsdl:message name="ISmartWCFService_GetActors_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetActorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_IsActorExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsActorExists" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_IsActorExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsActorExistsResponse" />
   </wsdl:message>
   <wsdl:message name="ISmartWCFService_GetGenres_InputMessage">
     <wsdl:part name="parameters" element="tns:GetGenres" />
@@ -127,6 +139,12 @@
   <wsdl:message name="ISmartWCFService_GetLocations_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetLocationsResponse" />
   </wsdl:message>
+  <wsdl:message name="ISmartWCFService_AddHits_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddHits" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_AddHits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddHitsResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISmartWCFService">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetData" message="tns:ISmartWCFService_GetData_InputMessage" />
@@ -135,6 +153,10 @@
     <wsdl:operation name="GetFilmById">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmById" message="tns:ISmartWCFService_GetFilmById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmByIdResponse" message="tns:ISmartWCFService_GetFilmById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilmByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmByName" message="tns:ISmartWCFService_GetFilmByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmByNameResponse" message="tns:ISmartWCFService_GetFilmByName_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetFilms">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilms" message="tns:ISmartWCFService_GetFilms_InputMessage" />
@@ -155,6 +177,10 @@
     <wsdl:operation name="GetActors">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetActors" message="tns:ISmartWCFService_GetActors_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetActorsResponse" message="tns:ISmartWCFService_GetActors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsActorExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/IsActorExists" message="tns:ISmartWCFService_IsActorExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/IsActorExistsResponse" message="tns:ISmartWCFService_IsActorExists_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetGenres">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetGenres" message="tns:ISmartWCFService_GetGenres_InputMessage" />
@@ -208,6 +234,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetLocations" message="tns:ISmartWCFService_GetLocations_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetLocationsResponse" message="tns:ISmartWCFService_GetLocations_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AddHits">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/AddHits" message="tns:ISmartWCFService_AddHits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/AddHitsResponse" message="tns:ISmartWCFService_AddHits_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISmartWCFService" type="tns:ISmartWCFService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -222,6 +252,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetFilmById">
       <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetFilmById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilmByName">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetFilmByName" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -267,6 +306,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetActors">
       <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetActors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsActorExists">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/IsActorExists" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -384,6 +432,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetLocations">
       <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHits">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/AddHits" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

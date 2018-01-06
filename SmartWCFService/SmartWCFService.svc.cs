@@ -25,6 +25,10 @@ namespace SmartWCFService
         {
             return BLLFilm.getFilmById(idFilm);
         }
+        public FilmDTO GetFilmByName(String filmName)
+        {
+            return BLLFilm.getFilmByName(filmName);
+        }
         public List<FilmDTO> GetFilmsPage(int page)
         {
             return BLLFilm.getFilmsPage(page);
@@ -48,6 +52,10 @@ namespace SmartWCFService
         public List<ActorDTO> GetActors()
         {
             return BLLFilm.getActors();
+        }
+        public ActorDTO IsActorExists(String actorName)
+        {
+            return BLLFilm.isActorExists(actorName);
         }
         public List<GenreDTO> GetGenres()
         {
@@ -98,6 +106,10 @@ namespace SmartWCFService
         public List<LocationDTO> GetLocations()
         {
             return BLLSmartVideo.GetLocations();
+        }
+        public void AddHits(String IdClient, int IdCritere, DateTime date, String critere)
+        {
+            BLLSmartVideo.AddHits(IdClient, IdCritere, date, Type);
         }
     }
 }

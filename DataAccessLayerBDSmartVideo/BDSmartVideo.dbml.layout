@@ -2,37 +2,43 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BDSmartVideo">
   <DataContextMoniker Name="/BDSmartVideoDataContext" />
   <nestedChildShapes>
-    <classShape Id="ba191b81-343d-4992-8211-0250d73a33cd" absoluteBounds="3.5, 1, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/BDSmartVideoDataContext/Hits" />
-      <nestedChildShapes>
-        <elementListCompartment Id="abbecaf5-a37e-4800-b9f8-dced9cddf379" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="8ef3ab01-e98d-47c1-8e91-5c1d9f42900c" absoluteBounds="0.75, 1.375, 2, 3.5016097005208326">
       <DataClassMoniker Name="/BDSmartVideoDataContext/AspNetUsers" />
       <nestedChildShapes>
         <elementListCompartment Id="fddec5aa-9d2d-4c2d-a93a-3df9491ded13" absoluteBounds="0.765, 1.835, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 1.97679768880208); (3.5 : 1.97679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/BDSmartVideoDataContext/AspNetUsers/AspNetUsers_Hits" />
-      <nodes>
-        <classShapeMoniker Id="8ef3ab01-e98d-47c1-8e91-5c1d9f42900c" />
-        <classShapeMoniker Id="ba191b81-343d-4992-8211-0250d73a33cd" />
-      </nodes>
-    </associationConnector>
     <classShape Id="38a2a5f8-e29b-4fbc-87fc-193dae06cb3a" absoluteBounds="3.5, 3.375, 2, 1.5785953776041666">
       <DataClassMoniker Name="/BDSmartVideoDataContext/Location" />
       <nestedChildShapes>
         <elementListCompartment Id="c18bae6f-114f-4920-b65d-f41d9fb474fa" absoluteBounds="3.5149999999999997, 3.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 4.12580485026042); (3.5 : 4.12580485026042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.12580485026042); (3.5 : 4.12580485026042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/BDSmartVideoDataContext/AspNetUsers/AspNetUsers_Location" />
       <nodes>
         <classShapeMoniker Id="8ef3ab01-e98d-47c1-8e91-5c1d9f42900c" />
         <classShapeMoniker Id="38a2a5f8-e29b-4fbc-87fc-193dae06cb3a" />
       </nodes>
     </associationConnector>
+    <classShape Id="08cc96f0-77fb-4869-a35a-a95675d6c30f" absoluteBounds="3.5, 1.375, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/BDSmartVideoDataContext/Hits" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92cbb537-7d5a-4ccb-85e2-2d2a71dd9882" absoluteBounds="3.5149999999999997, 1.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.26044840494792); (3.5 : 2.26044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BDSmartVideoDataContext/AspNetUsers/AspNetUsers_Hits" />
+      <nodes>
+        <classShapeMoniker Id="8ef3ab01-e98d-47c1-8e91-5c1d9f42900c" />
+        <classShapeMoniker Id="08cc96f0-77fb-4869-a35a-a95675d6c30f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1ef4288d-28fa-470a-9e42-cc6db6b34270" absoluteBounds="7.625, 2.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/BDSmartVideoDataContext/Statistiques" />
+      <nestedChildShapes>
+        <elementListCompartment Id="89fbf6ed-6ab1-41fc-aef6-233a07fa780c" absoluteBounds="7.6400000000000006, 2.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -16,6 +16,9 @@ namespace SmartWCFService
         FilmDTO GetFilmById(int idFilm);
 
         [OperationContract]
+        FilmDTO GetFilmByName(String filmName);
+
+        [OperationContract]
         List<FilmDTO> GetFilms(String table, String critere, int page);
 
         [OperationContract]
@@ -29,6 +32,9 @@ namespace SmartWCFService
         
         [OperationContract]
         List<ActorDTO> GetActors();
+
+        [OperationContract]
+        ActorDTO IsActorExists(String actorName);
 
         [OperationContract]
         List<GenreDTO> GetGenres();
@@ -69,5 +75,8 @@ namespace SmartWCFService
 
         [OperationContract]
         List<LocationDTO> GetLocations();
+
+        [OperationContract]
+        void AddHits(String IdClient, int IdCritere, DateTime date, String Type);
     }
 }

@@ -46,6 +46,9 @@ namespace BusinessLogicLayerBDSmartVideo
         {
             return dal.GetLocations();
         }
-
+        public static void AddHits(String IdClient, int IdCritere, DateTime date, String Type)
+        {
+            dal.AddHits(IdClient, IdCritere, date, Type);
+        }
     }
 }

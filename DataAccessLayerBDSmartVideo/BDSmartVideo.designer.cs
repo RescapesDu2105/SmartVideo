@@ -30,15 +30,15 @@ namespace DataAccessLayerBDSmartVideo
 		
     #region Définitions de méthodes d'extensibilité
     partial void OnCreated();
-    partial void InsertHits(Hits instance);
-    partial void UpdateHits(Hits instance);
-    partial void DeleteHits(Hits instance);
     partial void InsertAspNetUsers(AspNetUsers instance);
     partial void UpdateAspNetUsers(AspNetUsers instance);
     partial void DeleteAspNetUsers(AspNetUsers instance);
     partial void InsertLocation(Location instance);
     partial void UpdateLocation(Location instance);
     partial void DeleteLocation(Location instance);
+    partial void InsertHits(Hits instance);
+    partial void UpdateHits(Hits instance);
+    partial void DeleteHits(Hits instance);
     #endregion
 		
 		public BDSmartVideoDataContext() : 
@@ -71,14 +71,6 @@ namespace DataAccessLayerBDSmartVideo
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Hits> Hits
-		{
-			get
-			{
-				return this.GetTable<Hits>();
-			}
-		}
-		
 		public System.Data.Linq.Table<AspNetUsers> AspNetUsers
 		{
 			get
@@ -94,179 +86,20 @@ namespace DataAccessLayerBDSmartVideo
 				return this.GetTable<Location>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Hits")]
-	public partial class Hits : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _IdClient;
-		
-		private System.DateTime _Date;
-		
-		private string _Critere;
-		
-		private EntityRef<AspNetUsers> _AspNetUsers;
-		
-    #region Définitions de méthodes d'extensibilité
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnIdClientChanging(string value);
-    partial void OnIdClientChanged();
-    partial void OnDateChanging(System.DateTime value);
-    partial void OnDateChanged();
-    partial void OnCritereChanging(string value);
-    partial void OnCritereChanged();
-    #endregion
-		
-		public Hits()
-		{
-			this._AspNetUsers = default(EntityRef<AspNetUsers>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
+		public System.Data.Linq.Table<Hits> Hits
 		{
 			get
 			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
+				return this.GetTable<Hits>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdClient", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
-		public string IdClient
+		public System.Data.Linq.Table<Statistiques> Statistiques
 		{
 			get
 			{
-				return this._IdClient;
-			}
-			set
-			{
-				if ((this._IdClient != value))
-				{
-					if (this._AspNetUsers.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnIdClientChanging(value);
-					this.SendPropertyChanging();
-					this._IdClient = value;
-					this.SendPropertyChanged("IdClient");
-					this.OnIdClientChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
-		public System.DateTime Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this.OnDateChanging(value);
-					this.SendPropertyChanging();
-					this._Date = value;
-					this.SendPropertyChanged("Date");
-					this.OnDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Critere", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Critere
-		{
-			get
-			{
-				return this._Critere;
-			}
-			set
-			{
-				if ((this._Critere != value))
-				{
-					this.OnCritereChanging(value);
-					this.SendPropertyChanging();
-					this._Critere = value;
-					this.SendPropertyChanged("Critere");
-					this.OnCritereChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AspNetUsers_Hits", Storage="_AspNetUsers", ThisKey="IdClient", OtherKey="Id", IsForeignKey=true)]
-		public AspNetUsers AspNetUsers
-		{
-			get
-			{
-				return this._AspNetUsers.Entity;
-			}
-			set
-			{
-				AspNetUsers previousValue = this._AspNetUsers.Entity;
-				if (((previousValue != value) 
-							|| (this._AspNetUsers.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._AspNetUsers.Entity = null;
-						previousValue.Hits.Remove(this);
-					}
-					this._AspNetUsers.Entity = value;
-					if ((value != null))
-					{
-						value.Hits.Add(this);
-						this._IdClient = value.Id;
-					}
-					else
-					{
-						this._IdClient = default(string);
-					}
-					this.SendPropertyChanged("AspNetUsers");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<Statistiques>();
 			}
 		}
 	}
@@ -305,9 +138,9 @@ namespace DataAccessLayerBDSmartVideo
 		
 		private string _UserName;
 		
-		private EntitySet<Hits> _Hits;
-		
 		private EntitySet<Location> _Location;
+		
+		private EntitySet<Hits> _Hits;
 		
     #region Définitions de méthodes d'extensibilité
     partial void OnLoaded();
@@ -345,8 +178,8 @@ namespace DataAccessLayerBDSmartVideo
 		
 		public AspNetUsers()
 		{
-			this._Hits = new EntitySet<Hits>(new Action<Hits>(this.attach_Hits), new Action<Hits>(this.detach_Hits));
 			this._Location = new EntitySet<Location>(new Action<Location>(this.attach_Location), new Action<Location>(this.detach_Location));
+			this._Hits = new EntitySet<Hits>(new Action<Hits>(this.attach_Hits), new Action<Hits>(this.detach_Hits));
 			OnCreated();
 		}
 		
@@ -630,19 +463,6 @@ namespace DataAccessLayerBDSmartVideo
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AspNetUsers_Hits", Storage="_Hits", ThisKey="Id", OtherKey="IdClient")]
-		public EntitySet<Hits> Hits
-		{
-			get
-			{
-				return this._Hits;
-			}
-			set
-			{
-				this._Hits.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AspNetUsers_Location", Storage="_Location", ThisKey="Id", OtherKey="IdClient")]
 		public EntitySet<Location> Location
 		{
@@ -653,6 +473,19 @@ namespace DataAccessLayerBDSmartVideo
 			set
 			{
 				this._Location.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AspNetUsers_Hits", Storage="_Hits", ThisKey="Id", OtherKey="IdClient")]
+		public EntitySet<Hits> Hits
+		{
+			get
+			{
+				return this._Hits;
+			}
+			set
+			{
+				this._Hits.Assign(value);
 			}
 		}
 		
@@ -676,18 +509,6 @@ namespace DataAccessLayerBDSmartVideo
 			}
 		}
 		
-		private void attach_Hits(Hits entity)
-		{
-			this.SendPropertyChanging();
-			entity.AspNetUsers = this;
-		}
-		
-		private void detach_Hits(Hits entity)
-		{
-			this.SendPropertyChanging();
-			entity.AspNetUsers = null;
-		}
-		
 		private void attach_Location(Location entity)
 		{
 			this.SendPropertyChanging();
@@ -695,6 +516,18 @@ namespace DataAccessLayerBDSmartVideo
 		}
 		
 		private void detach_Location(Location entity)
+		{
+			this.SendPropertyChanging();
+			entity.AspNetUsers = null;
+		}
+		
+		private void attach_Hits(Hits entity)
+		{
+			this.SendPropertyChanging();
+			entity.AspNetUsers = this;
+		}
+		
+		private void detach_Hits(Hits entity)
 		{
 			this.SendPropertyChanging();
 			entity.AspNetUsers = null;
@@ -872,6 +705,304 @@ namespace DataAccessLayerBDSmartVideo
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Hits")]
+	public partial class Hits : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private System.DateTime _Date;
+		
+		private string _Type;
+		
+		private string _IdClient;
+		
+		private int _IdType;
+		
+		private EntityRef<AspNetUsers> _AspNetUsers;
+		
+    #region Définitions de méthodes d'extensibilité
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
+    partial void OnIdClientChanging(string value);
+    partial void OnIdClientChanged();
+    partial void OnIdTypeChanging(int value);
+    partial void OnIdTypeChanged();
+    #endregion
+		
+		public Hits()
+		{
+			this._AspNetUsers = default(EntityRef<AspNetUsers>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdClient", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string IdClient
+		{
+			get
+			{
+				return this._IdClient;
+			}
+			set
+			{
+				if ((this._IdClient != value))
+				{
+					if (this._AspNetUsers.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnIdClientChanging(value);
+					this.SendPropertyChanging();
+					this._IdClient = value;
+					this.SendPropertyChanged("IdClient");
+					this.OnIdClientChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdType", DbType="Int NOT NULL")]
+		public int IdType
+		{
+			get
+			{
+				return this._IdType;
+			}
+			set
+			{
+				if ((this._IdType != value))
+				{
+					this.OnIdTypeChanging(value);
+					this.SendPropertyChanging();
+					this._IdType = value;
+					this.SendPropertyChanged("IdType");
+					this.OnIdTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AspNetUsers_Hits", Storage="_AspNetUsers", ThisKey="IdClient", OtherKey="Id", IsForeignKey=true)]
+		public AspNetUsers AspNetUsers
+		{
+			get
+			{
+				return this._AspNetUsers.Entity;
+			}
+			set
+			{
+				AspNetUsers previousValue = this._AspNetUsers.Entity;
+				if (((previousValue != value) 
+							|| (this._AspNetUsers.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._AspNetUsers.Entity = null;
+						previousValue.Hits.Remove(this);
+					}
+					this._AspNetUsers.Entity = value;
+					if ((value != null))
+					{
+						value.Hits.Add(this);
+						this._IdClient = value.Id;
+					}
+					else
+					{
+						this._IdClient = default(string);
+					}
+					this.SendPropertyChanged("AspNetUsers");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Statistiques")]
+	public partial class Statistiques
+	{
+		
+		private int _Id;
+		
+		private System.DateTime _Date;
+		
+		private string _Type;
+		
+		private int _IdType;
+		
+		private int _NombreHits;
+		
+		public Statistiques()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="NVarChar(5) NOT NULL", CanBeNull=false)]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this._Type = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdType", DbType="Int NOT NULL")]
+		public int IdType
+		{
+			get
+			{
+				return this._IdType;
+			}
+			set
+			{
+				if ((this._IdType != value))
+				{
+					this._IdType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NombreHits", DbType="Int NOT NULL")]
+		public int NombreHits
+		{
+			get
+			{
+				return this._NombreHits;
+			}
+			set
+			{
+				if ((this._NombreHits != value))
+				{
+					this._NombreHits = value;
+				}
 			}
 		}
 	}

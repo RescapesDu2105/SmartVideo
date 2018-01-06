@@ -17,6 +17,11 @@ namespace BusinessLogicLayer
             return dal.GetFilmById(idFilm);
         }
 
+        public static FilmDTO getFilmByName(String filmName)
+        {
+            return dal.GetFilmByName(filmName);
+        }
+
         public static List<FilmDTO> getFilms(String table, String critere, int page)
         {
             List<FilmDTO> listFilms = dal.GetFilms(table, critere, page);
@@ -45,6 +50,10 @@ namespace BusinessLogicLayer
             Film.Genres = dal.GetGenresFilm(Film.Id);
 
             return Film;
+        }
+        public static ActorDTO isActorExists(String actorName)
+        {
+            return dal.IsActorExists(actorName);
         }
         
         public static List<ActorDTO> getActors()
