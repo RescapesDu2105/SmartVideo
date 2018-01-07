@@ -107,9 +107,17 @@ namespace SmartWCFService
         {
             return BLLSmartVideo.GetLocations();
         }
-        public void AddHits(String IdClient, int IdCritere, DateTime date, String critere)
+        public void AddHits(String IdClient, int IdCritere, DateTime date, String Type)
         {
             BLLSmartVideo.AddHits(IdClient, IdCritere, date, Type);
+        }
+        public List<int> TopThreeFilms()
+        {
+            BLLSmartVideo.TopThreeFilms();
+        }
+        public List<int> TopThreeActors()
+        {
+            BLLSmartVideo.TopThreeActors();
         }
     }
 }

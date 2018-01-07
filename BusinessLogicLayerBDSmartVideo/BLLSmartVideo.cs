@@ -50,5 +50,13 @@ namespace BusinessLogicLayerBDSmartVideo
         {
             dal.AddHits(IdClient, IdCritere, date, Type);
         }
+        public static List<int> TopThreeFilms()
+        {
+            return dal.TopThreeFilms();
+        }
+        public static List<int> TopThreeActors()
+        {
+            return dal.TopThreeActors();
+        }
     }
 }

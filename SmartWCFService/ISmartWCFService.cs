@@ -78,5 +78,11 @@ namespace SmartWCFService
 
         [OperationContract]
         void AddHits(String IdClient, int IdCritere, DateTime date, String Type);
+
+        [OperationContract]
+        List<int> TopThreeFilms();
+
+        [OperationContract]
+        List<int> TopThreeActors();
     }
 }

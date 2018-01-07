@@ -18,8 +18,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartVideoWindowsService", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWCFService", "SmartWCFService\SmartWCFService.csproj", "{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartStatService", "SmartStatService\SmartStatService.csproj", "{D6BCF0FA-285A-4CAE-ABAC-59D756B4B678}"
-EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web@SmartVideo(1)", "Web@SmartVideo\", "{D4992CD4-BE45-4B2A-AA9A-F4C2F65E1574}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
@@ -48,6 +46,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayerBDSmartVideo", "BusinessLogicLayerBDSmartVideo\BusinessLogicLayerBDSmartVideo.csproj", "{9416AD9D-A99B-4F7C-B709-67C6F8C31895}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{AEDAC4B1-A850-44AF-8E77-695842789D7F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842} = {E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartStatService", "SmartStatService\SmartStatService.csproj", "{E3F15969-A076-4C40-A755-2267D7DA64DD}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842} = {E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}
 	EndProjectSection
@@ -82,10 +85,6 @@ Global
 		{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9029A27-6FD7-4C6D-A9B9-F9368B7B0842}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6BCF0FA-285A-4CAE-ABAC-59D756B4B678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6BCF0FA-285A-4CAE-ABAC-59D756B4B678}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6BCF0FA-285A-4CAE-ABAC-59D756B4B678}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6BCF0FA-285A-4CAE-ABAC-59D756B4B678}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D4992CD4-BE45-4B2A-AA9A-F4C2F65E1574}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D4992CD4-BE45-4B2A-AA9A-F4C2F65E1574}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4992CD4-BE45-4B2A-AA9A-F4C2F65E1574}.Release|Any CPU.ActiveCfg = Debug|Any CPU
@@ -102,6 +101,10 @@ Global
 		{AEDAC4B1-A850-44AF-8E77-695842789D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEDAC4B1-A850-44AF-8E77-695842789D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEDAC4B1-A850-44AF-8E77-695842789D7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3F15969-A076-4C40-A755-2267D7DA64DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3F15969-A076-4C40-A755-2267D7DA64DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3F15969-A076-4C40-A755-2267D7DA64DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3F15969-A076-4C40-A755-2267D7DA64DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

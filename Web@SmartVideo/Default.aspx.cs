@@ -53,7 +53,7 @@ public partial class _Default : System.Web.UI.Page
                         FilmDTO Film = Service.GetFilmByName((String)Session["SearchInput"]);
                         if(Film != null)
                         {
-                            Service.AddHits(new UserManager().FindById(User.Identity.GetUserId()).Id, Film.Id, new DateTime(), "Film");
+                            Service.AddHits(new UserManager().FindById(User.Identity.GetUserId()).Id, Film.Id, DateTime.Now, "Film");
                         }
                     }
 
@@ -86,7 +86,7 @@ public partial class _Default : System.Web.UI.Page
                     ActorDTO Actor = Service.IsActorExists((String)Session["SearchInput"]);
                     if (Actor != null)
                     {
-                        Service.AddHits(new UserManager().FindById(User.Identity.GetUserId()).Id, Actor.Id, new DateTime(), "Actor");
+                        Service.AddHits(new UserManager().FindById(User.Identity.GetUserId()).Id, Actor.Id, DateTime.Now, "Actor");
                     }
 
                     Session["Recherche"] = "Actor";

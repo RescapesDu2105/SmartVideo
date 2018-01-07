@@ -12,15 +12,9 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            List<ServiceReference.FilmDTO> ListeTemp = Test();
 
-            Console.WriteLine(ListeTemp.Count);
+            Console.WriteLine(new SmartWCFServiceClient().TopThreeFilms());
             Console.ReadKey();
-        }
-
-        public static List<ServiceReference.FilmDTO> Test()
-        {
-            return new SmartWCFServiceClient().GetFilms("Film", "Star Wars", 0).ToList();
         }
     }
 }

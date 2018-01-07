@@ -81,6 +81,28 @@ namespace DataAccessLayerBDSmartVideo
             instanceDC.GetTable<Hits>().InsertOnSubmit(hits);
             instanceDC.SubmitChanges();
         }
+        public List<int> TopThreeFilms()
+        {
+            DateTime date = DateTime.Now.AddDays(-1.0);
+            List<int> listeHits = instanceDC.Hits
+                                        .Where(h => h.Date.Year == date.Year && h.Date.Month == date.Month && h.Date.Day == date.Day && h.Type == "Film")
+                                        .GroupBy(h => h.IdType) //&& h.Date.Year == date.Year && h.Date.Month == date.Month && h.Date.Day == date.Day && h.Type == "Film")
+                                        .Select(grp => grp.Key)
+                                        .Take(3)
+                                        .ToList();
+
+            return listeHits;
+
+                                /*(from h in instanceDC.Hits
+                                 group h by h.IdType into grp
+                                 where Date.Year == date.Year && h.Date.Month == date.Month && h.Date.Day == date.Day && h.== "Film"
+                                 select h.IdType); */
+            //instanceDC.Hits.Where(h => h.Date.Year == date.Year && h.Date.Month == date.Month && h.Date.Day == date.Day).ToList();
+        }
+        public List<int> TopThreeActors()
+        {
+            return null;
+        }
         #region Get All
         public List<ClientDTO> GetClients()
         {

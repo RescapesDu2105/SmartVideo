@@ -284,7 +284,8 @@ namespace DataAccessLayerDBFilm
             return instanceDC.Film.Count();
         }
 
-    #region Action sur un film
+
+        #region Action sur un film
         public void UpdateTrailerFilm(int idFilm, String url)
         {
             Film film = instanceDC.Film.Where(d => d.id == idFilm).SingleOrDefault();
