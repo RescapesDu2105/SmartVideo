@@ -21,12 +21,13 @@ namespace BusinessLogicLayer
         {
             return dal.GetFilmByName(filmName);
         }
-
+        public static List<FilmDTO> getAllFilms()
+        {          
+            return dal.GetAllFilms();
+        }
         public static List<FilmDTO> getFilms(String table, String critere, int page)
         {
-            List<FilmDTO> listFilms = dal.GetFilms(table, critere, page);
-
-            return listFilms;
+            return dal.GetFilms(table, critere, page);
         }
 
         public static List<FilmDTO> getNumberOfFilms()

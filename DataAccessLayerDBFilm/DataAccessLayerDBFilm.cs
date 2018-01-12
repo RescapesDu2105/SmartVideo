@@ -83,6 +83,18 @@ namespace DataAccessLayerDBFilm
     #endregion GetById
 
     #region Get
+        public List<FilmDTO> GetAllFilms()
+        {
+            List<Film> listeFilms = null;
+            List<FilmDTO> listeFilmDTO = new List<FilmDTO>();
+
+            listeFilms = instanceDC.Film.ToList();
+
+            foreach (Film film in listeFilms)
+                listeFilmDTO.Add(ToFilmDTO(film));
+
+            return listeFilmDTO;
+        }
         public List<FilmDTO> GetFilms(String table, String critere, int page)
         {
             List<Film> listFilm = null;
