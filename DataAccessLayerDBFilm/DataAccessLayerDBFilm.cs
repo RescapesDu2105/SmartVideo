@@ -290,7 +290,6 @@ namespace DataAccessLayerDBFilm
 
             return listFilmDTO.Count;
         }
-
         public int CountFilms()
         {
             return instanceDC.Film.Count();
