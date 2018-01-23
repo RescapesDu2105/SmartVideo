@@ -27,6 +27,12 @@ namespace SmartStatService.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetFilmById", ReplyAction="http://tempuri.org/ISmartWCFService/GetFilmByIdResponse")]
         System.Threading.Tasks.Task<DTOLib.FilmDTO> GetFilmByIdAsync(int idFilm);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetActorByIdActor", ReplyAction="http://tempuri.org/ISmartWCFService/GetActorByIdActorResponse")]
+        DTOLib.ActorDTO GetActorByIdActor(int idActor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetActorByIdActor", ReplyAction="http://tempuri.org/ISmartWCFService/GetActorByIdActorResponse")]
+        System.Threading.Tasks.Task<DTOLib.ActorDTO> GetActorByIdActorAsync(int idActor);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetFilmByName", ReplyAction="http://tempuri.org/ISmartWCFService/GetFilmByNameResponse")]
         DTOLib.FilmDTO GetFilmByName(string filmName);
         
@@ -170,15 +176,27 @@ namespace SmartStatService.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/AddStatistiques", ReplyAction="http://tempuri.org/ISmartWCFService/AddStatistiquesResponse")]
         System.Threading.Tasks.Task AddStatistiquesAsync(System.Collections.Generic.Dictionary<int, int> Top3Films, System.Collections.Generic.Dictionary<int, int> Top3Acteurs);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetStatistiquesFilms", ReplyAction="http://tempuri.org/ISmartWCFService/GetStatistiquesFilmsResponse")]
+        DTOLib.StatistiquesDTO[] GetStatistiquesFilms();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetStatistiquesFilms", ReplyAction="http://tempuri.org/ISmartWCFService/GetStatistiquesFilmsResponse")]
+        System.Threading.Tasks.Task<DTOLib.StatistiquesDTO[]> GetStatistiquesFilmsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetStatistiquesActeurs", ReplyAction="http://tempuri.org/ISmartWCFService/GetStatistiquesActeursResponse")]
+        DTOLib.StatistiquesDTO[] GetStatistiquesActeurs();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetStatistiquesActeurs", ReplyAction="http://tempuri.org/ISmartWCFService/GetStatistiquesActeursResponse")]
+        System.Threading.Tasks.Task<DTOLib.StatistiquesDTO[]> GetStatistiquesActeursAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ISmartWCFServiceChannel : SmartStatService.ServiceReference.ISmartWCFService, System.ServiceModel.IClientChannel {
+    public interface ISmartWCFServiceChannel : ServiceReference.ISmartWCFService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SmartWCFServiceClient : System.ServiceModel.ClientBase<SmartStatService.ServiceReference.ISmartWCFService>, SmartStatService.ServiceReference.ISmartWCFService {
+    public partial class SmartWCFServiceClient : System.ServiceModel.ClientBase<ServiceReference.ISmartWCFService>, ServiceReference.ISmartWCFService {
         
         public SmartWCFServiceClient() {
         }
@@ -213,6 +231,14 @@ namespace SmartStatService.ServiceReference {
         
         public System.Threading.Tasks.Task<DTOLib.FilmDTO> GetFilmByIdAsync(int idFilm) {
             return base.Channel.GetFilmByIdAsync(idFilm);
+        }
+        
+        public DTOLib.ActorDTO GetActorByIdActor(int idActor) {
+            return base.Channel.GetActorByIdActor(idActor);
+        }
+        
+        public System.Threading.Tasks.Task<DTOLib.ActorDTO> GetActorByIdActorAsync(int idActor) {
+            return base.Channel.GetActorByIdActorAsync(idActor);
         }
         
         public DTOLib.FilmDTO GetFilmByName(string filmName) {
@@ -405,6 +431,22 @@ namespace SmartStatService.ServiceReference {
         
         public System.Threading.Tasks.Task AddStatistiquesAsync(System.Collections.Generic.Dictionary<int, int> Top3Films, System.Collections.Generic.Dictionary<int, int> Top3Acteurs) {
             return base.Channel.AddStatistiquesAsync(Top3Films, Top3Acteurs);
+        }
+        
+        public DTOLib.StatistiquesDTO[] GetStatistiquesFilms() {
+            return base.Channel.GetStatistiquesFilms();
+        }
+        
+        public System.Threading.Tasks.Task<DTOLib.StatistiquesDTO[]> GetStatistiquesFilmsAsync() {
+            return base.Channel.GetStatistiquesFilmsAsync();
+        }
+        
+        public DTOLib.StatistiquesDTO[] GetStatistiquesActeurs() {
+            return base.Channel.GetStatistiquesActeurs();
+        }
+        
+        public System.Threading.Tasks.Task<DTOLib.StatistiquesDTO[]> GetStatistiquesActeursAsync() {
+            return base.Channel.GetStatistiquesActeursAsync();
         }
     }
 }

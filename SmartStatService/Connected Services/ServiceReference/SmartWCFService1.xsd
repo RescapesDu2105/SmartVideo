@@ -30,6 +30,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetActorByIdActor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idActor" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetActorByIdActorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetActorByIdActorResult" nillable="true" type="q2:ActorDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetFilmByName">
     <xs:complexType>
       <xs:sequence>
@@ -40,7 +54,7 @@
   <xs:element name="GetFilmByNameResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetFilmByNameResult" nillable="true" type="q2:FilmDTO" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetFilmByNameResult" nillable="true" type="q3:FilmDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -56,7 +70,7 @@
   <xs:element name="GetFilmsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetFilmsResult" nillable="true" type="q3:ArrayOfFilmDTO" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetFilmsResult" nillable="true" type="q4:ArrayOfFilmDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -68,21 +82,21 @@
   <xs:element name="GetNumberOfFilmsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetNumberOfFilmsResult" nillable="true" type="q4:ArrayOfFilmDTO" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetNumberOfFilmsResult" nillable="true" type="q5:ArrayOfFilmDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetFilmInfos">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="Film" nillable="true" type="q5:FilmDTO" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="Film" nillable="true" type="q6:FilmDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetFilmInfosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetFilmInfosResult" nillable="true" type="q6:FilmDTO" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetFilmInfosResult" nillable="true" type="q7:FilmDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -96,7 +110,7 @@
   <xs:element name="GetFilmsPageResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetFilmsPageResult" nillable="true" type="q7:ArrayOfFilmDTO" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetFilmsPageResult" nillable="true" type="q8:ArrayOfFilmDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -108,7 +122,7 @@
   <xs:element name="GetActorsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetActorsResult" nillable="true" type="q8:ArrayOfActorDTO" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetActorsResult" nillable="true" type="q9:ArrayOfActorDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -122,7 +136,7 @@
   <xs:element name="IsActorExistsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="IsActorExistsResult" nillable="true" type="q9:ActorDTO" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="IsActorExistsResult" nillable="true" type="q10:ActorDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -134,7 +148,7 @@
   <xs:element name="GetGenresResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetGenresResult" nillable="true" type="q10:ArrayOfGenreDTO" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetGenresResult" nillable="true" type="q11:ArrayOfGenreDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -146,7 +160,7 @@
   <xs:element name="GetDirectorsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetDirectorsResult" nillable="true" type="q11:ArrayOfDirectorDTO" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetDirectorsResult" nillable="true" type="q12:ArrayOfDirectorDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -200,7 +214,7 @@
   <xs:element name="GetClientByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetClientByIdResult" nillable="true" type="q12:ClientDTO" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetClientByIdResult" nillable="true" type="q13:ClientDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -214,7 +228,7 @@
   <xs:element name="GetHitsByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetHitsByIdResult" nillable="true" type="q13:HitsDTO" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetHitsByIdResult" nillable="true" type="q14:HitsDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -228,7 +242,7 @@
   <xs:element name="GetLocationByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetLocationByIdResult" nillable="true" type="q14:LocationDTO" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetLocationByIdResult" nillable="true" type="q15:LocationDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -242,7 +256,7 @@
   <xs:element name="GetLocationsClientResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetLocationsClientResult" nillable="true" type="q15:ArrayOfLocationDTO" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetLocationsClientResult" nillable="true" type="q16:ArrayOfLocationDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -268,7 +282,7 @@
   <xs:element name="GetClientsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetClientsResult" nillable="true" type="q16:ArrayOfClientDTO" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetClientsResult" nillable="true" type="q17:ArrayOfClientDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -280,7 +294,7 @@
   <xs:element name="GetHitsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetHitsResult" nillable="true" type="q17:ArrayOfHitsDTO" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetHitsResult" nillable="true" type="q18:ArrayOfHitsDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -292,7 +306,7 @@
   <xs:element name="GetLocationsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetLocationsResult" nillable="true" type="q18:ArrayOfLocationDTO" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetLocationsResult" nillable="true" type="q19:ArrayOfLocationDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -319,7 +333,7 @@
   <xs:element name="GetHitsFilmsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetHitsFilmsResult" nillable="true" type="q19:ArrayOfHitsDTO" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetHitsFilmsResult" nillable="true" type="q20:ArrayOfHitsDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -331,21 +345,45 @@
   <xs:element name="GetHitsActeursResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetHitsActeursResult" nillable="true" type="q20:ArrayOfHitsDTO" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetHitsActeursResult" nillable="true" type="q21:ArrayOfHitsDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddStatistiques">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Top3Films" nillable="true" type="q21:ArrayOfKeyValueOfintint" />
-        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Top3Acteurs" nillable="true" type="q22:ArrayOfKeyValueOfintint" />
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Top3Films" nillable="true" type="q22:ArrayOfKeyValueOfintint" />
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Top3Acteurs" nillable="true" type="q23:ArrayOfKeyValueOfintint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AddStatistiquesResponse">
     <xs:complexType>
       <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatistiquesFilms">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatistiquesFilmsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetStatistiquesFilmsResult" nillable="true" type="q24:ArrayOfStatistiquesDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatistiquesActeurs">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStatistiquesActeursResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetStatistiquesActeursResult" nillable="true" type="q25:ArrayOfStatistiquesDTO" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

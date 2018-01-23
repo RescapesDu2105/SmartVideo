@@ -28,7 +28,7 @@ namespace SmartStatService
             // Service will have Start Type of Manual
             serviceInstaller.StartType = ServiceStartMode.Manual;
 
-            serviceInstaller.ServiceName = "MyWindowsService";
+            serviceInstaller.ServiceName = "SmartStatService";
 
             Installers.Add(serviceInstaller);
             Installers.Add(processInstaller);
@@ -39,13 +39,13 @@ namespace SmartStatService
         {
             base.Install(stateSaver);
 
-            EventLog.WriteEntry("MyWindowsService","Installation de mon service", EventLogEntryType.Information);
+            EventLog.WriteEntry("SmartStatService", "Installation de mon service", EventLogEntryType.Information);
         }
 
         public override void Uninstall(System.Collections.IDictionary savedState)
         {
             base.Uninstall(savedState);
-            EventLog.WriteEntry("MyWindowsService","Désinstallation de mon service", EventLogEntryType.Information);
+            EventLog.WriteEntry("SmartStatService", "Désinstallation de mon service", EventLogEntryType.Information);
         }
     }
 }

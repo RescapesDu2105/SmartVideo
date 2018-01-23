@@ -107,4 +107,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfHitsDTO" nillable="true" type="tns:ArrayOfHitsDTO" />
+  <xs:complexType name="ArrayOfStatistiquesDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StatistiquesDTO" nillable="true" type="tns:StatistiquesDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStatistiquesDTO" nillable="true" type="tns:ArrayOfStatistiquesDTO" />
+  <xs:complexType name="StatistiquesDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IdType" type="xs:int" />
+      <xs:element minOccurs="0" name="NombreHits" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StatistiquesDTO" nillable="true" type="tns:StatistiquesDTO" />
 </xs:schema>

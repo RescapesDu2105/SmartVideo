@@ -20,6 +20,12 @@
   <wsdl:message name="ISmartWCFService_GetFilmById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetFilmByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetActorByIdActor_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActorByIdActor" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetActorByIdActor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActorByIdActorResponse" />
+  </wsdl:message>
   <wsdl:message name="ISmartWCFService_GetFilmByName_InputMessage">
     <wsdl:part name="parameters" element="tns:GetFilmByName" />
   </wsdl:message>
@@ -164,6 +170,18 @@
   <wsdl:message name="ISmartWCFService_AddStatistiques_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddStatistiquesResponse" />
   </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetStatistiquesFilms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatistiquesFilms" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetStatistiquesFilms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatistiquesFilmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetStatistiquesActeurs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatistiquesActeurs" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_GetStatistiquesActeurs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatistiquesActeursResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISmartWCFService">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetData" message="tns:ISmartWCFService_GetData_InputMessage" />
@@ -172,6 +190,10 @@
     <wsdl:operation name="GetFilmById">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmById" message="tns:ISmartWCFService_GetFilmById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmByIdResponse" message="tns:ISmartWCFService_GetFilmById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActorByIdActor">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetActorByIdActor" message="tns:ISmartWCFService_GetActorByIdActor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetActorByIdActorResponse" message="tns:ISmartWCFService_GetActorByIdActor_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetFilmByName">
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetFilmByName" message="tns:ISmartWCFService_GetFilmByName_InputMessage" />
@@ -269,6 +291,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/AddStatistiques" message="tns:ISmartWCFService_AddStatistiques_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/AddStatistiquesResponse" message="tns:ISmartWCFService_AddStatistiques_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetStatistiquesFilms">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetStatistiquesFilms" message="tns:ISmartWCFService_GetStatistiquesFilms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetStatistiquesFilmsResponse" message="tns:ISmartWCFService_GetStatistiquesFilms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatistiquesActeurs">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetStatistiquesActeurs" message="tns:ISmartWCFService_GetStatistiquesActeurs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetStatistiquesActeursResponse" message="tns:ISmartWCFService_GetStatistiquesActeurs_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISmartWCFService" type="tns:ISmartWCFService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -283,6 +313,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetFilmById">
       <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetFilmById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActorByIdActor">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetActorByIdActor" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -499,6 +538,24 @@
     </wsdl:operation>
     <wsdl:operation name="AddStatistiques">
       <soap:operation soapAction="http://tempuri.org/ISmartWCFService/AddStatistiques" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatistiquesFilms">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetStatistiquesFilms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatistiquesActeurs">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetStatistiquesActeurs" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

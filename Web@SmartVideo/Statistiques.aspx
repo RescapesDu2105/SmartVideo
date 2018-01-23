@@ -16,7 +16,7 @@
     <%  if (StatsFilms.Count == 0 && StatsActeurs.Count == 0)
         { %>
             <div class="row justify-content-md-center mt-4 mb-2">
-                <div id="alert" class="alert alert-info" role="alert">Aucune statistique à afficher !</div>
+                <div class="alert alert-info" role="alert">Aucune statistique à afficher !</div>
             </div>
     <%  }
         else

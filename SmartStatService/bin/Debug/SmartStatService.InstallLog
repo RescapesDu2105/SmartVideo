@@ -1,0 +1,39 @@
+﻿Installation de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.InstallLog
+Installation du service MyWindowsService en cours...
+Création d'une source EventLog MyWindowsService dans le journal Application...
+Restauration de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.InstallLog
+Restauration de l'état précédent du journal des événements pour la source MyWindowsService.
+Installation de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.InstallLog
+Installation du service MyWindowsService en cours...
+Création d'une source EventLog MyWindowsService dans le journal Application...
+Restauration de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.InstallLog
+Restauration de l'état précédent du journal des événements pour la source MyWindowsService.
+Installation de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.InstallLog
+Installation du service SmartStatService en cours...
+Le service SmartStatService a été installé avec succès.
+Création d'une source EventLog SmartStatService dans le journal Application...
+Validation de l'assembly 'E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe'.
+Les paramètres affectés sont :
+   logtoconsole = 
+   assemblypath = E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe
+   logfile = E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.InstallLog

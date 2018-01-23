@@ -85,6 +85,7 @@
     <None Include="Properties\DataSources\DTOLib.GenreDTO.datasource" />
     <None Include="Properties\DataSources\DTOLib.HitsDTO.datasource" />
     <None Include="Properties\DataSources\DTOLib.LocationDTO.datasource" />
+    <None Include="Properties\DataSources\DTOLib.StatistiquesDTO.datasource" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
