@@ -81,9 +81,39 @@ namespace DataAccessLayerBDSmartVideo
             instanceDC.GetTable<Hits>().InsertOnSubmit(hits);
             instanceDC.SubmitChanges();
         }
-        public List<int> TopThreeFilms()
+        public void AddStatistiques(Dictionary<int, int> Top3Films, Dictionary<int, int> Top3Acteurs)
         {
-            DateTime date = DateTime.Now.AddDays(-1.0);
+            for(int i = 0; Top3Films.Count > 0 && i < 3; i++)
+            {
+                Statistiques statistiques = new Statistiques()
+                {
+                    //Id = instanceDC.GetTable<Statistiques>().Count() + 1,
+                    Date = DateTime.Now,
+                    Type = "Film",
+                    IdType = Top3Films.ElementAt(i).Key,
+                    NombreHits = Top3Films.ElementAt(i).Value
+                };
+                instanceDC.GetTable<Statistiques>().InsertOnSubmit(statistiques);
+            }
+
+            for (int i = 0; Top3Acteurs.Count > 0 && i < 3; i++)
+            {
+                Statistiques statistiques = new Statistiques()
+                {
+                    //Id = instanceDC.GetTable<Statistiques>().Count() + 1,
+                    Date = DateTime.Now,
+                    Type = "Acteur",
+                    IdType = Top3Acteurs.ElementAt(i).Key,
+                    NombreHits = Top3Acteurs.ElementAt(i).Value
+                };
+                instanceDC.GetTable<Statistiques>().InsertOnSubmit(statistiques);
+            }
+
+            instanceDC.SubmitChanges();
+        }
+        public List<HitsDTO> GetHitsFilms()
+        {
+            /*DateTime date = DateTime.Now.AddDays(-1.0);
             List<int> listeHits = instanceDC.Hits
                                         .Where(h => h.Date.Year == date.Year && h.Date.Month == date.Month && h.Date.Day == date.Day && h.Type == "Film")
                                         .GroupBy(h => h.IdType) //&& h.Date.Year == date.Year && h.Date.Month == date.Month && h.Date.Day == date.Day && h.Type == "Film")
@@ -91,17 +121,29 @@ namespace DataAccessLayerBDSmartVideo
                                         .Take(3)
                                         .ToList();
 
-            return listeHits;
+            return listeHits;*/
 
-                                /*(from h in instanceDC.Hits
-                                 group h by h.IdType into grp
-                                 where Date.Year == date.Year && h.Date.Month == date.Month && h.Date.Day == date.Day && h.== "Film"
-                                 select h.IdType); */
-            //instanceDC.Hits.Where(h => h.Date.Year == date.Year && h.Date.Month == date.Month && h.Date.Day == date.Day).ToList();
+            List<Hits> Hits = instanceDC.Hits.Where(h => h.Type.Equals("Film")).ToList();
+            List<HitsDTO> HitsDTO = new List<HitsDTO>();
+
+            foreach (Hits hits in Hits)
+            {
+                HitsDTO.Add(ToHitsDTO(hits));
+            }
+
+            return HitsDTO;
         }
-        public List<int> TopThreeActors()
+        public List<HitsDTO> GetHitsActeurs()
         {
-            return null;
+            List<Hits> Hits = instanceDC.Hits.Where(h => h.Type.Equals("Acteur")).ToList();
+            List<HitsDTO> HitsDTO = new List<HitsDTO>();
+
+            foreach(Hits hits in Hits)
+            {
+                HitsDTO.Add(ToHitsDTO(hits));
+            }
+
+            return HitsDTO;
         }
         #region Get All
         public List<ClientDTO> GetClients()
@@ -140,6 +182,32 @@ namespace DataAccessLayerBDSmartVideo
 
             return listLocationDTO;
         }
+        public List<StatistiquesDTO> GetStatistiquesFilms()
+        {
+            DateTime Date = DateTime.Now.AddDays(-1.0);
+            List<Statistiques> listStats = instanceDC.Statistiques.Where(s => s.Date.Year == Date.Year && s.Date.Month == Date.Month && s.Date.Day == Date.Day && s.Type.Equals("Film")).OrderBy(s => s.NombreHits).ToList();
+            List<StatistiquesDTO> listStatsDTO = new List<StatistiquesDTO>();
+
+            foreach (Statistiques stats in listStats)
+            {
+                listStatsDTO.Add(ToStatistiquesDTO(stats));
+            }
+
+            return listStatsDTO;
+        }
+        public List<StatistiquesDTO> GetStatistiquesActeurs()
+        {
+            DateTime Date = DateTime.Now.AddDays(-1.0);
+            List<Statistiques> listStats = instanceDC.Statistiques.Where(s => s.Date.Year == Date.Year && s.Date.Month == Date.Month && s.Date.Day == Date.Day && s.Type.Equals("Acteur")).OrderBy(s => s.NombreHits).ToList();
+            List<StatistiquesDTO> listStatsDTO = new List<StatistiquesDTO>();
+
+            foreach (Statistiques stats in listStats)
+            {
+                listStatsDTO.Add(ToStatistiquesDTO(stats));
+            }
+
+            return listStatsDTO;
+        }
         #endregion
 
         #region To*DTO
@@ -161,6 +229,7 @@ namespace DataAccessLayerBDSmartVideo
             hitsDTO.IdClient = hits.IdClient;
             hitsDTO.Date = hits.Date;
             hitsDTO.Type = hits.Type;
+            hitsDTO.IdType = hits.IdType;
 
             return hitsDTO;
         }
@@ -173,6 +242,17 @@ namespace DataAccessLayerBDSmartVideo
             locationDTO.DateFin = location.DateFin;
 
             return locationDTO;
+        }
+        public StatistiquesDTO ToStatistiquesDTO(Statistiques stats)
+        {
+            StatistiquesDTO statsDTO = new StatistiquesDTO();
+            statsDTO.Id = stats.Id;
+            statsDTO.Type = stats.Type;
+            statsDTO.IdType = stats.IdType;
+            statsDTO.Date = stats.Date;
+            statsDTO.NombreHits = stats.NombreHits;
+
+            return statsDTO;
         }
         #endregion To*DTO
     }

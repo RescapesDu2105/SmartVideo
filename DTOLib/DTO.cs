@@ -89,6 +89,7 @@ namespace DTOLib
         public String IdClient { get; set; }
         public DateTime Date { get; set; }
         public String Type { get; set; }
+        public int IdType { get; set; }
 
         public override string ToString()
         {

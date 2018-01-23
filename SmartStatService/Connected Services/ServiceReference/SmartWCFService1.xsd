@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:60888/SmartWCFService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DTOLib" />
+  <xs:import schemaLocation="http://localhost:60888/SmartWCFService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="GetData">
     <xs:complexType>
       <xs:sequence>
@@ -310,22 +311,39 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="TopThreeFilms">
+  <xs:element name="GetHitsFilms">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="TopThreeFilmsResponse">
+  <xs:element name="GetHitsFilmsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetHitsFilmsResult" nillable="true" type="q19:ArrayOfHitsDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHitsActeurs">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="TopThreeActors">
+  <xs:element name="GetHitsActeursResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/DTOLib" minOccurs="0" name="GetHitsActeursResult" nillable="true" type="q20:ArrayOfHitsDTO" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="TopThreeActorsResponse">
+  <xs:element name="AddStatistiques">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Top3Films" nillable="true" type="q21:ArrayOfKeyValueOfintint" />
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Top3Acteurs" nillable="true" type="q22:ArrayOfKeyValueOfintint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddStatistiquesResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

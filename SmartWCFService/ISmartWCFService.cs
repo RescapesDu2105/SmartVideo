@@ -16,6 +16,9 @@ namespace SmartWCFService
         FilmDTO GetFilmById(int idFilm);
 
         [OperationContract]
+        ActorDTO GetActorByIdActor(int idActor);
+
+        [OperationContract]
         FilmDTO GetFilmByName(String filmName);
 
         [OperationContract]
@@ -80,9 +83,18 @@ namespace SmartWCFService
         void AddHits(String IdClient, int IdCritere, DateTime date, String Type);
 
         [OperationContract]
-        List<int> TopThreeFilms();
+        List<HitsDTO> GetHitsFilms();
 
         [OperationContract]
-        List<int> TopThreeActors();
+        List<HitsDTO> GetHitsActeurs();
+
+        [OperationContract]
+        void AddStatistiques(Dictionary<int, int> Top3Films, Dictionary<int, int> Top3Acteurs);
+
+        [OperationContract]
+        List<StatistiquesDTO> GetStatistiquesFilms();
+
+        [OperationContract]
+        List<StatistiquesDTO> GetStatistiquesActeurs();
     }
 }

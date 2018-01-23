@@ -153,17 +153,23 @@ namespace SmartStatService.ServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/AddHits", ReplyAction="http://tempuri.org/ISmartWCFService/AddHitsResponse")]
         System.Threading.Tasks.Task AddHitsAsync(string IdClient, int IdCritere, System.DateTime date, string Type);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/TopThreeFilms", ReplyAction="http://tempuri.org/ISmartWCFService/TopThreeFilmsResponse")]
-        void TopThreeFilms();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetHitsFilms", ReplyAction="http://tempuri.org/ISmartWCFService/GetHitsFilmsResponse")]
+        DTOLib.HitsDTO[] GetHitsFilms();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/TopThreeFilms", ReplyAction="http://tempuri.org/ISmartWCFService/TopThreeFilmsResponse")]
-        System.Threading.Tasks.Task TopThreeFilmsAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetHitsFilms", ReplyAction="http://tempuri.org/ISmartWCFService/GetHitsFilmsResponse")]
+        System.Threading.Tasks.Task<DTOLib.HitsDTO[]> GetHitsFilmsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/TopThreeActors", ReplyAction="http://tempuri.org/ISmartWCFService/TopThreeActorsResponse")]
-        void TopThreeActors();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetHitsActeurs", ReplyAction="http://tempuri.org/ISmartWCFService/GetHitsActeursResponse")]
+        DTOLib.HitsDTO[] GetHitsActeurs();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/TopThreeActors", ReplyAction="http://tempuri.org/ISmartWCFService/TopThreeActorsResponse")]
-        System.Threading.Tasks.Task TopThreeActorsAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/GetHitsActeurs", ReplyAction="http://tempuri.org/ISmartWCFService/GetHitsActeursResponse")]
+        System.Threading.Tasks.Task<DTOLib.HitsDTO[]> GetHitsActeursAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/AddStatistiques", ReplyAction="http://tempuri.org/ISmartWCFService/AddStatistiquesResponse")]
+        void AddStatistiques(System.Collections.Generic.Dictionary<int, int> Top3Films, System.Collections.Generic.Dictionary<int, int> Top3Acteurs);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISmartWCFService/AddStatistiques", ReplyAction="http://tempuri.org/ISmartWCFService/AddStatistiquesResponse")]
+        System.Threading.Tasks.Task AddStatistiquesAsync(System.Collections.Generic.Dictionary<int, int> Top3Films, System.Collections.Generic.Dictionary<int, int> Top3Acteurs);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -377,20 +383,28 @@ namespace SmartStatService.ServiceReference {
             return base.Channel.AddHitsAsync(IdClient, IdCritere, date, Type);
         }
         
-        public void TopThreeFilms() {
-            base.Channel.TopThreeFilms();
+        public DTOLib.HitsDTO[] GetHitsFilms() {
+            return base.Channel.GetHitsFilms();
         }
         
-        public System.Threading.Tasks.Task TopThreeFilmsAsync() {
-            return base.Channel.TopThreeFilmsAsync();
+        public System.Threading.Tasks.Task<DTOLib.HitsDTO[]> GetHitsFilmsAsync() {
+            return base.Channel.GetHitsFilmsAsync();
         }
         
-        public void TopThreeActors() {
-            base.Channel.TopThreeActors();
+        public DTOLib.HitsDTO[] GetHitsActeurs() {
+            return base.Channel.GetHitsActeurs();
         }
         
-        public System.Threading.Tasks.Task TopThreeActorsAsync() {
-            return base.Channel.TopThreeActorsAsync();
+        public System.Threading.Tasks.Task<DTOLib.HitsDTO[]> GetHitsActeursAsync() {
+            return base.Channel.GetHitsActeursAsync();
+        }
+        
+        public void AddStatistiques(System.Collections.Generic.Dictionary<int, int> Top3Films, System.Collections.Generic.Dictionary<int, int> Top3Acteurs) {
+            base.Channel.AddStatistiques(Top3Films, Top3Acteurs);
+        }
+        
+        public System.Threading.Tasks.Task AddStatistiquesAsync(System.Collections.Generic.Dictionary<int, int> Top3Films, System.Collections.Generic.Dictionary<int, int> Top3Acteurs) {
+            return base.Channel.AddStatistiquesAsync(Top3Films, Top3Acteurs);
         }
     }
 }

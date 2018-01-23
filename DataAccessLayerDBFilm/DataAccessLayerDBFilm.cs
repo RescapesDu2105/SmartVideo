@@ -72,9 +72,13 @@ namespace DataAccessLayerDBFilm
         {
             return instanceDC.Genre.Where(d => d.id == idFilm).SingleOrDefault();
         }
-        public Actor GetActorById(int idFilm)
+        public Actor GetActorByIdFilm(int idFilm)
         {
             return instanceDC.Actor.Where(d => d.id == idFilm).SingleOrDefault();
+        }
+        public ActorDTO GetActorByIdActor(int idActor)
+        {
+            return ToActorDTO(instanceDC.Actor.Where(d => d.id == idActor).SingleOrDefault());
         }
         public Director GetDirectorById(int idFilm)
         {

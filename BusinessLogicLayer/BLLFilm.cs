@@ -61,6 +61,10 @@ namespace BusinessLogicLayer
         {
             return dal.GetActors();
         }
+        public static ActorDTO getActorByIdActor(int idActor)
+        {
+            return dal.GetActorByIdActor(idActor);
+        }
 
         public static List<GenreDTO> getGenres()
         {

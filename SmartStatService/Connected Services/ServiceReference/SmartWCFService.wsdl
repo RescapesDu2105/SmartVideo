@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:60888/SmartWCFService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:60888/SmartWCFService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:60888/SmartWCFService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DTOLib" />
+      <xsd:import schemaLocation="http://localhost:60888/SmartWCFService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ISmartWCFService_GetData_InputMessage">
@@ -145,17 +146,23 @@
   <wsdl:message name="ISmartWCFService_AddHits_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddHitsResponse" />
   </wsdl:message>
-  <wsdl:message name="ISmartWCFService_TopThreeFilms_InputMessage">
-    <wsdl:part name="parameters" element="tns:TopThreeFilms" />
+  <wsdl:message name="ISmartWCFService_GetHitsFilms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHitsFilms" />
   </wsdl:message>
-  <wsdl:message name="ISmartWCFService_TopThreeFilms_OutputMessage">
-    <wsdl:part name="parameters" element="tns:TopThreeFilmsResponse" />
+  <wsdl:message name="ISmartWCFService_GetHitsFilms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHitsFilmsResponse" />
   </wsdl:message>
-  <wsdl:message name="ISmartWCFService_TopThreeActors_InputMessage">
-    <wsdl:part name="parameters" element="tns:TopThreeActors" />
+  <wsdl:message name="ISmartWCFService_GetHitsActeurs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHitsActeurs" />
   </wsdl:message>
-  <wsdl:message name="ISmartWCFService_TopThreeActors_OutputMessage">
-    <wsdl:part name="parameters" element="tns:TopThreeActorsResponse" />
+  <wsdl:message name="ISmartWCFService_GetHitsActeurs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHitsActeursResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_AddStatistiques_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddStatistiques" />
+  </wsdl:message>
+  <wsdl:message name="ISmartWCFService_AddStatistiques_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddStatistiquesResponse" />
   </wsdl:message>
   <wsdl:portType name="ISmartWCFService">
     <wsdl:operation name="GetData">
@@ -250,13 +257,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/AddHits" message="tns:ISmartWCFService_AddHits_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/AddHitsResponse" message="tns:ISmartWCFService_AddHits_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="TopThreeFilms">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/TopThreeFilms" message="tns:ISmartWCFService_TopThreeFilms_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/TopThreeFilmsResponse" message="tns:ISmartWCFService_TopThreeFilms_OutputMessage" />
+    <wsdl:operation name="GetHitsFilms">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetHitsFilms" message="tns:ISmartWCFService_GetHitsFilms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetHitsFilmsResponse" message="tns:ISmartWCFService_GetHitsFilms_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="TopThreeActors">
-      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/TopThreeActors" message="tns:ISmartWCFService_TopThreeActors_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/TopThreeActorsResponse" message="tns:ISmartWCFService_TopThreeActors_OutputMessage" />
+    <wsdl:operation name="GetHitsActeurs">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/GetHitsActeurs" message="tns:ISmartWCFService_GetHitsActeurs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/GetHitsActeursResponse" message="tns:ISmartWCFService_GetHitsActeurs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddStatistiques">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISmartWCFService/AddStatistiques" message="tns:ISmartWCFService_AddStatistiques_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISmartWCFService/AddStatistiquesResponse" message="tns:ISmartWCFService_AddStatistiques_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISmartWCFService" type="tns:ISmartWCFService">
@@ -468,8 +479,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="TopThreeFilms">
-      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/TopThreeFilms" style="document" />
+    <wsdl:operation name="GetHitsFilms">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetHitsFilms" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -477,8 +488,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="TopThreeActors">
-      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/TopThreeActors" style="document" />
+    <wsdl:operation name="GetHitsActeurs">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/GetHitsActeurs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddStatistiques">
+      <soap:operation soapAction="http://tempuri.org/ISmartWCFService/AddStatistiques" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

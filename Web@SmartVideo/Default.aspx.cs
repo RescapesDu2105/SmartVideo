@@ -15,7 +15,6 @@ public partial class _Default : System.Web.UI.Page
 {
     private SmartWCFServiceReference.SmartWCFServiceClient Service = new SmartWCFServiceReference.SmartWCFServiceClient();
 
-
     protected void Page_Init(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -86,10 +85,10 @@ public partial class _Default : System.Web.UI.Page
                     ActorDTO Actor = Service.IsActorExists((String)Session["SearchInput"]);
                     if (Actor != null)
                     {
-                        Service.AddHits(new UserManager().FindById(User.Identity.GetUserId()).Id, Actor.Id, DateTime.Now, "Actor");
+                        Service.AddHits(new UserManager().FindById(User.Identity.GetUserId()).Id, Actor.Id, DateTime.Now, "Acteur");
                     }
 
-                    Session["Recherche"] = "Actor";
+                    Session["Recherche"] = "Acteur";
                     Session["ListeFilms"] = ChargerFilms(1).ToList();
                     Session["PagesMax"] = Count / 20;
                     Response.Write("Count 2 = " + (int)Session["PagesMax"] + " <br/>");

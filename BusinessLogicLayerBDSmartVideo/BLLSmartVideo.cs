@@ -33,6 +33,10 @@ namespace BusinessLogicLayerBDSmartVideo
         {
             dal.AddLocationClient(idClient, idFilm, date);
         }
+        public static void AddStatistiques(Dictionary<int, int> Top3Films, Dictionary<int, int> Top3Acteurs)
+        {
+            dal.AddStatistiques(Top3Films, Top3Acteurs);
+        }
 
         public static List<ClientDTO> GetClients()
         {
@@ -50,13 +54,21 @@ namespace BusinessLogicLayerBDSmartVideo
         {
             dal.AddHits(IdClient, IdCritere, date, Type);
         }
-        public static List<int> TopThreeFilms()
+        public static List<HitsDTO> GetHitsFilms()
         {
-            return dal.TopThreeFilms();
+            return dal.GetHitsFilms();
         }
-        public static List<int> TopThreeActors()
+        public static List<HitsDTO> GetHitsActeurs()
         {
-            return dal.TopThreeActors();
+            return dal.GetHitsActeurs();
+        }
+        public static List<StatistiquesDTO> GetStatistiquesFilms()
+        {
+            return dal.GetStatistiquesFilms();
+        }
+        public static List<StatistiquesDTO> GetStatistiquesActeurs()
+        {
+            return dal.GetStatistiquesActeurs();
         }
     }
 }

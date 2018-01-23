@@ -39,6 +39,9 @@ namespace DataAccessLayerBDSmartVideo
     partial void InsertHits(Hits instance);
     partial void UpdateHits(Hits instance);
     partial void DeleteHits(Hits instance);
+    partial void InsertStatistiques(Statistiques instance);
+    partial void UpdateStatistiques(Statistiques instance);
+    partial void DeleteStatistiques(Statistiques instance);
     #endregion
 		
 		public BDSmartVideoDataContext() : 
@@ -909,8 +912,10 @@ namespace DataAccessLayerBDSmartVideo
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Statistiques")]
-	public partial class Statistiques
+	public partial class Statistiques : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
@@ -922,11 +927,28 @@ namespace DataAccessLayerBDSmartVideo
 		
 		private int _NombreHits;
 		
+    #region Définitions de méthodes d'extensibilité
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
+    partial void OnIdTypeChanging(int value);
+    partial void OnIdTypeChanged();
+    partial void OnNombreHitsChanging(int value);
+    partial void OnNombreHitsChanged();
+    #endregion
+		
 		public Statistiques()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -937,7 +959,11 @@ namespace DataAccessLayerBDSmartVideo
 			{
 				if ((this._Id != value))
 				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
 					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
 				}
 			}
 		}
@@ -953,7 +979,11 @@ namespace DataAccessLayerBDSmartVideo
 			{
 				if ((this._Date != value))
 				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
 					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
 				}
 			}
 		}
@@ -969,7 +999,11 @@ namespace DataAccessLayerBDSmartVideo
 			{
 				if ((this._Type != value))
 				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
 					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
 				}
 			}
 		}
@@ -985,7 +1019,11 @@ namespace DataAccessLayerBDSmartVideo
 			{
 				if ((this._IdType != value))
 				{
+					this.OnIdTypeChanging(value);
+					this.SendPropertyChanging();
 					this._IdType = value;
+					this.SendPropertyChanged("IdType");
+					this.OnIdTypeChanged();
 				}
 			}
 		}
@@ -1001,8 +1039,32 @@ namespace DataAccessLayerBDSmartVideo
 			{
 				if ((this._NombreHits != value))
 				{
+					this.OnNombreHitsChanging(value);
+					this.SendPropertyChanging();
 					this._NombreHits = value;
+					this.SendPropertyChanged("NombreHits");
+					this.OnNombreHitsChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

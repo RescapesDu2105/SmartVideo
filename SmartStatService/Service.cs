@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTOLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,7 +27,7 @@ namespace SmartStatService
 
             DateTime now = DateTime.Now;
 
-            timer.Interval = new DateTime(now.Year, now.Month, now.Day + 1, 0, 0, 0, DateTimeKind.Local).ToUniversalTime().Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;
+            timer.Interval = new DateTime(now.Year, now.Month, now.Day + 1, 0, 0, 0, DateTimeKind.Utc).ToUniversalTime().Subtract(now).TotalMilliseconds;
             timer.Elapsed += new ElapsedEventHandler(timer_Tick);
             timer.Enabled = true;
         }
@@ -35,8 +36,36 @@ namespace SmartStatService
         {
             ServiceReference.SmartWCFServiceClient Service = new ServiceReference.SmartWCFServiceClient();
 
-            Service.TopThreeFilms();
-            Service.TopThreeActors();
+            List<HitsDTO> HitsFilms = Service.GetHitsFilms().ToList();
+            List<HitsDTO> HitsActeurs = Service.GetHitsActeurs().ToList();
+            Dictionary<int, int> dFilms = new Dictionary<int, int>();
+            Dictionary<int, int> dActeurs = new Dictionary<int, int>();
+
+            Console.WriteLine(HitsFilms.Count);
+            foreach (HitsDTO hits in HitsFilms)
+            {
+                //Console.WriteLine(hits.IdType);
+                if (!dFilms.ContainsKey(hits.IdType))
+                    dFilms.Add(hits.IdType, 1);
+                else
+                    dFilms[hits.IdType] = dFilms[hits.IdType] + 1;
+            }
+            dFilms = dFilms.OrderByDescending(t => t.Value).Take(3).ToDictionary(pair => pair.Key, pair => pair.Value);
+
+
+            Console.WriteLine(HitsActeurs.Count);
+            foreach (HitsDTO hits in HitsActeurs)
+            {
+                //Console.WriteLine(hits.IdType);
+                if (!dActeurs.ContainsKey(hits.IdType))
+                    dActeurs.Add(hits.IdType, 1);
+                else
+                    dActeurs[hits.IdType] = dActeurs[hits.IdType] + 1;
+            }
+            dActeurs = dActeurs.OrderByDescending(t => t.Value).Take(3).ToDictionary(pair => pair.Key, pair => pair.Value);
+
+            //Add dans Statistiques
+            Service.AddStatistiques(dFilms, dActeurs);
 
             Service = null;
 

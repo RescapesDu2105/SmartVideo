@@ -25,6 +25,10 @@ namespace SmartWCFService
         {
             return BLLFilm.getFilmById(idFilm);
         }
+        public ActorDTO GetActorByIdActor(int idActor)
+        {
+            return BLLFilm.getActorByIdActor(idActor);
+        }
         public FilmDTO GetFilmByName(String filmName)
         {
             return BLLFilm.getFilmByName(filmName);
@@ -111,13 +115,25 @@ namespace SmartWCFService
         {
             BLLSmartVideo.AddHits(IdClient, IdCritere, date, Type);
         }
-        public List<int> TopThreeFilms()
+        public List<HitsDTO> GetHitsFilms()
         {
-            BLLSmartVideo.TopThreeFilms();
+            return BLLSmartVideo.GetHitsFilms();
         }
-        public List<int> TopThreeActors()
+        public List<HitsDTO> GetHitsActeurs()
         {
-            BLLSmartVideo.TopThreeActors();
+            return BLLSmartVideo.GetHitsActeurs();
+        }
+        public void AddStatistiques(Dictionary<int, int> Top3Films, Dictionary<int, int> Top3Acteurs)
+        {
+            BLLSmartVideo.AddStatistiques(Top3Films, Top3Acteurs);
+        }
+        public List<StatistiquesDTO> GetStatistiquesFilms()
+        {
+            return BLLSmartVideo.GetStatistiquesFilms();
+        }
+        public List<StatistiquesDTO> GetStatistiquesActeurs()
+        {
+            return BLLSmartVideo.GetStatistiquesActeurs();
         }
     }
 }

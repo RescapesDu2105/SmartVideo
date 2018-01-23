@@ -11,11 +11,11 @@
         BundleConfig.RegisterBundles(BundleTable.Bundles);
 
         ScriptResourceDefinition Popper = new ScriptResourceDefinition();
-        Popper.CdnPath = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js";
+        Popper.CdnPath = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js";
         Popper.Path = "~/Scripts/popper.min.js";
         Popper.DebugPath = "~/Scripts/popper.min.js";
-        Popper.CdnPath = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js";
-        Popper.CdnDebugPath = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js";
+        Popper.CdnPath = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js";
+        Popper.CdnDebugPath = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js";
         ScriptManager.ScriptResourceMapping.AddDefinition("popper", null, Popper);
 
         ScriptResourceDefinition JQuery = new ScriptResourceDefinition();
@@ -27,11 +27,11 @@
         ScriptManager.ScriptResourceMapping.AddDefinition("jquery", null, JQuery);
 
         ScriptResourceDefinition Bootstrap = new ScriptResourceDefinition();
-        Bootstrap.CdnPath = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js";
+        Bootstrap.CdnPath = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js";
         Bootstrap.Path = "~/Scripts/bootstrap.min.js";
         Bootstrap.DebugPath = "~/Scripts/bootstrap.min.js";
-        Bootstrap.CdnPath = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js";
-        Bootstrap.CdnDebugPath = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js";
+        Bootstrap.CdnPath = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js";
+        Bootstrap.CdnDebugPath = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js";
         ScriptManager.ScriptResourceMapping.AddDefinition("bootstrap", null, Bootstrap);
 
         ScriptResourceDefinition FontAwesome = new ScriptResourceDefinition();

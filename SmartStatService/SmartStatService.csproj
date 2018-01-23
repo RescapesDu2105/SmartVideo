@@ -75,6 +75,9 @@
     <None Include="Connected Services\ServiceReference\SmartWCFService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServiceReference\SmartWCFService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\DataSources\DTOLib.ActorDTO.datasource" />
     <None Include="Properties\DataSources\DTOLib.ClientDTO.datasource" />
     <None Include="Properties\DataSources\DTOLib.DirectorDTO.datasource" />

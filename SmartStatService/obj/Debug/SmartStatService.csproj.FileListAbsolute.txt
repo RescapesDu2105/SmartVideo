@@ -1,0 +1,2 @@
+E:\Dropbox\B3\C#\SmartVideo\SmartStatService\obj\Debug\SmartStatService.csprojResolveAssemblyReference.cache
+E:\Dropbox\B3\C#\SmartVideo\SmartStatService\obj\Debug\SmartStatService.csproj.CoreCompileInputs.cache

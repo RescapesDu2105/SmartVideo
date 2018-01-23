@@ -34,10 +34,10 @@
         <classShapeMoniker Id="08cc96f0-77fb-4869-a35a-a95675d6c30f" />
       </nodes>
     </associationConnector>
-    <classShape Id="1ef4288d-28fa-470a-9e42-cc6db6b34270" absoluteBounds="7.625, 2.25, 2, 1.7708968098958331">
+    <classShape Id="0a3fe9da-7ba8-4941-9239-2df4a2baaf31" absoluteBounds="7.625, 2.375, 2, 1.7708968098958331">
       <DataClassMoniker Name="/BDSmartVideoDataContext/Statistiques" />
       <nestedChildShapes>
-        <elementListCompartment Id="89fbf6ed-6ab1-41fc-aef6-233a07fa780c" absoluteBounds="7.6400000000000006, 2.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e11456cd-8713-4d36-af6f-08c91912e1c2" absoluteBounds="7.64, 2.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
