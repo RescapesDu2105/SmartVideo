@@ -44,9 +44,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccessLayerDBFilm\DataAccessLayerDBFilm.csproj">
+    <ProjectReference Include="..\DataAccessLayerDBFilm\DataAccessLayerBDFilm.csproj">
       <Project>{21344474-5B98-49E7-AAE4-0E88C22222D1}</Project>
-      <Name>DataAccessLayerDBFilm</Name>
+      <Name>DataAccessLayerBDFilm</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTOLib\DTOLib.csproj">
       <Project>{152B13C5-A53A-4FB2-BF1A-81F1BB5B820D}</Project>

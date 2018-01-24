@@ -1,4 +1,5 @@
-﻿using DTOLib;
+﻿using BusinessLogicLayerBDSmartVideo;
+using DTOLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,9 @@ public partial class _Statistiques : Page
     {   
         /*if (!IsPostBack)
         {*/
-            List<StatistiquesDTO> StatsFilms = Service.GetStatistiquesFilms().ToList();
+            List<StatistiquesDTO> StatsFilms = BLLSmartVideo.GetStatistiquesFilms().ToList();
             List<FilmDTO> FilmsStats = new List<FilmDTO>();
-            List<StatistiquesDTO> StatsActeurs = Service.GetStatistiquesActeurs().ToList();
+            List<StatistiquesDTO> StatsActeurs = BLLSmartVideo.GetStatistiquesActeurs().ToList();
             List<ActorDTO> ActeursStats = new List<ActorDTO>();
         
             foreach(StatistiquesDTO stats in StatsFilms)

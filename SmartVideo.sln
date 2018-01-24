@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartVideo", "SmartVideo\SmartVideo.csproj", "{9DA23492-6CFD-4D36-A841-5AC414974385}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -10,9 +10,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartVideo", "SmartVideo\Sm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOLib", "DTOLib\DTOLib.csproj", "{152B13C5-A53A-4FB2-BF1A-81F1BB5B820D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayerDBFilm", "BusinessLogicLayer\BusinessLogicLayerDBFilm.csproj", "{DFEE3DC3-BD08-47E9-A681-91E17AC053B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayerBDFilm", "BusinessLogicLayer\BusinessLogicLayerBDFilm.csproj", "{DFEE3DC3-BD08-47E9-A681-91E17AC053B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayerDBFilm", "DataAccessLayerDBFilm\DataAccessLayerDBFilm.csproj", "{21344474-5B98-49E7-AAE4-0E88C22222D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayerBDFilm", "DataAccessLayerDBFilm\DataAccessLayerBDFilm.csproj", "{21344474-5B98-49E7-AAE4-0E88C22222D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartVideoWindowsService", "SmartVideoWindowsService\SmartVideoWindowsService.csproj", "{22D54066-53CE-41F3-B9E8-DE114B9E78A5}"
 EndProject

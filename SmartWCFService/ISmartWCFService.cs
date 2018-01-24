@@ -54,7 +54,7 @@ namespace SmartWCFService
         [OperationContract]
         int CountFilmsRecherche(String table, String critere);
 
-
+/*
         [OperationContract]
         ClientDTO GetClientById(String idClient);
 
@@ -95,6 +95,6 @@ namespace SmartWCFService
         List<StatistiquesDTO> GetStatistiquesFilms();
 
         [OperationContract]
-        List<StatistiquesDTO> GetStatistiquesActeurs();
+        List<StatistiquesDTO> GetStatistiquesActeurs();*/
     }
 }

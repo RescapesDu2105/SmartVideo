@@ -1,4 +1,3 @@
-E:\Dropbox\B3\C#\SmartVideo\SmartStatService\obj\Debug\SmartStatService.csprojResolveAssemblyReference.cache
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\obj\Debug\SmartStatService.csproj.CoreCompileInputs.cache
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe.config
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.exe
@@ -6,17 +5,12 @@ E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartStatService.pdb
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\DTOLib.dll
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartWCFService.dll
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\BusinessLogicLayer.dll
-E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\BusinessLogicLayerBDSmartVideo.dll
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\DataAccessLayerDBFilm.dll
-E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\DataAccessLayerBDSmartVideo.dll
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\DTOLib.pdb
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartWCFService.pdb
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\SmartWCFService.dll.config
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\BusinessLogicLayer.pdb
-E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\BusinessLogicLayerBDSmartVideo.pdb
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\DataAccessLayerDBFilm.pdb
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\DataAccessLayerDBFilm.dll.config
-E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\DataAccessLayerBDSmartVideo.pdb
-E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\DataAccessLayerBDSmartVideo.dll.config
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\obj\Debug\SmartStatService.exe
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\obj\Debug\SmartStatService.pdb

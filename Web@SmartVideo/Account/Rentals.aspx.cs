@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using BusinessLogicLayerBDSmartVideo;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -52,7 +53,7 @@ public partial class Account_Rentals : Page
     {
         //Response.Write("Chargement");
 
-        List<DTOLib.LocationDTO> Locations = Service.GetLocationsClient(new UserManager().FindById(User.Identity.GetUserId()).Id).ToList();
+        List<DTOLib.LocationDTO> Locations = BLLSmartVideo.GetLocationsClient(new UserManager().FindById(User.Identity.GetUserId()).Id).ToList();
         List<DTOLib.FilmDTO> Films = new List<DTOLib.FilmDTO>();
 
         foreach (DTOLib.LocationDTO Location in Locations)

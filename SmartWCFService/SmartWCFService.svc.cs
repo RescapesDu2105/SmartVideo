@@ -78,6 +78,7 @@ namespace SmartWCFService
             return BLLFilm.CountFilms(table, critere);
         }
 
+        /*
         //BDSmartVideo
         public ClientDTO GetClientById(String idClient)
         {
@@ -134,6 +135,6 @@ namespace SmartWCFService
         public List<StatistiquesDTO> GetStatistiquesActeurs()
         {
             return BLLSmartVideo.GetStatistiquesActeurs();
-        }
+        }*/
     }
 }

@@ -22,11 +22,10 @@
     <MetadataSource Address="http://localhost:60888/SmartWCFService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SmartWCFService.xsd" MetadataType="Schema" ID="97c69a84-6e6b-405e-a479-066ed440ba6d" SourceId="1" SourceUrl="http://localhost:60888/SmartWCFService.svc?xsd=xsd1" />
-    <MetadataFile FileName="SmartWCFService1.xsd" MetadataType="Schema" ID="1b38b97d-228d-4155-9b0b-c5911990500d" SourceId="1" SourceUrl="http://localhost:60888/SmartWCFService.svc?xsd=xsd0" />
-    <MetadataFile FileName="SmartWCFService.wsdl" MetadataType="Wsdl" ID="b21df431-edeb-4e88-9750-7768266a2682" SourceId="1" SourceUrl="http://localhost:60888/SmartWCFService.svc?wsdl" />
-    <MetadataFile FileName="SmartWCFService3.xsd" MetadataType="Schema" ID="244b267e-6209-40a1-a241-98ead9a29212" SourceId="1" SourceUrl="http://localhost:60888/SmartWCFService.svc?xsd=xsd3" />
     <MetadataFile FileName="SmartWCFService.disco" MetadataType="Disco" ID="8b0f11ae-e762-4ea5-a355-b7682741f0c1" SourceId="1" SourceUrl="http://localhost:60888/SmartWCFService.svc?disco" />
+    <MetadataFile FileName="SmartWCFService.xsd" MetadataType="Schema" ID="97c69a84-6e6b-405e-a479-066ed440ba6d" SourceId="1" SourceUrl="http://localhost:60888/SmartWCFService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SmartWCFService.wsdl" MetadataType="Wsdl" ID="b21df431-edeb-4e88-9750-7768266a2682" SourceId="1" SourceUrl="http://localhost:60888/SmartWCFService.svc?wsdl" />
+    <MetadataFile FileName="SmartWCFService1.xsd" MetadataType="Schema" ID="1b38b97d-228d-4155-9b0b-c5911990500d" SourceId="1" SourceUrl="http://localhost:60888/SmartWCFService.svc?xsd=xsd0" />
     <MetadataFile FileName="SmartWCFService2.xsd" MetadataType="Schema" ID="274a2923-c7ef-43a7-a31a-cb7841128f64" SourceId="1" SourceUrl="http://localhost:60888/SmartWCFService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>

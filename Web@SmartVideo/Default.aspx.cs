@@ -1,4 +1,5 @@
-﻿using DTOLib;
+﻿using BusinessLogicLayerBDSmartVideo;
+using DTOLib;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections;
@@ -52,7 +53,7 @@ public partial class _Default : System.Web.UI.Page
                         FilmDTO Film = Service.GetFilmByName((String)Session["SearchInput"]);
                         if(Film != null)
                         {
-                            Service.AddHits(new UserManager().FindById(User.Identity.GetUserId()).Id, Film.Id, DateTime.Now, "Film");
+                            BLLSmartVideo.AddHits(new UserManager().FindById(User.Identity.GetUserId()).Id, Film.Id, DateTime.Now, "Film");
                         }
                     }
 
@@ -85,7 +86,7 @@ public partial class _Default : System.Web.UI.Page
                     ActorDTO Actor = Service.IsActorExists((String)Session["SearchInput"]);
                     if (Actor != null)
                     {
-                        Service.AddHits(new UserManager().FindById(User.Identity.GetUserId()).Id, Actor.Id, DateTime.Now, "Acteur");
+                        BLLSmartVideo.AddHits(new UserManager().FindById(User.Identity.GetUserId()).Id, Actor.Id, DateTime.Now, "Acteur");
                     }
 
                     Session["Recherche"] = "Acteur";
@@ -210,8 +211,8 @@ public partial class _Default : System.Web.UI.Page
     protected void Louer(object sender, EventArgs e)
     {        
         String clientId = new UserManager().FindById(User.Identity.GetUserId()).Id;
-        
-        Service.AddLocationClient(clientId, Int32.Parse(FilmID.Value), DateTime.Now.AddMonths(Int32.Parse(Duree.Value)));
+
+        BLLSmartVideo.AddLocationClient(clientId, Int32.Parse(FilmID.Value), DateTime.Now.AddMonths(Int32.Parse(Duree.Value)));
     }
 
     protected void Reset(object sender, EventArgs e)

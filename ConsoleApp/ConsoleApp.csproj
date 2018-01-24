@@ -80,13 +80,13 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayerDBFilm.csproj">
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayerBDFilm.csproj">
       <Project>{dfee3dc3-bd08-47e9-a681-91e17ac053b1}</Project>
-      <Name>BusinessLogicLayerDBFilm</Name>
+      <Name>BusinessLogicLayerBDFilm</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataAccessLayerDBFilm\DataAccessLayerDBFilm.csproj">
+    <ProjectReference Include="..\DataAccessLayerDBFilm\DataAccessLayerBDFilm.csproj">
       <Project>{21344474-5b98-49e7-aae4-0e88c22222d1}</Project>
-      <Name>DataAccessLayerDBFilm</Name>
+      <Name>DataAccessLayerBDFilm</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTOLib\DTOLib.csproj">
       <Project>{152b13c5-a53a-4fb2-bf1a-81f1bb5b820d}</Project>

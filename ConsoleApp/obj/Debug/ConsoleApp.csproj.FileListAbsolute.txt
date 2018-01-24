@@ -7,16 +7,11 @@ E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\bin\Debug\BusinessLogicLayer.dll
 E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\bin\Debug\DataAccessLayerDBFilm.dll
 E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\bin\Debug\DTOLib.dll
 E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\bin\Debug\SmartWCFService.dll
-E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\bin\Debug\BusinessLogicLayerBDSmartVideo.dll
-E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\bin\Debug\DataAccessLayerBDSmartVideo.dll
 E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\bin\Debug\BusinessLogicLayer.pdb
 E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\bin\Debug\DataAccessLayerDBFilm.pdb
 E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\bin\Debug\DataAccessLayerDBFilm.dll.config
 E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\bin\Debug\DTOLib.pdb
 E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\bin\Debug\SmartWCFService.pdb
 E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\bin\Debug\SmartWCFService.dll.config
-E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\bin\Debug\BusinessLogicLayerBDSmartVideo.pdb
-E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\bin\Debug\DataAccessLayerBDSmartVideo.pdb
-E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\bin\Debug\DataAccessLayerBDSmartVideo.dll.config
 E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\obj\Debug\ConsoleApp.exe
 E:\Dropbox\B3\C#\SmartVideo\ConsoleApp\obj\Debug\ConsoleApp.pdb
