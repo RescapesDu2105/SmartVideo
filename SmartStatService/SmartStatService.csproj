@@ -109,13 +109,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayerBDSmartVideo\BusinessLogicLayerBDSmartVideo.csproj">
+      <Project>{9416AD9D-A99B-4F7C-B709-67C6F8C31895}</Project>
+      <Name>BusinessLogicLayerBDSmartVideo</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTOLib\DTOLib.csproj">
       <Project>{152b13c5-a53a-4fb2-bf1a-81f1bb5b820d}</Project>
       <Name>DTOLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SmartWCFService\SmartWCFService.csproj">
-      <Project>{e9029a27-6fd7-4c6d-a9b9-f9368b7b0842}</Project>
-      <Name>SmartWCFService</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

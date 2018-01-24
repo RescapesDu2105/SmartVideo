@@ -10,8 +10,6 @@ using Web_SmartVideo;
 
 public partial class Account_Login : Page
 {
-    private SmartWCFServiceReference.SmartWCFServiceClient Service = new SmartWCFServiceReference.SmartWCFServiceClient();
-
     protected void Page_Load(object sender, EventArgs e)
     {
 

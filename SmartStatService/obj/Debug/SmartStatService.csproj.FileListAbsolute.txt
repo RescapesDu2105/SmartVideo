@@ -14,3 +14,4 @@ E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\DataAccessLayerDBFilm.pdb
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\bin\Debug\DataAccessLayerDBFilm.dll.config
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\obj\Debug\SmartStatService.exe
 E:\Dropbox\B3\C#\SmartVideo\SmartStatService\obj\Debug\SmartStatService.pdb
+E:\Dropbox\B3\C#\SmartVideo\SmartStatService\obj\Debug\SmartStatService.csprojResolveAssemblyReference.cache

@@ -60,7 +60,7 @@ public partial class _Default : System.Web.UI.Page
                     Session["Recherche"] = "Film";
                     Session["ListeFilms"] = ChargerFilms(1);
                     Session["PagesMax"] = (int)Math.Ceiling(Count / 20.0);
-                    Response.Write("Count = " + Count + " <br/>");
+                    //Response.Write("Count = " + Count + " <br/>");
 
                     if ((int)Session["PagesMax"] < 3)
                     {
@@ -92,7 +92,7 @@ public partial class _Default : System.Web.UI.Page
                     Session["Recherche"] = "Acteur";
                     Session["ListeFilms"] = ChargerFilms(1).ToList();
                     Session["PagesMax"] = Count / 20;
-                    Response.Write("Count 2 = " + (int)Session["PagesMax"] + " <br/>");
+                    //Response.Write("Count 2 = " + (int)Session["PagesMax"] + " <br/>");
 
                     if ((int)Session["PagesMax"] < 3)
                     {
@@ -118,7 +118,7 @@ public partial class _Default : System.Web.UI.Page
             ChangerPage(null, null);
 
 
-        Response.Write("Search<br/>");
+        //Response.Write("Search<br/>");
     }
 
     protected List<FilmDTO> ChargerFilms(int page)

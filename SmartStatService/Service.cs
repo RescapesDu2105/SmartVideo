@@ -1,4 +1,5 @@
-﻿using DTOLib;
+﻿using BusinessLogicLayerBDSmartVideo;
+using DTOLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,10 +35,8 @@ namespace SmartStatService
 
         private void timer_Tick(object sender, ElapsedEventArgs e)
         {
-            ServiceReference.SmartWCFServiceClient Service = new ServiceReference.SmartWCFServiceClient();
-
-            List<HitsDTO> HitsFilms = Service.GetHitsFilms().ToList();
-            List<HitsDTO> HitsActeurs = Service.GetHitsActeurs().ToList();
+            List<HitsDTO> HitsFilms = BLLSmartVideo.GetHitsFilms().ToList();
+            List<HitsDTO> HitsActeurs = BLLSmartVideo.GetHitsActeurs().ToList();
             Dictionary<int, int> dFilms = new Dictionary<int, int>();
             Dictionary<int, int> dActeurs = new Dictionary<int, int>();
 
@@ -65,9 +64,7 @@ namespace SmartStatService
             dActeurs = dActeurs.OrderByDescending(t => t.Value).Take(3).ToDictionary(pair => pair.Key, pair => pair.Value);
 
             //Add dans Statistiques
-            Service.AddStatistiques(dFilms, dActeurs);
-
-            Service = null;
+            BLLSmartVideo.AddStatistiques(dFilms, dActeurs);
 
             if(timer.Interval != (1000 * 60 * 60 * 24))
                 timer.Interval = (1000 * 60 * 60 * 24); // 1s * 60 = 1m => 1m * 60 = 1h => 1h * 24 = 1j

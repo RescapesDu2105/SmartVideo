@@ -5,7 +5,7 @@
 
     <div class="row justify-content-md-center mt-2 mb-2" hidden>
         <div class="alert alert-success" role="alert">
-            J'AFFICHE UNE ERREUR LOL
+            
         </div>
     </div>
 
@@ -17,7 +17,7 @@
                 </div>
                 <asp:TextBox runat="server" placeholder="Entrer le nom d'un film ou d'un acteur" type="search" CssClass="form-control" ID="SearchInput"/>
                 <div class="input-group-append">
-                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chercher</button>
+                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chercher </button>
                     <div class="dropdown-menu">
                         <asp:LinkButton runat="server" CssClass="dropdown-item" Text="Chercher par rapport au nom du film" OnClick="Search"/>
                         <asp:LinkButton runat="server" CssClass="dropdown-item" Text="Chercher par rapport au nom d'un acteur" OnClick="Search"/>

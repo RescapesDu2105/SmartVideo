@@ -46,7 +46,7 @@ namespace DataAccessLayerBDSmartVideo
         #endregion Get by id
         public List<LocationDTO> GetLocationsClient(String idClient)
         {
-            List<Location> listLocations = instanceDC.Location.OrderBy(d => d.Id).ToList();
+            List<Location> listLocations = instanceDC.Location.Where(d => d.DateFin >= DateTime.Now).OrderBy(d => d.Id).ToList();
             List<LocationDTO> listLocationDTO = new List<LocationDTO>();
 
             foreach (Location location in listLocations)
@@ -113,16 +113,6 @@ namespace DataAccessLayerBDSmartVideo
         }
         public List<HitsDTO> GetHitsFilms()
         {
-            /*DateTime date = DateTime.Now.AddDays(-1.0);
-            List<int> listeHits = instanceDC.Hits
-                                        .Where(h => h.Date.Year == date.Year && h.Date.Month == date.Month && h.Date.Day == date.Day && h.Type == "Film")
-                                        .GroupBy(h => h.IdType) //&& h.Date.Year == date.Year && h.Date.Month == date.Month && h.Date.Day == date.Day && h.Type == "Film")
-                                        .Select(grp => grp.Key)
-                                        .Take(3)
-                                        .ToList();
-
-            return listeHits;*/
-
             List<Hits> Hits = instanceDC.Hits.Where(h => h.Type.Equals("Film")).ToList();
             List<HitsDTO> HitsDTO = new List<HitsDTO>();
 
